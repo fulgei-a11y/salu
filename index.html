@@ -1,0 +1,919 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Qui e Ora</title>
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="googlebot" content="noindex, nofollow">
+<script>
+/* Accesso con password semplice: tiene lontani i curiosi, non è una protezione forte.
+   La password si cambia con il segreto SITO_PASSWORD su GitHub. */
+var QO_ACCESSO = { sale: "029d3d7df9772170179134c2194cbbc3", impronta: "08210fa6d48a608658b1707a7358c35ea01497f92033531d008ea61313c9e52a", giri: 200000 };
+(function () {
+  var ok = false;
+  try { ok = localStorage.getItem("qo:accesso") === QO_ACCESSO.impronta; } catch (e) {}
+  if (!ok) document.documentElement.classList.add("bloccato");
+  try {
+    var t = localStorage.getItem("qo:tema"); if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    if (localStorage.getItem("qo:testo") === "grande") document.documentElement.classList.add("testo-grande");
+  } catch (e) {}
+})();
+</script>
+<style>
+html.bloccato body > :not(#lucchetto) { display: none !important; }
+#lucchetto { display: none; }
+html.bloccato #lucchetto { display: grid; min-height: 100vh; min-height: 100dvh; place-items: center; padding: 24px; box-sizing: border-box; background: #23392F; color: #fff; font-family: "Atkinson Hyperlegible", system-ui, sans-serif; }
+#lucchetto form { width: 100%; max-width: 340px; display: grid; gap: 14px; text-align: center; }
+#lucchetto h1 { margin: 0; font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: 1.9rem; }
+#lucchetto p { margin: 0; color: #CFDDD4; line-height: 1.45; }
+#lucchetto input { font: inherit; font-size: 1.05rem; padding: 12px 14px; border-radius: 12px; border: 1px solid #4A6657; background: #1A2C24; color: #fff; text-align: center; }
+#lucchetto button { font: inherit; font-weight: 700; font-size: 1.05rem; padding: 12px 14px; border-radius: 12px; border: 0; background: #E8B86A; color: #23392F; cursor: pointer; }
+#lucchetto .err { color: #FFC2B4; min-height: 1.4em; }
+</style>
+<meta name="description" content="Ogni giorno un passo per il corpo e per la mente: abitudini sane, cibo di stagione, movimento, presenza e prevenzione.">
+<meta name="theme-color" content="#23392F">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Qui e Ora">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="icons/favicon.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+:root {
+  --bg: #F4F1EA; --surface: #FFFDF8; --surface-2: #ECE7DC; --ink: #1F2E27; --muted: #5E6B63; --line: #DDD6C8;
+  --verde: #2F6B4F; --verde-soft: #DCEBDF; --oro: #B3741C; --oro-soft: #F5E6CB; --rosso: #B23B2E; --rosso-soft: #F6DDD8;
+  --blu: #2C5E7A; --blu-soft: #DAE8EF;
+  --hero: #23392F; --hero-ink: #F3F6F2; --hero-muted: #B9CABE;
+  --shadow: 0 1px 2px rgba(31,46,39,.05), 0 8px 24px rgba(31,46,39,.06);
+  --f-display: "Fraunces", Georgia, serif; --f-body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --r: 16px; color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111A16; --surface: #18241E; --surface-2: #213029; --ink: #E7EEE9; --muted: #A3B2A9; --line: #2D3F36;
+    --verde: #7CC39C; --verde-soft: #1E3A2C; --oro: #E8B86A; --oro-soft: #3A2E18; --rosso: #F08A7A; --rosso-soft: #3E211D;
+    --blu: #8EC1DD; --blu-soft: #1B3240; --hero: #0C1310; --hero-ink: #F3F6F2; --hero-muted: #A3B2A9;
+    --shadow: 0 1px 2px rgba(0,0,0,.3); color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111A16; --surface: #18241E; --surface-2: #213029; --ink: #E7EEE9; --muted: #A3B2A9; --line: #2D3F36;
+  --verde: #7CC39C; --verde-soft: #1E3A2C; --oro: #E8B86A; --oro-soft: #3A2E18; --rosso: #F08A7A; --rosso-soft: #3E211D;
+  --blu: #8EC1DD; --blu-soft: #1B3240; --hero: #0C1310; --hero-ink: #F3F6F2; --hero-muted: #A3B2A9;
+  --shadow: 0 1px 2px rgba(0,0,0,.3); color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { -webkit-text-size-adjust: 100%; }
+html.testo-grande { font-size: 118%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 1rem; line-height: 1.55; padding-bottom: calc(76px + env(safe-area-inset-bottom)); }
+a { color: var(--verde); }
+h1, h2, h3 { font-family: var(--f-display); font-weight: 600; line-height: 1.2; margin: 0; letter-spacing: -.01em; }
+h2 { font-size: 1.45rem; }
+h3 { font-size: 1.12rem; }
+p { margin: 0; }
+button, input, select, textarea { font: inherit; color: inherit; }
+.wrap { max-width: 860px; margin: 0 auto; padding: 0 16px; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Testata */
+.masthead { background: var(--hero); color: var(--hero-ink); padding: calc(14px + env(safe-area-inset-top)) 0 22px; }
+.topbar { display: flex; align-items: center; gap: 10px; }
+.brand { display: flex; align-items: center; gap: 10px; color: inherit; text-decoration: none; margin-right: auto; }
+.brand b { font-family: var(--f-display); font-size: 1.35rem; font-weight: 600; }
+.icon-btn { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14); color: var(--hero-ink); border-radius: 12px; width: 42px; height: 42px; display: grid; place-items: center; cursor: pointer; }
+.icon-btn svg { width: 22px; height: 22px; }
+.saluto { margin-top: 18px; }
+.saluto .data { color: var(--hero-muted); font-size: .95rem; text-transform: capitalize; }
+.saluto h1 { font-size: clamp(1.7rem, 5vw, 2.3rem); margin-top: 4px; }
+.saluto .giornata { display: inline-block; margin-top: 10px; background: rgba(232,184,106,.16); color: #F2CF95; border-radius: 999px; padding: 4px 12px; font-size: .9rem; }
+.tabs { display: none; gap: 4px; margin-top: 18px; flex-wrap: wrap; }
+.tabs a { color: var(--hero-muted); text-decoration: none; padding: 7px 12px; border-radius: 999px; font-size: .95rem; }
+.tabs a[aria-current="page"] { background: rgba(255,255,255,.12); color: var(--hero-ink); }
+@media (min-width: 760px) { .tabs { display: flex; } .bnav { display: none !important; } body { padding-bottom: 24px; } }
+
+/* Navigazione in basso */
+.bnav { position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; display: grid; grid-template-columns: repeat(5, 1fr); background: var(--surface); border-top: 1px solid var(--line); padding: 6px 4px calc(6px + env(safe-area-inset-bottom)); }
+.bnav a { display: grid; justify-items: center; gap: 2px; color: var(--muted); text-decoration: none; font-size: .74rem; padding: 4px 0; border-radius: 10px; }
+.bnav a svg { width: 24px; height: 24px; }
+.bnav a[aria-current="page"] { color: var(--verde); font-weight: 700; }
+
+/* Schede */
+main { padding-top: 18px; }
+.view { display: none; }
+.view.attiva { display: grid; gap: 14px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 18px; box-shadow: var(--shadow); display: grid; gap: 10px; }
+.card.evidenza { background: var(--verde-soft); border-color: transparent; }
+.kicker { font-size: .78rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); display: flex; align-items: center; gap: 8px; }
+.kicker .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--verde); }
+.kicker.oro .dot { background: var(--oro); } .kicker.blu .dot { background: var(--blu); } .kicker.rosso .dot { background: var(--rosso); }
+.muted { color: var(--muted); }
+.small { font-size: .9rem; }
+.fonte { font-size: .82rem; color: var(--muted); }
+.fonte a { color: var(--muted); }
+.row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.grid2 { display: grid; gap: 14px; }
+@media (min-width: 640px) { .grid2 { grid-template-columns: 1fr 1fr; } }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: var(--verde); color: #fff; border: 0; border-radius: 12px; padding: 10px 16px; font-weight: 700; cursor: pointer; text-decoration: none; }
+:root[data-theme="dark"] .btn { color: #0C1310; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .btn { color: #0C1310; } }
+.btn.sec { background: transparent; color: var(--verde); border: 1px solid var(--verde); }
+.btn.piccolo { padding: 6px 12px; font-size: .9rem; border-radius: 10px; }
+ol.passi, ul.lista { margin: 0; padding-left: 1.3em; display: grid; gap: 6px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { background: var(--surface-2); border-radius: 999px; padding: 4px 11px; font-size: .9rem; }
+.chip.ok { background: var(--verde-soft); color: var(--verde); font-weight: 700; }
+details { border-top: 1px solid var(--line); padding-top: 10px; }
+details:first-of-type { border-top: 0; padding-top: 0; }
+summary { cursor: pointer; font-weight: 700; list-style: none; display: flex; justify-content: space-between; gap: 10px; align-items: baseline; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; color: var(--muted); font-weight: 400; font-size: 1.2rem; line-height: 1; }
+details[open] summary::after { content: "−"; }
+details > div { margin-top: 10px; display: grid; gap: 8px; }
+.badge { display: inline-block; border-radius: 999px; padding: 2px 10px; font-size: .78rem; font-weight: 700; white-space: nowrap; }
+.badge.si { background: var(--verde-soft); color: var(--verde); }
+.badge.forse { background: var(--oro-soft); color: var(--oro); }
+.badge.no { background: var(--surface-2); color: var(--muted); }
+.badge.scad { background: var(--rosso-soft); color: var(--rosso); }
+
+/* Fuori oggi */
+.meteo { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; }
+.meteo .m { background: var(--surface-2); border-radius: 12px; padding: 10px 12px; }
+.meteo .m b { display: block; font-size: 1.25rem; font-family: var(--f-display); }
+.meteo .m span { font-size: .85rem; color: var(--muted); }
+
+/* Diario */
+.check { display: flex; gap: 12px; align-items: flex-start; padding: 10px 12px; border-radius: 12px; background: var(--surface-2); cursor: pointer; }
+.check input { width: 22px; height: 22px; margin: 2px 0 0; accent-color: var(--verde); flex: none; }
+.check small { display: block; color: var(--muted); }
+.checks { display: grid; gap: 8px; }
+.umore { display: flex; gap: 6px; }
+.umore button { flex: 1; border: 1px solid var(--line); background: var(--surface); border-radius: 12px; padding: 8px 0; cursor: pointer; font-size: .9rem; }
+.umore button[aria-pressed="true"] { background: var(--verde); border-color: var(--verde); color: #fff; font-weight: 700; }
+textarea, input[type="text"], input[type="number"], input[type="date"], input[type="time"], select { width: 100%; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; }
+textarea { min-height: 80px; resize: vertical; }
+label.campo { display: grid; gap: 4px; font-size: .92rem; font-weight: 700; }
+label.campo span { font-weight: 400; color: var(--muted); font-size: .85rem; }
+.storico { display: grid; grid-template-columns: 9.5em repeat(28, 1fr); gap: 3px; align-items: center; font-size: .8rem; }
+.storico .q { aspect-ratio: 1; border-radius: 3px; background: var(--surface-2); }
+.storico .q.s { background: var(--verde); }
+.storico .lab { color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.serie { font-family: var(--f-display); font-size: 2rem; font-weight: 700; color: var(--verde); }
+
+/* Notizie */
+.news { display: grid; gap: 12px; }
+.news a { text-decoration: none; color: inherit; display: grid; gap: 2px; }
+.news a b { color: var(--ink); }
+.news a:hover b { text-decoration: underline; }
+
+/* Respiro guidato */
+dialog { border: 0; border-radius: 22px; padding: 0; width: min(440px, calc(100vw - 24px)); background: var(--surface); color: var(--ink); box-shadow: 0 20px 60px rgba(0,0,0,.3); }
+dialog::backdrop { background: rgba(10,20,15,.55); }
+.dlg { padding: 22px; display: grid; gap: 14px; text-align: center; }
+.cerchio { width: 190px; height: 190px; margin: 6px auto; border-radius: 50%; background: radial-gradient(circle, var(--verde-soft) 0%, var(--verde-soft) 55%, transparent 56%); display: grid; place-items: center; position: relative; }
+.cerchio::before { content: ""; position: absolute; inset: 22px; border-radius: 50%; background: var(--verde); opacity: .85; transform: scale(var(--s, .55)); transition: transform var(--t, 4s) ease-in-out; }
+.cerchio span { position: relative; color: #fff; font-weight: 700; font-size: 1.1rem; }
+.passo-grande:empty { display: none; }
+.passo-grande { font-size: 1.15rem; min-height: 3.2em; display: grid; place-items: center; }
+.durate { display: flex; gap: 6px; justify-content: center; }
+.durate button { border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+.durate button[aria-pressed="true"] { background: var(--verde); color: #fff; border-color: var(--verde); }
+.avviso { background: var(--oro-soft); border-radius: 12px; padding: 12px 14px; font-size: .92rem; }
+.urgente { background: var(--rosso-soft); border-radius: 12px; padding: 12px 14px; display: grid; gap: 4px; }
+.urgente b { color: var(--rosso); }
+footer.piede { padding: 26px 0 10px; color: var(--muted); font-size: .85rem; display: grid; gap: 6px; }
+@media (prefers-reduced-motion: reduce) { .cerchio::before { transition: none; } }
+</style>
+</head>
+<body>
+
+<div id="lucchetto">
+  <form id="lucchettoForm" autocomplete="on">
+    <svg width="58" height="58" viewBox="0 0 48 48" aria-hidden="true" style="margin:0 auto"><circle cx="24" cy="24" r="21" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="1.5"/><circle cx="24" cy="24" r="6" fill="#E8B86A"/><path d="M8 31c5-4 10-4 16 0s11 4 16 0" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width="2" stroke-linecap="round"/></svg>
+    <h1>Qui e Ora</h1>
+    <p>Spazio riservato. Scrivi la password per entrare: su questo dispositivo te la chiederà una volta sola.</p>
+    <input type="text" name="username" value="quieora" autocomplete="username" hidden>
+    <input type="password" id="lucchettoPw" autocomplete="current-password" aria-label="Password" placeholder="Password" required>
+    <button type="submit">Entra</button>
+    <p class="err" id="lucchettoErr" aria-live="polite"></p>
+  </form>
+</div>
+<script>
+(function () {
+  var f = document.getElementById("lucchettoForm"); if (!f) return;
+  function hex(buf) { return Array.prototype.map.call(new Uint8Array(buf), function (b) { return ("0" + b.toString(16)).slice(-2); }).join(""); }
+  function bytes(h) { var a = new Uint8Array(h.length / 2); for (var i = 0; i < a.length; i++) a[i] = parseInt(h.substr(i * 2, 2), 16); return a; }
+  f.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var err = document.getElementById("lucchettoErr"), pw = document.getElementById("lucchettoPw").value;
+    if (!window.crypto || !crypto.subtle) { err.textContent = "Apri il sito dall'indirizzo https per entrare."; return; }
+    err.textContent = "Controllo…";
+    crypto.subtle.importKey("raw", new TextEncoder().encode(pw), "PBKDF2", false, ["deriveBits"]).then(function (k) {
+      return crypto.subtle.deriveBits({ name: "PBKDF2", hash: "SHA-256", salt: bytes(QO_ACCESSO.sale), iterations: QO_ACCESSO.giri }, k, 256);
+    }).then(function (b) {
+      if (hex(b) === QO_ACCESSO.impronta) {
+        try { localStorage.setItem("qo:accesso", QO_ACCESSO.impronta); } catch (x) {}
+        location.reload();
+      } else { err.textContent = "Password sbagliata, riprova."; document.getElementById("lucchettoPw").select(); }
+    }).catch(function () { err.textContent = "Qualcosa non ha funzionato, riprova."; });
+  });
+})();
+</script>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="topbar">
+      <a class="brand" href="#oggi" aria-label="Qui e Ora, vai a Oggi">
+        <svg width="34" height="34" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="1.5"/><circle cx="24" cy="24" r="6" fill="#E8B86A"/><path d="M8 31c5-4 10-4 16 0s11 4 16 0" fill="none" stroke="currentColor" stroke-opacity=".6" stroke-width="2" stroke-linecap="round"/></svg>
+        <b>Qui e Ora</b>
+      </a>
+      <a class="icon-btn" href="#diario" aria-label="Il mio diario"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3.5" width="14" height="17" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 8h6M9 12h6M9 16h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></a>
+      <a class="icon-btn" href="#info" aria-label="Profilo, impostazioni e fonti"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.5" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M5 20c1.2-3.6 4-5.5 7-5.5s5.8 1.9 7 5.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></a>
+    </div>
+    <div class="saluto">
+      <div class="data" id="oggiData"></div>
+      <h1 id="oggiSaluto">Buongiorno</h1>
+      <span class="giornata" id="giornata" hidden></span>
+    </div>
+    <nav class="tabs" aria-label="Sezioni">
+      <a href="#oggi" data-view="oggi">Oggi</a>
+      <a href="#cibo" data-view="cibo">Mangiare</a>
+      <a href="#movimento" data-view="movimento">Muoversi</a>
+      <a href="#mente" data-view="mente">Mente</a>
+      <a href="#prevenzione" data-view="prevenzione">Prevenzione</a>
+      <a href="#diario" data-view="diario">Diario</a>
+      <a href="#info" data-view="info">Profilo e fonti</a>
+    </nav>
+  </div>
+</header>
+
+<nav class="bnav" aria-label="Sezioni principali">
+  <a href="#oggi" data-view="oggi"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Oggi</a>
+  <a href="#cibo" data-view="cibo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7c-4-3-8 0-7.5 5 .4 4.5 3.5 8.5 7.5 7.5 4 1 7.1-3 7.5-7.5C20 7 16 4 12 7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 7c0-2 1-3.5 3-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Mangiare</a>
+  <a href="#movimento" data-view="movimento"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="14" cy="4.5" r="2" fill="currentColor"/><path d="M8 21l3-6 3 2 1 4M11 15l1-5 4 3 3 0M12 10l-4 1-2 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Muoversi</a>
+  <a href="#mente" data-view="mente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 16c3-3 6-3 9 0s6 3 9 0M3 11c3-3 6-3 9 0s6 3 9 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Mente</a>
+  <a href="#prevenzione" data-view="prevenzione"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7.5 3v5.5c0 4.5-3.2 8.2-7.5 9.5-4.3-1.3-7.5-5-7.5-9.5V6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12l2.2 2.2L15.5 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Prevenzione</a>
+</nav>
+
+<main class="wrap">
+
+  <!-- ===================== OGGI ===================== -->
+  <div class="view" id="view-oggi">
+    <section class="card evidenza" aria-labelledby="h-pres">
+      <div class="kicker"><span class="dot"></span>Il momento di adesso</div>
+      <h2 id="h-pres"></h2>
+      <p id="presPerche" class="muted"></p>
+      <div class="row">
+        <button class="btn" type="button" id="presInizia">Inizia</button>
+        <button class="btn sec" type="button" data-respiro="1">Un minuto di respiro</button>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="h-abit">
+      <div class="kicker" id="abitArea"><span class="dot"></span>L'abitudine di oggi</div>
+      <h3 id="h-abit"></h3>
+      <p id="abitTesto"></p>
+      <p class="fonte" id="abitFonte"></p>
+    </section>
+
+    <div class="grid2">
+      <section class="card" aria-labelledby="h-cibo">
+        <div class="kicker oro"><span class="dot"></span>A tavola oggi</div>
+        <h3 id="h-cibo"></h3>
+        <p id="ciboPerche"></p>
+        <p class="muted small" id="ciboCome"></p>
+        <a class="small" href="#cibo">Cosa è di stagione questo mese</a>
+      </section>
+      <section class="card" aria-labelledby="h-mov">
+        <div class="kicker blu"><span class="dot"></span>Muoviti oggi</div>
+        <h3 id="h-mov"></h3>
+        <p class="muted small" id="movChi"></p>
+        <ol class="passi small" id="movPassi"></ol>
+      </section>
+    </div>
+
+    <section class="card" aria-labelledby="h-fuori" id="fuori">
+      <div class="kicker blu"><span class="dot"></span>Fuori, oggi</div>
+      <h3 id="h-fuori">Aria, sole e pollini</h3>
+      <div id="fuoriCorpo"><p class="muted">Imposta la tua città nel profilo per vedere qualità dell'aria, indice UV e pollini.</p><a class="btn sec piccolo" href="#info">Imposta la città</a></div>
+    </section>
+
+    <section class="card" aria-labelledby="h-dom">
+      <div class="kicker"><span class="dot"></span>Una domanda per te</div>
+      <h3 id="h-dom"></h3>
+      <label class="sr" for="domRisposta">La tua risposta</label>
+      <textarea id="domRisposta" placeholder="Se vuoi, scrivi qui. Resta solo su questo dispositivo."></textarea>
+    </section>
+
+    <section class="card" aria-labelledby="h-giorno">
+      <div class="kicker"><span class="dot"></span>Com'è andata oggi</div>
+      <h3 id="h-giorno">Il tuo diario in un tocco</h3>
+      <div class="checks" id="oggiChecks"></div>
+      <div>
+        <p class="small muted" style="margin-bottom:6px">Come ti senti?</p>
+        <div class="umore" id="oggiUmore"></div>
+      </div>
+      <a class="small" href="#diario">Vedi le ultime quattro settimane</a>
+    </section>
+
+    <section class="card" aria-labelledby="h-prevoggi" id="prevOggi" hidden>
+      <div class="kicker rosso"><span class="dot"></span>Da non dimenticare</div>
+      <h3 id="h-prevoggi">La tua prevenzione</h3>
+      <div id="prevOggiLista" class="checks"></div>
+      <a class="small" href="#prevenzione">Tutti i controlli per la tua età</a>
+    </section>
+
+    <section class="card" aria-labelledby="h-rich">
+      <div class="kicker oro"><span class="dot"></span>Richiami della giornata</div>
+      <h3 id="h-rich">Tre pause per tornare al presente</h3>
+      <ul class="lista small" id="richLista"></ul>
+      <p class="small muted">Aggiungili al calendario del telefono: ti avviseranno ogni giorno anche ad app chiusa. Puoi cambiare gli orari nel profilo.</p>
+      <div class="row"><button class="btn sec piccolo" type="button" id="richIcs">Aggiungi al calendario</button></div>
+    </section>
+
+    <section class="card" aria-labelledby="h-news" id="newsCard" hidden>
+      <div class="kicker blu"><span class="dot"></span>Dal mondo della salute</div>
+      <h3 id="h-news">Notizie da fonti istituzionali</h3>
+      <div class="news" id="newsLista"></div>
+      <p class="fonte" id="newsAgg"></p>
+    </section>
+  </div>
+
+  <!-- ===================== CIBO ===================== -->
+  <div class="view" id="view-cibo">
+    <section class="card">
+      <div class="kicker oro"><span class="dot"></span>Mangiare bene</div>
+      <h2>Il piatto mediterraneo</h2>
+      <ul class="lista">
+        <li><b>Metà piatto</b> di verdura e frutta, di colori diversi.</li>
+        <li><b>Un quarto</b> di cereali, meglio integrali: pasta, pane, riso, orzo, farro.</li>
+        <li><b>Un quarto</b> di proteine, alternando legumi, pesce, uova, latticini e, meno spesso, carne.</li>
+        <li><b>Olio extravergine</b> come condimento, acqua come bevanda.</li>
+      </ul>
+      <p class="fonte">Fonti: <a href="#" data-fonte="crea"></a> · <a href="#" data-fonte="oms_dieta"></a></p>
+    </section>
+    <section class="card">
+      <div class="kicker"><span class="dot"></span>Di stagione</div>
+      <h3 id="h-stag"></h3>
+      <div class="chips" id="stagChips"></div>
+      <p class="small muted">Frutta e verdura di stagione sono più saporite, costano meno e spesso hanno più nutrienti.</p>
+    </section>
+    <section class="card">
+      <div class="kicker"><span class="dot"></span>Le regole d'oro</div>
+      <div id="ciboRegole"></div>
+    </section>
+    <section class="card">
+      <div class="kicker"><span class="dot"></span>Alimenti da conoscere</div>
+      <div id="ciboAlimenti"></div>
+    </section>
+  </div>
+
+  <!-- ===================== MOVIMENTO ===================== -->
+  <div class="view" id="view-movimento">
+    <section class="card">
+      <div class="kicker blu"><span class="dot"></span>Quanto muoversi</div>
+      <h2>Le raccomandazioni per gli adulti</h2>
+      <ul class="lista">
+        <li><b>150-300 minuti a settimana</b> di attività moderata (camminata veloce, bici tranquilla, ballo) <b>oppure 75-150</b> di attività intensa (corsa, nuoto veloce).</li>
+        <li><b>Almeno 2 giorni a settimana</b> di esercizi di forza per i grandi gruppi muscolari.</li>
+        <li><b>Dai 65 anni</b>, anche esercizi di equilibrio almeno 3 giorni a settimana.</li>
+        <li><b>Meno tempo seduti</b>: interrompi la sedentarietà spesso. Qualsiasi movimento è meglio di nessuno.</li>
+      </ul>
+      <p class="fonte">Fonti: <a href="#" data-fonte="oms_att"></a> · <a href="#" data-fonte="epi_att"></a></p>
+      <p class="avviso">Se hai malattie del cuore, dei polmoni o delle articolazioni, o sei fermo da tempo, parti piano e chiedi consiglio al medico. Fermati se senti dolore al petto, vertigini o un fiato insolito.</p>
+    </section>
+    <section class="card">
+      <div class="kicker blu"><span class="dot"></span>Routine da fare ovunque</div>
+      <div id="movRoutine"></div>
+    </section>
+    <section class="card">
+      <div class="kicker"><span class="dot"></span>Consigli per muoversi</div>
+      <div id="movRegole"></div>
+    </section>
+  </div>
+
+  <!-- ===================== MENTE ===================== -->
+  <div class="view" id="view-mente">
+    <section class="card evidenza">
+      <div class="kicker"><span class="dot"></span>Qui e ora</div>
+      <h2>Una pausa adesso</h2>
+      <p>Scegli quanto tempo hai: il respiro guidato ti accompagna con un cerchio che si apre e si chiude.</p>
+      <div class="row">
+        <button class="btn" type="button" data-respiro="1">1 minuto</button>
+        <button class="btn sec" type="button" data-respiro="3">3 minuti</button>
+        <button class="btn sec" type="button" data-respiro="5">5 minuti</button>
+      </div>
+    </section>
+    <section class="card">
+      <div class="kicker"><span class="dot"></span>Esercizi di presenza</div>
+      <div id="menteEsercizi"></div>
+    </section>
+    <section class="card">
+      <div class="kicker"><span class="dot"></span>Capire e prendersi cura</div>
+      <div id="menteSchede"></div>
+    </section>
+    <section class="card">
+      <div class="kicker rosso"><span class="dot"></span>Chiedere aiuto</div>
+      <h3>Non sei solo</h3>
+      <ul class="lista small">
+        <li><b>Medico di famiglia</b>: il primo passo per ansia, umore basso, insonnia. Può indirizzarti ai servizi di salute mentale dell'ASL, gratuiti.</li>
+        <li><b>Telefono Amico Italia</b>: <a href="tel:+390223272327">02 2327 2327</a>, tutti i giorni dalle 10 alle 24; WhatsApp <a href="https://wa.me/393240117252">324 011 7252</a>.</li>
+        <li><b>Bonus psicologo</b>: un contributo INPS per le sedute di psicoterapia, in base all'ISEE. Le domande si presentano sul sito INPS quando apre il bando.</li>
+        <li><b>Emergenza</b>: se pensi di farti del male o sei in pericolo, chiama il <a href="tel:112">112</a>.</li>
+      </ul>
+      <p class="fonte">Fonti: <a href="#" data-fonte="telamico"></a> · <a href="#" data-fonte="inps"></a></p>
+    </section>
+  </div>
+
+  <!-- ===================== PREVENZIONE ===================== -->
+  <div class="view" id="view-prevenzione">
+    <section class="card">
+      <div class="kicker rosso"><span class="dot"></span>Prevenzione</div>
+      <h2>I controlli per te</h2>
+      <p id="prevProfilo" class="muted"></p>
+      <p class="small">Segna la data dell'ultimo controllo: l'app calcola quando tocca il prossimo e te lo ricorda nella pagina Oggi.</p>
+      <p class="avviso">Le fasce d'età sono quelle dei programmi nazionali; alcune Regioni le allargano. Con familiarità o sintomi il percorso può essere diverso: decidilo con il medico.</p>
+    </section>
+    <div id="prevGruppi" style="display:grid;gap:14px"></div>
+    <section class="card">
+      <div class="kicker rosso"><span class="dot"></span>Quando non aspettare</div>
+      <div id="prevUrgenze" style="display:grid;gap:8px"></div>
+      <h3 style="margin-top:6px">Da mostrare presto al medico</h3>
+      <ul class="lista small" id="prevMedico"></ul>
+    </section>
+  </div>
+
+  <!-- ===================== DIARIO ===================== -->
+  <div class="view" id="view-diario">
+    <section class="card">
+      <div class="kicker"><span class="dot"></span>Il mio diario</div>
+      <h2>Le ultime quattro settimane</h2>
+      <div class="row"><span class="serie" id="diarioSerie">0</span><span class="muted" id="diarioSerieTesto">giorni di fila con almeno tre buone abitudini</span></div>
+      <div class="storico" id="diarioStorico" aria-label="Storico delle abitudini"></div>
+      <p class="small muted">Ogni quadratino è un giorno, da sinistra (4 settimane fa) a destra (oggi). I dati restano solo su questo dispositivo.</p>
+    </section>
+    <section class="card">
+      <div class="kicker"><span class="dot"></span>Le tue risposte</div>
+      <div id="diarioNote"><p class="muted small">Qui compaiono le risposte che scrivi alla domanda del giorno.</p></div>
+    </section>
+  </div>
+
+  <!-- ===================== INFO ===================== -->
+  <div class="view" id="view-info">
+    <section class="card">
+      <div class="kicker"><span class="dot"></span>Il tuo profilo</div>
+      <h2>Per consigli su misura</h2>
+      <p class="small muted">Questi dati servono solo a scegliere screening, vaccini e informazioni per la tua città. Restano su questo dispositivo: non vengono inviati né salvati altrove.</p>
+      <div class="grid2">
+        <label class="campo">Anno di nascita<input type="number" id="pNascita" inputmode="numeric" min="1900" max="2026" placeholder="Es. 1975"></label>
+        <label class="campo">Sesso<span>Serve per gli screening specifici</span>
+          <select id="pSesso"><option value="">Preferisco non indicarlo</option><option value="F">Donna</option><option value="M">Uomo</option></select></label>
+        <label class="campo">Fumo
+          <select id="pFumo"><option value="mai">Non ho mai fumato</option><option value="ex">Ho smesso</option><option value="si">Fumo</option></select></label>
+        <label class="campo">Forte fumatore<span>Circa un pacchetto al giorno per 30 anni</span>
+          <select id="pForte"><option value="">No</option><option value="1">Sì</option></select></label>
+      </div>
+      <label class="campo">Città<span>Per aria, UV e pollini. Viene cercata con il servizio gratuito Open-Meteo.</span>
+        <input type="text" id="pCitta" placeholder="Es. Bologna" autocomplete="off"></label>
+      <div id="pCittaRisultati" class="chips"></div>
+      <div class="grid2">
+        <label class="campo">Richiamo del mattino<input type="time" id="r1" value="10:30"></label>
+        <label class="campo">Richiamo del pomeriggio<input type="time" id="r2" value="15:30"></label>
+        <label class="campo">Richiamo della sera<input type="time" id="r3" value="21:30"></label>
+      </div>
+      <p class="small" id="pSalvato" aria-live="polite"></p>
+    </section>
+    <section class="card">
+      <div class="kicker"><span class="dot"></span>Aspetto</div>
+      <div class="row">
+        <span class="small">Tema</span>
+        <div class="durate" id="temaBtns"><button type="button" data-tema="light">Chiaro</button><button type="button" data-tema="auto">Auto</button><button type="button" data-tema="dark">Scuro</button></div>
+      </div>
+      <div class="row">
+        <span class="small">Testo</span>
+        <div class="durate" id="testoBtns"><button type="button" data-testo="normale">Normale</button><button type="button" data-testo="grande">Grande</button></div>
+      </div>
+    </section>
+    <section class="card">
+      <div class="kicker"><span class="dot"></span>Fonti</div>
+      <p class="small">Tutti i contenuti si basano su fonti istituzionali e scientifiche. Le informazioni servono a conoscere e a ricordare: per le decisioni sulla tua salute il riferimento resta il medico.</p>
+      <ul class="lista small" id="fontiLista"></ul>
+      <p class="small muted" id="fontiVerifica"></p>
+    </section>
+    <section class="card">
+      <div class="kicker"><span class="dot"></span>I tuoi dati</div>
+      <p class="small">Profilo, diario e date dei controlli sono salvati solo nel browser di questo dispositivo. Puoi scaricarli o cancellarli quando vuoi.</p>
+      <div class="row">
+        <button class="btn sec piccolo" type="button" id="datiScarica">Scarica i miei dati</button>
+        <button class="btn sec piccolo" type="button" id="datiCancella">Cancella tutto</button>
+        <button class="btn sec piccolo" type="button" id="esci">Esci</button>
+      </div>
+      <p class="small muted">Per installare l'app: su Android tocca il menu del browser e «Installa app»; su iPhone tocca Condividi e «Aggiungi alla schermata Home».</p>
+    </section>
+  </div>
+
+  <footer class="piede">
+    <p>Qui e Ora raccoglie informazioni da fonti istituzionali per aiutarti a prenderti cura di te. Non sostituisce il parere del medico.</p>
+    <p>In emergenza chiama il 112.</p>
+  </footer>
+</main>
+
+<dialog id="dlgRespiro" aria-labelledby="dlgTitolo">
+  <div class="dlg">
+    <h2 id="dlgTitolo">Respira</h2>
+    <div class="cerchio" id="cerchio"><span id="cerchioTesto">Pronto</span></div>
+    <div class="passo-grande" id="dlgPasso"></div>
+    <div class="durate" id="dlgDurate"><button type="button" data-min="1">1 min</button><button type="button" data-min="3">3 min</button><button type="button" data-min="5">5 min</button></div>
+    <p class="small muted" id="dlgInfo">Inspira mentre il cerchio si apre, espira mentre si chiude.</p>
+    <div class="row" style="justify-content:center">
+      <button class="btn" type="button" id="dlgAvvia">Avvia</button>
+      <button class="btn sec" type="button" id="dlgChiudi">Chiudi</button>
+    </div>
+  </div>
+</dialog>
+
+<script src="fonti.js"></script>
+<script src="contenuti.js"></script>
+<script src="prevenzione.js"></script>
+<script src="data.js"></script>
+<script>
+(function () {
+  "use strict";
+  var Q = window.QO, F = window.QO_FONTI, P = window.QO_PREV, D = window.QO_DATI || { notizie: [] };
+  var $ = function (id) { return document.getElementById(id); };
+  var MESI = ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"];
+  var AREE = { movimento: "Muoversi", cibo: "Mangiare", sonno: "Sonno", mente: "Mente", prevenzione: "Prevenzione", corpo: "Corpo", relazioni: "Relazioni" };
+
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+  function leggi(k, def) { try { var v = localStorage.getItem(k); return v ? JSON.parse(v) : def; } catch (e) { return def; } }
+  function scrivi(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+  function fonteHtml(k) { var f = F[k]; return f ? 'Fonte: <a href="' + esc(f.u) + '" target="_blank" rel="noopener">' + esc(f.n) + "</a>" : ""; }
+
+  // ---------- data di oggi (ora italiana)
+  function oggiIso(d) {
+    var p = new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Rome", year: "numeric", month: "2-digit", day: "2-digit" }).format(d || new Date());
+    return p;
+  }
+  var OGGI = oggiIso();
+  var Y = +OGGI.slice(0, 4), M = +OGGI.slice(5, 7), G = +OGGI.slice(8, 10);
+  var IDX = Math.round((Date.UTC(Y, M - 1, G) - Date.UTC(2026, 0, 1)) / 864e5);
+  function scegli(arr, sale) { var n = arr.length; return arr[(((IDX + sale) % n) + n) % n]; }
+  function isoMeno(giorni) { var d = new Date(Date.UTC(Y, M - 1, G) - giorni * 864e5); return d.toISOString().slice(0, 10); }
+
+  // ---------- profilo
+  var profilo = leggi("qo:profilo", { nascita: null, sesso: null, fumo: "mai", forte: false, citta: null, richiami: ["10:30", "15:30", "21:30"] });
+  if (!profilo.richiami) profilo.richiami = ["10:30", "15:30", "21:30"];
+  function profiloPrev() {
+    return { eta: profilo.nascita ? Y - profilo.nascita : null, sesso: profilo.sesso || null, nascita: profilo.nascita || null, fumo: profilo.fumo || "mai", forteFumatore: !!profilo.forte };
+  }
+
+  // ---------- testata
+  var dataLunga = new Intl.DateTimeFormat("it-IT", { timeZone: "Europe/Rome", weekday: "long", day: "numeric", month: "long" }).format(new Date());
+  $("oggiData").textContent = dataLunga;
+  var ora = +new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Rome", hour: "2-digit", hour12: false }).format(new Date());
+  $("oggiSaluto").textContent = ora < 5 ? "Buonanotte" : ora < 13 ? "Buongiorno" : ora < 18 ? "Buon pomeriggio" : "Buonasera";
+  Q.GIORNATE.forEach(function (g) { if (g[0] === M && g[1] === G) { var el = $("giornata"); el.textContent = "Oggi è la " + g[2]; el.hidden = false; } });
+
+  // ---------- fonti collegate nel testo
+  document.querySelectorAll("[data-fonte]").forEach(function (a) { var f = F[a.dataset.fonte]; if (f) { a.href = f.u; a.textContent = f.n; a.target = "_blank"; a.rel = "noopener"; } });
+
+  // ================= OGGI
+  var pres = scegli(Q.PRESENZA, 3);
+  $("h-pres").textContent = pres[0] + " · " + pres[1] + (pres[1] === 1 ? " minuto" : " minuti");
+  $("presPerche").textContent = pres[3];
+  $("presInizia").addEventListener("click", function () { apriEsercizio(pres); });
+
+  var ab = scegli(Q.ABITUDINI, 0);
+  $("abitArea").innerHTML = '<span class="dot"></span>L\'abitudine di oggi · ' + esc(AREE[ab[0]] || "");
+  $("h-abit").textContent = ab[1]; $("abitTesto").textContent = ab[2]; $("abitFonte").innerHTML = fonteHtml(ab[3]);
+
+  var stagione = Q.ALIMENTI.filter(function (a) { return a[4] && a[4].indexOf(M) >= 0; });
+  var sempre = Q.ALIMENTI.filter(function (a) { return !a[4]; });
+  var poolCibo = stagione.concat(sempre);
+  var cibo = scegli(poolCibo, 7);
+  $("h-cibo").textContent = cibo[0] + (cibo[4] ? " · di stagione" : "");
+  $("ciboPerche").textContent = cibo[2]; $("ciboCome").textContent = cibo[3];
+
+  var rout = scegli(Q.ROUTINE, 1);
+  $("h-mov").textContent = rout[1] + " · " + rout[2] + " minuti";
+  $("movChi").textContent = rout[3];
+  $("movPassi").innerHTML = rout[4].map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("");
+
+  var dom = scegli(Q.DOMANDE, 5);
+  $("h-dom").textContent = dom;
+
+  // ---------- diario
+  var diario = leggi("qo:diario", {});
+  function giorno(d) { return diario[d] || (diario[d] = {}); }
+  function salvaDiario() { scrivi("qo:diario", diario); renderDiario(); }
+  $("domRisposta").value = (diario[OGGI] && diario[OGGI].nota) || "";
+  var tDom;
+  $("domRisposta").addEventListener("input", function (e) {
+    clearTimeout(tDom);
+    tDom = setTimeout(function () { var g = giorno(OGGI); g.nota = e.target.value.trim(); g.domanda = dom; if (!g.nota) { delete g.nota; delete g.domanda; } salvaDiario(); }, 400);
+  });
+  $("oggiChecks").innerHTML = Q.DIARIO.map(function (v) {
+    var on = diario[OGGI] && diario[OGGI][v[0]];
+    return '<label class="check"><input type="checkbox" data-voce="' + v[0] + '"' + (on ? " checked" : "") + '><span>' + esc(v[1]) + "<small>" + esc(v[2]) + "</small></span></label>";
+  }).join("");
+  $("oggiChecks").addEventListener("change", function (e) { var k = e.target.dataset.voce; if (!k) return; var g = giorno(OGGI); if (e.target.checked) g[k] = 1; else delete g[k]; salvaDiario(); });
+  var UMORI = ["Giù", "Così così", "Bene", "Molto bene"];
+  function renderUmore() {
+    var u = diario[OGGI] && diario[OGGI].umore;
+    $("oggiUmore").innerHTML = UMORI.map(function (t, i) { return '<button type="button" data-u="' + (i + 1) + '" aria-pressed="' + (u === i + 1) + '">' + t + "</button>"; }).join("");
+  }
+  renderUmore();
+  $("oggiUmore").addEventListener("click", function (e) { var b = e.target.closest("button"); if (!b) return; var g = giorno(OGGI), v = +b.dataset.u; if (g.umore === v) delete g.umore; else g.umore = v; salvaDiario(); renderUmore(); });
+
+  function renderDiario() {
+    var html = "";
+    Q.DIARIO.forEach(function (v) {
+      html += '<span class="lab" title="' + esc(v[1]) + '">' + esc(v[1].replace(/^Ho |^Mi sono |^Sono /, "")) + "</span>";
+      for (var i = 27; i >= 0; i--) { var d = isoMeno(i), on = diario[d] && diario[d][v[0]]; html += '<span class="q' + (on ? " s" : "") + '" title="' + d + '"></span>'; }
+    });
+    $("diarioStorico").innerHTML = html;
+    var serie = 0;
+    for (var j = 0; j < 365; j++) {
+      var g = diario[isoMeno(j)], n = 0;
+      if (g) Q.DIARIO.forEach(function (v) { if (g[v[0]]) n++; });
+      if (n >= 3) serie++; else if (j > 0) break;
+    }
+    $("diarioSerie").textContent = serie;
+    var note = Object.keys(diario).filter(function (d) { return diario[d].nota; }).sort().reverse().slice(0, 30);
+    $("diarioNote").innerHTML = note.length ? note.map(function (d) {
+      return '<div><p class="small muted">' + esc(new Date(d + "T12:00:00").toLocaleDateString("it-IT", { day: "numeric", month: "long" })) + " · " + esc(diario[d].domanda || "") + "</p><p>" + esc(diario[d].nota) + "</p></div>";
+    }).join("") : '<p class="muted small">Qui compaiono le risposte che scrivi alla domanda del giorno.</p>';
+  }
+  renderDiario();
+
+  // ---------- richiami
+  var RICH = [["mattino", "Fermati un minuto: tre respiri lenti e guarda dove sei."], ["pomeriggio", "Alzati, sgranchisciti, bevi un bicchiere d'acqua."], ["sera", "Ripensa a una cosa andata bene oggi. Schermi giù, si va verso il riposo."]];
+  function renderRichiami() {
+    $("richLista").innerHTML = RICH.map(function (r, i) { return "<li><b>" + esc(profilo.richiami[i]) + "</b> · " + esc(r[1]) + "</li>"; }).join("");
+  }
+  renderRichiami();
+  $("richIcs").addEventListener("click", function () {
+    var dt = OGGI.replace(/-/g, ""), stamp = new Date().toISOString().replace(/[-:]/g, "").slice(0, 15) + "Z";
+    var righe = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Qui e Ora//IT", "CALSCALE:GREGORIAN"];
+    RICH.forEach(function (r, i) {
+      var t = (profilo.richiami[i] || "10:30").replace(":", "") + "00";
+      righe.push("BEGIN:VEVENT", "UID:quieora-" + r[0] + "@quieora", "DTSTAMP:" + stamp, "DTSTART:" + dt + "T" + t, "DURATION:PT5M", "RRULE:FREQ=DAILY",
+        "SUMMARY:Qui e Ora · pausa del " + r[0], "DESCRIPTION:" + r[1].replace(/,/g, "\\,"),
+        "BEGIN:VALARM", "ACTION:DISPLAY", "DESCRIPTION:" + r[1].replace(/,/g, "\\,"), "TRIGGER:PT0M", "END:VALARM", "END:VEVENT");
+    });
+    righe.push("END:VCALENDAR");
+    scarica("qui-e-ora-richiami.ics", righe.join("\r\n"), "text/calendar");
+  });
+  function scarica(nome, testo, tipo) {
+    var url = URL.createObjectURL(new Blob([testo], { type: tipo }));
+    var a = document.createElement("a"); a.href = url; a.download = nome; document.body.appendChild(a); a.click();
+    setTimeout(function () { URL.revokeObjectURL(url); a.remove(); }, 1000);
+  }
+
+  // ---------- notizie
+  if (D.notizie && D.notizie.length) {
+    $("newsCard").hidden = false;
+    $("newsLista").innerHTML = D.notizie.slice(0, 6).map(function (n) {
+      var d = n.data ? new Date(n.data).toLocaleDateString("it-IT", { day: "numeric", month: "short" }) : "";
+      return '<a href="' + esc(n.url) + '" target="_blank" rel="noopener"><b>' + esc(n.titolo) + '</b><span class="small muted">' + esc(n.fonte) + (d ? " · " + esc(d) : "") + "</span></a>";
+    }).join("");
+    if (D.aggiornato) $("newsAgg").textContent = "Aggiornato il " + new Date(D.aggiornato).toLocaleString("it-IT", { day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" }) + ". Le notizie si aprono sul sito della fonte.";
+  }
+
+  // ---------- fuori oggi (Open-Meteo, dal browser)
+  function eaqi(v) { return v == null ? null : v <= 20 ? ["buona", "si"] : v <= 40 ? ["discreta", "si"] : v <= 60 ? ["moderata", "forse"] : v <= 80 ? ["scadente", "scad"] : v <= 100 ? ["molto scadente", "scad"] : ["pessima", "scad"]; }
+  function uvTesto(u) { return u == null ? "" : u < 3 ? "basso" : u < 6 ? "moderato" : u < 8 ? "alto" : u < 11 ? "molto alto" : "estremo"; }
+  var POLLINI = { alder_pollen: "ontano", birch_pollen: "betulla", grass_pollen: "graminacee", mugwort_pollen: "artemisia", olive_pollen: "olivo", ragweed_pollen: "ambrosia" };
+  function caricaFuori() {
+    var c = profilo.citta; if (!c || c.lat == null) return;
+    var cache = leggi("qo:meteo", null);
+    if (cache && cache.k === c.lat + "," + c.lon && Date.now() - cache.t < 3600e3) return mostraFuori(cache.d);
+    $("fuoriCorpo").innerHTML = '<p class="muted">Carico i dati per ' + esc(c.nome) + "…</p>";
+    var q = "latitude=" + c.lat + "&longitude=" + c.lon + "&timezone=Europe%2FRome&forecast_days=1";
+    Promise.all([
+      fetch("https://api.open-meteo.com/v1/forecast?" + q + "&current=temperature_2m,apparent_temperature&daily=temperature_2m_max,temperature_2m_min,apparent_temperature_max,uv_index_max").then(function (r) { return r.json(); }),
+      fetch("https://air-quality-api.open-meteo.com/v1/air-quality?" + q + "&current=european_aqi,pm2_5&hourly=" + Object.keys(POLLINI).join(",")).then(function (r) { return r.json(); })
+    ]).then(function (res) {
+      var d = { meteo: res[0], aria: res[1] };
+      scrivi("qo:meteo", { k: c.lat + "," + c.lon, t: Date.now(), d: d });
+      mostraFuori(d);
+    }).catch(function () { $("fuoriCorpo").innerHTML = '<p class="muted">Non riesco a scaricare i dati adesso. Riprova più tardi.</p>'; });
+  }
+  function mostraFuori(d) {
+    var m = d.meteo || {}, a = d.aria || {}, cur = m.current || {}, day = m.daily || {};
+    var uv = day.uv_index_max ? day.uv_index_max[0] : null, tmax = day.temperature_2m_max ? day.temperature_2m_max[0] : null, tmin = day.temperature_2m_min ? day.temperature_2m_min[0] : null;
+    var perc = day.apparent_temperature_max ? day.apparent_temperature_max[0] : null;
+    var q = eaqi(a.current ? a.current.european_aqi : null);
+    var pol = null;
+    if (a.hourly) Object.keys(POLLINI).forEach(function (k) { var arr = (a.hourly[k] || []).filter(function (x) { return x != null; }); var mx = arr.length ? Math.max.apply(null, arr) : 0; if (!pol || mx > pol[1]) pol = [POLLINI[k], mx]; });
+    var polLiv = !pol || pol[1] < 10 ? "bassi" : pol[1] < 50 ? "moderati" : "alti";
+    var celle = [];
+    if (cur.temperature_2m != null) celle.push(["Temperatura", Math.round(cur.temperature_2m) + "°", tmin != null ? "min " + Math.round(tmin) + "° · max " + Math.round(tmax) + "°" : ""]);
+    if (q) celle.push(["Qualità dell'aria", q[0], "indice europeo " + Math.round(a.current.european_aqi)]);
+    if (uv != null) celle.push(["Indice UV massimo", String(Math.round(uv)), uvTesto(uv)]);
+    if (pol) celle.push(["Pollini", polLiv, pol[1] >= 10 ? "soprattutto " + pol[0] : "stima del modello CAMS"]);
+    var consigli = [];
+    if (uv != null && uv >= 3) consigli.push("UV " + uvTesto(uv) + ": nelle ore centrali cappello, occhiali da sole, crema e ombra.");
+    if (q && (q[1] === "scad")) consigli.push("Aria scadente: evita attività intense all'aperto vicino al traffico, soprattutto se hai asma o malattie del cuore.");
+    else if (q && q[1] === "forse") consigli.push("Aria moderata: le persone sensibili riducano gli sforzi intensi all'aperto.");
+    if (pol && pol[1] >= 50) consigli.push("Pollini alti: se sei allergico, arieggia la casa nelle prime ore del mattino o la sera e lava viso e mani al rientro.");
+    if (perc != null && perc >= 32) consigli.push("Caldo intenso: bevi spesso, evita il sole tra le 11 e le 18, cerca luoghi freschi e controlla chi vive solo.");
+    if (tmax != null && tmax <= 3) consigli.push("Freddo: copri bene testa e mani, e muoviti per scaldarti.");
+    if (!consigli.length) consigli.push("Buona giornata per stare un po' all'aperto: anche una breve camminata alla luce del giorno fa bene a corpo e umore.");
+    $("h-fuori").textContent = "Aria, sole e pollini a " + profilo.citta.nome;
+    $("fuoriCorpo").innerHTML = '<div class="meteo">' + celle.map(function (c) { return '<div class="m"><span>' + esc(c[0]) + "</span><b>" + esc(c[1]) + "</b><span>" + esc(c[2]) + "</span></div>"; }).join("") + "</div>" +
+      '<ul class="lista small" style="margin-top:10px">' + consigli.map(function (c) { return "<li>" + esc(c) + "</li>"; }).join("") + "</ul>" +
+      '<p class="fonte" style="margin-top:8px">Dati <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a> su modelli Copernicus CAMS: sono previsioni, non misure delle centraline.</p>';
+  }
+  caricaFuori();
+
+  // ---------- prevenzione
+  var fatti = leggi("qo:prev", {});
+  function statoVoce(v) {
+    var p = profiloPrev(), es = v.verifica(p, OGGI), ogni = v.ogni(p), ult = fatti[v.id] || null, pr = P.prossima(ult, ogni);
+    return { esito: es[0], testo: es[1], ogni: ogni, ultimo: ult, prossima: pr, scaduto: es[0] === "si" && (pr ? pr <= OGGI : !ult) };
+  }
+  function renderPrevenzione() {
+    var p = profiloPrev();
+    $("prevProfilo").textContent = p.eta != null ? "Per " + (p.sesso === "F" ? "una donna" : p.sesso === "M" ? "un uomo" : "una persona") + " di " + p.eta + " anni." : "Indica l'anno di nascita nel profilo per vedere i controlli adatti alla tua età.";
+    var gruppi = {};
+    P.VOCI.forEach(function (v) { (gruppi[v.gruppo] = gruppi[v.gruppo] || []).push(v); });
+    $("prevGruppi").innerHTML = Object.keys(gruppi).map(function (g) {
+      var voci = gruppi[g].map(function (v) {
+        var s = statoVoce(v);
+        var lab = s.esito === "si" ? "Per te" : s.esito === "forse" ? "Da valutare" : "Non previsto";
+        var scad = s.esito === "si" && s.prossima ? (s.prossima <= OGGI ? '<span class="badge scad">Da fare</span>' : '<span class="badge no">Prossimo: ' + esc(new Date(s.prossima + "T12:00:00").toLocaleDateString("it-IT", { month: "long", year: "numeric" })) + "</span>") : "";
+        return "<details" + (s.esito === "si" ? " open" : "") + "><summary><span>" + esc(v.nome) + ' <span class="badge ' + s.esito + '">' + lab + "</span> " + scad + "</span></summary><div>" +
+          '<p class="small"><b>' + esc(v.esame) + "</b>" + (v.gratuito ? " · gratuito nel Servizio sanitario" : "") + "</p>" +
+          "<p>" + esc(s.testo) + "</p>" +
+          (s.esito !== "no" ? '<label class="campo">' + (v.unaVolta ? "Fatto il" : "Ultimo fatto il") + '<input type="date" data-prev="' + v.id + '" value="' + esc(s.ultimo || "") + '" max="' + OGGI + '"></label>' : "") +
+          '<p class="fonte">' + fonteHtml(v.fonte) + "</p></div></details>";
+      }).join("");
+      return '<section class="card"><div class="kicker rosso"><span class="dot"></span>' + esc(g) + "</div>" + voci + "</section>";
+    }).join("");
+    $("fontiVerifica").textContent = "Fasce di screening e vaccini verificate il " + P.verificate + ".";
+    // in Oggi: cosa è da fare
+    var daFare = P.VOCI.map(function (v) { return [v, statoVoce(v)]; }).filter(function (x) { return x[1].scaduto && x[1].ogni !== null || (x[1].esito === "si" && !x[1].ultimo && (x[0].gruppo.indexOf("Screening") === 0 || x[0].gruppo === "Altri screening")); });
+    var seen = {};
+    daFare = daFare.filter(function (x) { if (seen[x[0].id]) return false; seen[x[0].id] = 1; return true; }).slice(0, 4);
+    if (profilo.nascita && daFare.length) {
+      $("prevOggi").hidden = false;
+      $("prevOggiLista").innerHTML = daFare.map(function (x) {
+        return '<a class="check" href="#prevenzione" style="text-decoration:none;color:inherit"><span><b>' + esc(x[0].nome) + "</b><small>" + esc(x[1].ultimo ? "Sarebbe ora di rifarlo." : "Non hai ancora segnato quando l'hai fatto.") + "</small></span></a>";
+      }).join("");
+    } else $("prevOggi").hidden = true;
+  }
+  $("prevGruppi").addEventListener("change", function (e) {
+    var id = e.target.dataset.prev; if (!id) return;
+    if (e.target.value) fatti[id] = e.target.value; else delete fatti[id];
+    scrivi("qo:prev", fatti); renderPrevenzione();
+  });
+  renderPrevenzione();
+  $("prevUrgenze").innerHTML = Q.URGENZE.map(function (u) { return '<div class="urgente"><b>' + esc(u[0]) + "</b><span class=\"small\">" + esc(u[1]) + '</span><a class="btn piccolo" style="justify-self:start;background:var(--rosso)" href="tel:' + u[2] + '">Chiama il ' + u[2] + "</a></div>"; }).join("");
+  $("prevMedico").innerHTML = Q.DAL_MEDICO.map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("");
+
+  // ================= CIBO
+  $("h-stag").textContent = "Frutta e verdura di " + MESI[M - 1];
+  $("stagChips").innerHTML = stagione.map(function (a) { return '<span class="chip ok">' + esc(a[0]) + "</span>"; }).join("");
+  function regole(area) {
+    return Q.ABITUDINI.filter(function (a) { return a[0] === area || (area === "movimento" && a[0] === "corpo"); }).map(function (a) {
+      return "<details><summary>" + esc(a[1]) + "</summary><div><p>" + esc(a[2]) + '</p><p class="fonte">' + fonteHtml(a[3]) + "</p></div></details>";
+    }).join("");
+  }
+  $("ciboRegole").innerHTML = regole("cibo");
+  $("ciboAlimenti").innerHTML = Q.ALIMENTI.map(function (a) {
+    var st = a[4] ? (a[4].indexOf(M) >= 0 ? ' <span class="badge si">di stagione</span>' : "") : "";
+    return "<details><summary><span>" + esc(a[0]) + st + '</span></summary><div><p class="small muted">' + esc(a[1]) + (a[4] ? " · " + a[4].map(function (m) { return MESI[m - 1].slice(0, 3); }).join(" ") : " · tutto l'anno") + "</p><p>" + esc(a[2]) + "</p><p class=\"small\"><b>Come:</b> " + esc(a[3]) + "</p></div></details>";
+  }).join("");
+
+  // ================= MOVIMENTO
+  $("movRoutine").innerHTML = Q.ROUTINE.map(function (r) {
+    return "<details><summary><span>" + esc(r[1]) + ' <span class="badge no">' + r[2] + ' min</span></span></summary><div><p class="small muted">' + esc(r[3]) + '</p><ol class="passi">' + r[4].map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("") + '</ol><p class="small">' + esc(r[5]) + "</p></div></details>";
+  }).join("");
+  $("movRegole").innerHTML = regole("movimento") + regole("sonno");
+
+  // ================= MENTE
+  $("menteEsercizi").innerHTML = Q.PRESENZA.map(function (e, i) {
+    return "<details><summary><span>" + esc(e[0]) + ' <span class="badge no">' + e[1] + ' min</span></span></summary><div><ol class="passi">' + e[2].map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("") + '</ol><p class="small muted">' + esc(e[3]) + '</p><button class="btn piccolo" type="button" data-esercizio="' + i + '" style="justify-self:start">Guidami</button></div></details>';
+  }).join("");
+  $("menteEsercizi").addEventListener("click", function (e) { var b = e.target.closest("[data-esercizio]"); if (b) apriEsercizio(Q.PRESENZA[+b.dataset.esercizio]); });
+  $("menteSchede").innerHTML = Q.MENTE.map(function (s) {
+    return "<details><summary>" + esc(s[1]) + '</summary><div><p class="small muted">' + esc(s[2]) + '</p><ul class="lista">' + s[3].map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + '</ul><p class="fonte">' + fonteHtml(s[4]) + "</p></div></details>";
+  }).join("") + "<details><summary>Le abitudini per la mente</summary><div>" + Q.ABITUDINI.filter(function (a) { return a[0] === "mente" || a[0] === "relazioni"; }).map(function (a) { return "<p><b>" + esc(a[1]) + ".</b> " + esc(a[2]) + "</p>"; }).join("") + "</div></details>";
+
+  // ================= RESPIRO GUIDATO / ESERCIZIO
+  var dlg = $("dlgRespiro"), timer = null, fine = 0, minuti = 1, modo = "respiro", passi = [], passoI = 0;
+  function premi(btns, sel) { btns.forEach(function (b) { b.setAttribute("aria-pressed", String(sel(b))); }); }
+  function apriRespiro(min) {
+    ferma(); modo = "respiro"; minuti = min || 1;
+    $("dlgTitolo").textContent = "Respira"; $("dlgDurate").hidden = false; $("dlgPasso").textContent = "";
+    $("dlgInfo").textContent = "Inspira mentre il cerchio si apre (4 secondi), espira mentre si chiude (6 secondi).";
+    $("cerchio").hidden = false; $("cerchioTesto").textContent = "Pronto"; $("dlgAvvia").textContent = "Avvia"; $("dlgAvvia").hidden = false;
+    premi(dlg.querySelectorAll("[data-min]"), function (b) { return +b.dataset.min === minuti; });
+    dlg.showModal ? dlg.showModal() : dlg.setAttribute("open", "");
+  }
+  function apriEsercizio(es) {
+    ferma(); modo = "passi"; passi = es[2]; passoI = 0;
+    $("dlgTitolo").textContent = es[0]; $("dlgDurate").hidden = true; $("cerchio").hidden = true;
+    $("dlgPasso").textContent = passi[0]; $("dlgInfo").textContent = "Passo 1 di " + passi.length + ". Prenditi il tempo che serve.";
+    $("dlgAvvia").textContent = passi.length > 1 ? "Avanti" : "Fatto"; $("dlgAvvia").hidden = false;
+    dlg.showModal ? dlg.showModal() : dlg.setAttribute("open", "");
+  }
+  function ferma() { clearTimeout(timer); timer = null; var c = $("cerchio"); c.style.setProperty("--s", ".55"); c.style.setProperty("--t", "1s"); }
+  function ciclo(inspira) {
+    if (Date.now() >= fine) { ferma(); $("cerchioTesto").textContent = "Fatto"; $("dlgInfo").textContent = "Nota come ti senti adesso. Puoi tornare qui quando vuoi."; $("dlgAvvia").textContent = "Ancora"; segnaPresenza(); return; }
+    var c = $("cerchio"), dur = inspira ? 4 : 6;
+    c.style.setProperty("--t", dur + "s"); c.style.setProperty("--s", inspira ? "1" : ".55");
+    $("cerchioTesto").textContent = inspira ? "Inspira" : "Espira";
+    timer = setTimeout(function () { ciclo(!inspira); }, dur * 1000);
+  }
+  function segnaPresenza() { var g = giorno(OGGI); if (!g.presenza) { g.presenza = 1; salvaDiario(); var cb = document.querySelector('#oggiChecks [data-voce="presenza"]'); if (cb) cb.checked = true; } }
+  $("dlgAvvia").addEventListener("click", function () {
+    if (modo === "respiro") { if (timer) { ferma(); $("cerchioTesto").textContent = "In pausa"; $("dlgAvvia").textContent = "Riprendi"; return; } fine = Date.now() + minuti * 60000; $("dlgAvvia").textContent = "Pausa"; ciclo(true); return; }
+    passoI++;
+    if (passoI >= passi.length) { $("dlgPasso").textContent = "Fatto. Nota come ti senti adesso."; $("dlgInfo").textContent = ""; $("dlgAvvia").hidden = true; segnaPresenza(); return; }
+    $("dlgPasso").textContent = passi[passoI]; $("dlgInfo").textContent = "Passo " + (passoI + 1) + " di " + passi.length + ".";
+    if (passoI === passi.length - 1) $("dlgAvvia").textContent = "Fatto";
+  });
+  $("dlgDurate").addEventListener("click", function (e) { var b = e.target.closest("[data-min]"); if (!b) return; minuti = +b.dataset.min; ferma(); $("cerchioTesto").textContent = "Pronto"; $("dlgAvvia").textContent = "Avvia"; premi(dlg.querySelectorAll("[data-min]"), function (x) { return x === b; }); });
+  $("dlgChiudi").addEventListener("click", function () { ferma(); dlg.close ? dlg.close() : dlg.removeAttribute("open"); });
+  dlg.addEventListener("close", ferma);
+  document.addEventListener("click", function (e) { var b = e.target.closest("[data-respiro]"); if (b) apriRespiro(+b.dataset.respiro); });
+
+  // ================= PROFILO E IMPOSTAZIONI
+  $("pNascita").value = profilo.nascita || ""; $("pSesso").value = profilo.sesso || ""; $("pFumo").value = profilo.fumo || "mai"; $("pForte").value = profilo.forte ? "1" : "";
+  $("pCitta").value = profilo.citta ? profilo.citta.nome : "";
+  ["r1", "r2", "r3"].forEach(function (id, i) { $(id).value = profilo.richiami[i]; });
+  function salvaProfilo(msg) {
+    scrivi("qo:profilo", profilo); renderPrevenzione(); renderRichiami();
+    $("pSalvato").textContent = msg || "Salvato su questo dispositivo.";
+  }
+  $("pNascita").addEventListener("change", function (e) { var v = parseInt(e.target.value, 10); profilo.nascita = v >= 1900 && v <= Y ? v : null; salvaProfilo(); });
+  $("pSesso").addEventListener("change", function (e) { profilo.sesso = e.target.value || null; salvaProfilo(); });
+  $("pFumo").addEventListener("change", function (e) { profilo.fumo = e.target.value; salvaProfilo(); });
+  $("pForte").addEventListener("change", function (e) { profilo.forte = !!e.target.value; salvaProfilo(); });
+  ["r1", "r2", "r3"].forEach(function (id, i) { $(id).addEventListener("change", function (e) { if (e.target.value) { profilo.richiami[i] = e.target.value; salvaProfilo("Orari salvati. Per aggiornare il calendario, aggiungi di nuovo i richiami dalla pagina Oggi."); } }); });
+  var tCitta;
+  $("pCitta").addEventListener("input", function (e) {
+    clearTimeout(tCitta); var q = e.target.value.trim();
+    if (q.length < 2) { $("pCittaRisultati").innerHTML = ""; return; }
+    tCitta = setTimeout(function () {
+      fetch("https://geocoding-api.open-meteo.com/v1/search?count=5&language=it&format=json&name=" + encodeURIComponent(q)).then(function (r) { return r.json(); }).then(function (j) {
+        var rs = (j.results || []);
+        $("pCittaRisultati").innerHTML = rs.length ? rs.map(function (r, i) { return '<button type="button" class="chip" data-i="' + i + '">' + esc(r.name + (r.admin1 ? ", " + r.admin1 : "") + (r.country_code && r.country_code !== "IT" ? " (" + r.country_code + ")" : "")) + "</button>"; }).join("") : '<span class="small muted">Nessuna città trovata.</span>';
+        $("pCittaRisultati").onclick = function (ev) {
+          var b = ev.target.closest("[data-i]"); if (!b) return; var r = rs[+b.dataset.i];
+          profilo.citta = { nome: r.name, lat: Math.round(r.latitude * 100) / 100, lon: Math.round(r.longitude * 100) / 100 };
+          $("pCitta").value = r.name; $("pCittaRisultati").innerHTML = ""; salvaProfilo("Città salvata."); caricaFuori();
+        };
+      }).catch(function () { $("pCittaRisultati").innerHTML = '<span class="small muted">Ricerca non disponibile adesso.</span>'; });
+    }, 350);
+  });
+
+  function applicaTema(t) {
+    if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t); else document.documentElement.removeAttribute("data-theme");
+    try { if (t === "auto") localStorage.removeItem("qo:tema"); else localStorage.setItem("qo:tema", t); } catch (e) {}
+    premi(document.querySelectorAll("#temaBtns button"), function (b) { return b.dataset.tema === t; });
+  }
+  applicaTema(document.documentElement.getAttribute("data-theme") || "auto");
+  $("temaBtns").addEventListener("click", function (e) { var b = e.target.closest("[data-tema]"); if (b) applicaTema(b.dataset.tema); });
+  function applicaTesto(t) {
+    document.documentElement.classList.toggle("testo-grande", t === "grande");
+    try { localStorage.setItem("qo:testo", t); } catch (e) {}
+    premi(document.querySelectorAll("#testoBtns button"), function (b) { return b.dataset.testo === t; });
+  }
+  applicaTesto(document.documentElement.classList.contains("testo-grande") ? "grande" : "normale");
+  $("testoBtns").addEventListener("click", function (e) { var b = e.target.closest("[data-testo]"); if (b) applicaTesto(b.dataset.testo); });
+
+  $("fontiLista").innerHTML = Object.keys(F).map(function (k) { return '<li><a href="' + esc(F[k].u) + '" target="_blank" rel="noopener">' + esc(F[k].n) + "</a></li>"; }).join("");
+
+  $("datiScarica").addEventListener("click", function () {
+    scarica("qui-e-ora-dati.json", JSON.stringify({ profilo: leggi("qo:profilo", null), diario: leggi("qo:diario", {}), prevenzione: leggi("qo:prev", {}) }, null, 2), "application/json");
+  });
+  $("datiCancella").addEventListener("click", function () {
+    if (!confirm("Vuoi cancellare profilo, diario e date dei controlli da questo dispositivo?")) return;
+    ["qo:profilo", "qo:diario", "qo:prev", "qo:meteo"].forEach(function (k) { try { localStorage.removeItem(k); } catch (e) {} });
+    location.reload();
+  });
+  $("esci").addEventListener("click", function () { try { localStorage.removeItem("qo:accesso"); } catch (e) {} location.reload(); });
+
+  // ================= NAVIGAZIONE
+  var VISTE = ["oggi", "cibo", "movimento", "mente", "prevenzione", "diario", "info"];
+  function vai() {
+    var h = (location.hash || "#oggi").slice(1), v = VISTE.indexOf(h) >= 0 ? h : "oggi";
+    VISTE.forEach(function (x) { $("view-" + x).classList.toggle("attiva", x === v); });
+    document.querySelectorAll("[data-view]").forEach(function (a) { if (a.dataset.view === v) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current"); });
+    if (VISTE.indexOf(h) >= 0) window.scrollTo(0, 0);
+  }
+  window.addEventListener("hashchange", vai); vai();
+
+  if ("serviceWorker" in navigator && location.protocol === "https:") navigator.serviceWorker.register("sw.js").catch(function () {});
+})();
+</script>
+</body>
+</html>
