@@ -188,6 +188,78 @@ dialog::backdrop { background: rgba(10,20,15,.55); }
 .urgente b { color: var(--rosso); }
 footer.piede { padding: 26px 0 10px; color: var(--muted); font-size: .85rem; display: grid; gap: 6px; }
 @media (prefers-reduced-motion: reduce) { .cerchio::before { transition: none; } }
+
+/* Figure degli esercizi */
+.figura { display: block; }
+.figura path, .figura line { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.figura .arto { stroke: var(--verde); stroke-width: 8; }
+.figura .lontano { opacity: .42; }
+.figura .busto { stroke: var(--verde); stroke-width: 11; }
+.figura .collo { stroke: var(--verde); stroke-width: 6; }
+.figura .testa { fill: var(--verde); }
+.figura .pav { stroke: var(--line); stroke-width: 2; }
+.figura .og { stroke: var(--muted); stroke-width: 3; opacity: .55; }
+.figura .og.sottile { stroke-width: 1.5; }
+.figura .ogf { fill: var(--line); stroke: none; opacity: .7; }
+.striscia { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; scrollbar-width: thin; }
+.g-mini { margin: 0; flex: none; width: 76px; display: grid; gap: 2px; text-align: center; }
+.g-mini .figura { width: 76px; height: 76px; background: var(--surface-2); border-radius: 12px; }
+.g-mini figcaption { font-size: .72rem; line-height: 1.2; color: var(--muted); }
+.btn svg { width: 18px; height: 18px; flex: none; }
+
+/* Guida a schermo intero */
+dialog.guida { width: 100%; max-width: 560px; height: 100%; max-height: 100%; margin: 0 auto; border-radius: 0; overflow-y: auto; overscroll-behavior: contain; }
+@media (min-width: 620px) { dialog.guida { height: auto; max-height: 94vh; margin: auto; border-radius: 22px; } }
+.g-wrap { display: grid; gap: 12px; padding: calc(12px + env(safe-area-inset-top)) 18px calc(20px + env(safe-area-inset-bottom)); }
+.g-top { display: flex; align-items: center; gap: 8px; }
+.g-tit { flex: 1; display: grid; min-width: 0; }
+.g-tit b { font-family: var(--f-display); font-size: 1.15rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.g-tit span { font-size: .85rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.g-ico { flex: none; width: 42px; height: 42px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); display: grid; place-items: center; cursor: pointer; padding: 0; }
+.g-ico svg { width: 22px; height: 22px; }
+.g-ico[aria-pressed="false"] { opacity: .45; }
+.g-ico:disabled { opacity: .3; cursor: default; }
+.g-barra, .g-tempo { height: 6px; border-radius: 3px; background: var(--surface-2); overflow: hidden; }
+.g-tempo { height: 4px; }
+.g-barra span, .g-tempo span { display: block; height: 100%; width: 0; background: var(--verde); border-radius: inherit; }
+.g-tempo span { background: var(--oro); }
+.g-lista { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.g-lista li { display: flex; gap: 12px; align-items: center; }
+.g-lista li > div:last-child { display: grid; }
+.g-lista .g-mini { width: 64px; }
+.g-lista .g-mini .figura { width: 64px; height: 64px; }
+.g-stato { text-align: center; font-size: .8rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+#gNome { text-align: center; font-size: 1.5rem; }
+.g-vis { display: grid; place-items: center; background: var(--surface-2); border-radius: 20px; padding: 6px; min-height: 200px; }
+.g-vis .figura { width: min(68vw, 270px); height: auto; aspect-ratio: 1; }
+.g-vis .figura .pav { stroke: var(--muted); opacity: .4; }
+.g-vis .cerchio { margin: 14px auto; }
+.g-vis .cerchio::before { transition: transform .12s linear; }
+.g-num { font-family: var(--f-display); font-size: 3.4rem; font-weight: 700; text-align: center; line-height: 1; font-variant-numeric: tabular-nums; }
+.g-num small { font-size: 1.5rem; color: var(--muted); font-weight: 600; }
+.g-sub { text-align: center; color: var(--muted); min-height: 1.4em; margin-top: -6px; }
+.g-passo { text-align: center; font-size: 1.05rem; }
+.g-passo.grande { font-size: 1.25rem; line-height: 1.45; min-height: 3em; display: grid; place-items: center; }
+.g-ctrl { display: flex; gap: 12px; justify-content: center; align-items: center; }
+.g-ctrl .btn { min-width: 150px; padding: 12px 18px; font-size: 1.05rem; }
+.g-ctrl .g-ico { width: 52px; height: 52px; border-radius: 16px; }
+#gFatto { justify-self: center; min-width: 200px; padding: 14px 22px; font-size: 1.1rem; }
+.g-come { background: var(--surface-2); border-radius: 14px; padding: 12px 14px; display: grid; gap: 8px; }
+.g-fine { text-align: center; display: grid; gap: 14px; padding: 18px 0; }
+.g-fine .g-ok { width: 84px; height: 84px; margin: 0 auto; border-radius: 50%; background: var(--verde-soft); color: var(--verde); display: grid; place-items: center; }
+.g-fine .g-ok svg { width: 44px; height: 44px; }
+dialog.guida.calma .g-vis { background: transparent; }
+@media (prefers-reduced-motion: reduce) { .g-vis .cerchio::before { transition: none; } }
+
+/* Primi passi */
+.check.attivita { align-items: center; }
+.check.attivita > span { flex: 1; }
+.check.attivita.ok b { text-decoration: line-through; text-decoration-color: var(--muted); }
+.pp-punti { display: grid; grid-template-columns: repeat(28, 1fr); gap: 3px; }
+.pp-punti span { aspect-ratio: 1; border-radius: 50%; background: var(--surface-2); }
+.pp-punti span.s { background: var(--verde); }
+.pp-punti span.c { background: var(--oro); }
+li.fatto { color: var(--muted); }
 </style>
 </head>
 <body>
@@ -269,16 +341,19 @@ footer.piede { padding: 26px 0 10px; color: var(--muted); font-size: .85rem; dis
       <h2 id="h-pres"></h2>
       <p id="presPerche" class="muted"></p>
       <div class="row">
-        <button class="btn" type="button" id="presInizia">Inizia</button>
+        <button class="btn" type="button" id="presInizia">Inizia con il timer</button>
         <button class="btn sec" type="button" data-respiro="1">Un minuto di respiro</button>
       </div>
     </section>
+
+    <section class="card" id="primiOggi" aria-label="Primi passi" hidden></section>
 
     <section class="card" aria-labelledby="h-abit">
       <div class="kicker" id="abitArea"><span class="dot"></span>L'abitudine di oggi</div>
       <h3 id="h-abit"></h3>
       <p id="abitTesto"></p>
       <p class="fonte" id="abitFonte"></p>
+      <div id="abitAzione"></div>
     </section>
 
     <div class="grid2">
@@ -294,6 +369,7 @@ footer.piede { padding: 26px 0 10px; color: var(--muted); font-size: .85rem; dis
         <h3 id="h-mov"></h3>
         <p class="muted small" id="movChi"></p>
         <ol class="passi small" id="movPassi"></ol>
+        <div id="movGuida" style="display:grid;gap:10px"></div>
       </section>
     </div>
 
@@ -338,7 +414,7 @@ footer.piede { padding: 26px 0 10px; color: var(--muted); font-size: .85rem; dis
 
     <section class="card" aria-labelledby="h-news" id="newsCard" hidden>
       <div class="kicker blu"><span class="dot"></span>Dal mondo della salute</div>
-      <h3 id="h-news">Notizie da fonti istituzionali</h3>
+      <h3 id="h-news">Notizie sulla salute</h3>
       <div class="news" id="newsLista"></div>
       <p class="fonte" id="newsAgg"></p>
     </section>
@@ -375,6 +451,7 @@ footer.piede { padding: 26px 0 10px; color: var(--muted); font-size: .85rem; dis
 
   <!-- ===================== MOVIMENTO ===================== -->
   <div class="view" id="view-movimento">
+    <section class="card evidenza" id="primiMov" aria-label="Primi passi"></section>
     <section class="card">
       <div class="kicker blu"><span class="dot"></span>Quanto muoversi</div>
       <h2>Le raccomandazioni per gli adulti</h2>
@@ -402,7 +479,7 @@ footer.piede { padding: 26px 0 10px; color: var(--muted); font-size: .85rem; dis
     <section class="card evidenza">
       <div class="kicker"><span class="dot"></span>Qui e ora</div>
       <h2>Una pausa adesso</h2>
-      <p>Scegli quanto tempo hai: il respiro guidato ti accompagna con un cerchio che si apre e si chiude.</p>
+      <p>Scegli quanto tempo hai: il cerchio si apre e si chiude, e una voce calma ti dice quando inspirare e quando espirare.</p>
       <div class="row">
         <button class="btn" type="button" data-respiro="1">1 minuto</button>
         <button class="btn sec" type="button" data-respiro="3">3 minuti</button>
@@ -523,16 +600,55 @@ footer.piede { padding: 26px 0 10px; color: var(--muted); font-size: .85rem; dis
   </footer>
 </main>
 
-<dialog id="dlgRespiro" aria-labelledby="dlgTitolo">
-  <div class="dlg">
-    <h2 id="dlgTitolo">Respira</h2>
-    <div class="cerchio" id="cerchio"><span id="cerchioTesto">Pronto</span></div>
-    <div class="passo-grande" id="dlgPasso"></div>
-    <div class="durate" id="dlgDurate"><button type="button" data-min="1">1 min</button><button type="button" data-min="3">3 min</button><button type="button" data-min="5">5 min</button></div>
-    <p class="small muted" id="dlgInfo">Inspira mentre il cerchio si apre, espira mentre si chiude.</p>
-    <div class="row" style="justify-content:center">
-      <button class="btn" type="button" id="dlgAvvia">Avvia</button>
-      <button class="btn sec" type="button" id="dlgChiudi">Chiudi</button>
+<dialog id="guida" class="guida" aria-labelledby="gTitolo">
+  <div class="g-wrap">
+    <div class="g-top">
+      <button class="g-ico" type="button" id="gChiudi" aria-label="Chiudi la guida"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+      <div class="g-tit"><b id="gTitolo"></b><span id="gResta"></span></div>
+      <button class="g-ico" type="button" id="gSuoni" aria-label="Segnali sonori" aria-pressed="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4a5 5 0 0 0-5 5v3.5L5 16h14l-2-3.5V9a5 5 0 0 0-5-5zM10 19a2 2 0 0 0 4 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></button>
+      <button class="g-ico" type="button" id="gVoce" aria-label="Voce" aria-pressed="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5v14l-4.5-4.5H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+    </div>
+    <div class="g-barra"><span id="gBarra"></span></div>
+
+    <div id="gIntro" class="g-wrap" style="padding:0">
+      <ul class="g-lista" id="gIntroLista"></ul>
+      <p class="small" id="gIntroNota"></p>
+      <div class="row" id="gLivello" style="justify-content:center">
+        <span class="small">Livello</span>
+        <div class="durate"><button type="button" data-liv="facile">Per iniziare</button><button type="button" data-liv="normale">Normale</button></div>
+      </div>
+      <p class="avviso" id="gAvvisoMoto">Muoviti senza fretta e fermati se senti dolore al petto, vertigini o un fiato insolito. Se hai problemi di salute o sei fermo da tempo, chiedi prima consiglio al medico.</p>
+      <p class="small muted" style="text-align:center">La voce ti dice cosa fare e conta con te: puoi seguire la figura senza guardare lo schermo. Lo schermo resta acceso.</p>
+      <button class="btn" type="button" id="gInizia" style="justify-self:center;min-width:200px;padding:14px 22px;font-size:1.1rem">Inizia</button>
+    </div>
+
+    <div id="gScena" class="g-wrap" style="padding:0" hidden>
+      <p class="g-stato" id="gStato"></p>
+      <h2 id="gNome"></h2>
+      <div class="g-vis"><div id="gFig"></div><div class="cerchio" id="gCerchio"><span id="gCerchioT"></span></div></div>
+      <p class="g-passo" id="gPasso"></p>
+      <div class="g-num" id="gNum" aria-live="off"></div>
+      <div class="g-sub" id="gSub"></div>
+      <div class="g-tempo"><span id="gTempo"></span></div>
+      <button class="btn" type="button" id="gFatto" hidden>Fatto</button>
+      <div class="g-ctrl">
+        <button class="g-ico" type="button" id="gPrec" aria-label="Esercizio precedente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5v14M18 6l-8 6 8 6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/></svg></button>
+        <button class="btn" type="button" id="gPausa"></button>
+        <button class="g-ico" type="button" id="gSucc" aria-label="Salta al prossimo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 5v14M6 6l8 6-8 6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/></svg></button>
+      </div>
+      <div class="g-come" id="gCome"></div>
+    </div>
+
+    <div id="gFine" class="g-fine" hidden>
+      <div class="g-ok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <h2>Fatto!</h2>
+      <p id="gFineTesto"></p>
+      <div id="gFineSentire">
+        <p class="small muted" style="margin-bottom:8px">Com'è andata? Serve a scegliere il livello della prossima volta.</p>
+        <div class="durate"><button type="button" data-sent="facile">Facile</button><button type="button" data-sent="giusto">Giusto</button><button type="button" data-sent="dura">Faticoso</button></div>
+        <p class="small" id="gFineConsiglio" style="margin-top:10px" aria-live="polite"></p>
+      </div>
+      <button class="btn" type="button" id="gFineChiudi" style="justify-self:center;min-width:160px">Chiudi</button>
     </div>
   </div>
 </dialog>
@@ -552,6 +668,141 @@ footer.piede { padding: 26px 0 10px; color: var(--muted); font-size: .85rem; dis
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
   function leggi(k, def) { try { var v = localStorage.getItem(k); return v ? JSON.parse(v) : def; } catch (e) { return def; } }
   function scrivi(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+  // ================= FIGURE ANIMATE DEGLI ESERCIZI
+  // Ogni posa descrive angoli e posizione del bacino; la figura viene calcolata segmento per segmento.
+  // Angoli in gradi: 0 = verso il basso, 90 = in avanti (a destra), 180 = verso l'alto, -90 = indietro.
+  var FIG = (function () {
+    var PAV = 186, L = { torso: 50, collo: 15, testa: 9.5, br: 24, av: 22, co: 32, ga: 31, pi: 11 }, SP = 4.5;
+    var BASE = { x: 100, t: 180, s: 0, a: [8, 14], b: [-6, 4], g: [0, 0, 90], k: [0, 0, 90], w: 1, sy: 0, cf: 1, hx: 0 };
+    function dir(a) { var r = a * Math.PI / 180; return [Math.sin(r), Math.cos(r)]; }
+    function piu(p, a, l) { var d = dir(a); return [p[0] + d[0] * l, p[1] + d[1] * l]; }
+    function lerp(a, b, f) { return a + (b - a) * f; }
+    function mix(A, B, f) {
+      if (A === undefined) return B; if (B === undefined) return A;
+      if (typeof A === "number" && typeof B === "number") return lerp(A, B, f);
+      if (Array.isArray(A) && Array.isArray(B) && typeof A[0] === "number" && typeof B[0] === "number") return A.map(function (v, i) { return lerp(v, B[i] == null ? v : B[i], f); });
+      return f < .5 ? A : B;
+    }
+    function completa(p) { var o = {}, k; for (k in BASE) o[k] = BASE[k]; for (k in p) if (p[k] != null) o[k] = p[k]; return o; }
+    function interp(A, B, f) {
+      A = completa(A); B = completa(B);
+      var o = {}, keys = {}, k;
+      for (k in A) keys[k] = 1; for (k in B) keys[k] = 1;
+      for (k in keys) o[k] = mix(A[k], B[k], f);
+      return o;
+    }
+    function scambia(p) { // lato opposto, vista di lato: gamba e braccio vicini diventano lontani
+      var o = {}, k; for (k in p) o[k] = p[k];
+      o.g = p.k || BASE.k; o.k = p.g || BASE.g; o.a = p.b || BASE.b; o.b = p.a || BASE.a;
+      o.ma = p.mb; o.mb = p.ma; o.ga = p.gb; o.gb = p.ga;
+      if (typeof p.ma === "string") o.mb = p.ma.replace(/a$/, "b"); if (typeof p.mb === "string") o.ma = p.mb.replace(/b$/, "a");
+      return o;
+    }
+    function ik(S, T, l1, l2, giu) {
+      var dx = T[0] - S[0], dy = T[1] - S[1], d = Math.sqrt(dx * dx + dy * dy) || 1, max = (l1 + l2) * .999;
+      if (d > max) { dx *= max / d; dy *= max / d; d = max; }
+      var base = Math.atan2(dy, dx), al = Math.acos(Math.max(-1, Math.min(1, (l1 * l1 + d * d - l2 * l2) / (2 * l1 * d))));
+      var e1 = [S[0] + Math.cos(base + al) * l1, S[1] + Math.sin(base + al) * l1], e2 = [S[0] + Math.cos(base - al) * l1, S[1] + Math.sin(base - al) * l1];
+      var E = (giu === false ? e1[1] < e2[1] : e1[1] > e2[1]) ? e1 : e2;
+      return [E, [S[0] + dx, S[1] + dy]];
+    }
+    function calcola(p, vista) {
+      p = completa(p);
+      var P = [p.x, 0], N = piu(P, p.t, L.torso), J = {};
+      var perp = dir(p.t + 90);
+      J.P = P; J.N = N;
+      J.M = [(P[0] + N[0]) / 2 + perp[0] * p.s, (P[1] + N[1]) / 2 + perp[1] * p.s];
+      J.H = piu(N, p.c == null ? p.t : p.c, L.collo); J.H[0] += p.hx;
+      if (vista === "fronte") {
+        var lat = dir(p.t - 90), w = 13 * p.w;
+        J.sa = [N[0] - lat[0] * w, N[1] - lat[1] * w + 2 - p.sy]; J.sb = [N[0] + lat[0] * w, N[1] + lat[1] * w + 2 - p.sy];
+        J.pa = [P[0] - lat[0] * 8, P[1] - lat[1] * 8]; J.pb = [P[0] + lat[0] * 8, P[1] + lat[1] * 8];
+        var spec = function (pt, a, l, s) { var d = dir(a); return [pt[0] + s * d[0] * l, pt[1] + d[1] * l]; };
+        J.ea = spec(J.sa, p.a[0], L.br, -1); J.ha = spec(J.ea, p.a[1], L.av, -1);
+        J.eb = spec(J.sb, p.b[0], L.br, 1); J.hb = spec(J.eb, p.b[1], L.av, 1);
+        J.ka = spec(J.pa, p.g[0], L.co * p.cf, -1); J.ca = spec(J.ka, p.g[1], L.ga, -1); J.ta = [J.ca[0] - 7, J.ca[1]];
+        J.kb = spec(J.pb, p.k[0], L.co * p.cf, 1); J.cb = spec(J.kb, p.k[1], L.ga, 1); J.tb = [J.cb[0] + 7, J.cb[1]];
+      } else {
+        J.sa = J.sb = N;
+        J.ea = piu(N, p.a[0], L.br); J.ha = piu(J.ea, p.a[1], L.av);
+        J.eb = piu(N, p.b[0], L.br); J.hb = piu(J.eb, p.b[1], L.av);
+        J.pa = J.pb = P;
+        J.ka = piu(P, p.g[0], L.co); J.ca = piu(J.ka, p.g[1], L.ga); J.ta = piu(J.ca, p.g[2] == null ? 90 : p.g[2], L.pi);
+        J.kb = piu(P, p.k[0], L.co); J.cb = piu(J.kb, p.k[1], L.ga); J.tb = piu(J.cb, p.k[2] == null ? 90 : p.k[2], L.pi);
+      }
+      // appoggio a terra: il punto più basso tocca il pavimento
+      var dy = 0, dx = 0;
+      if (p.y != null) dy = p.y;
+      else {
+        var mx = J.H[1] + L.testa - SP;
+        ["P", "N", "M", "ka", "kb", "ca", "cb", "ta", "tb"].concat(p.ma ? [] : ["ea", "ha"], p.mb ? [] : ["eb", "hb"]).forEach(function (k) { if (J[k][1] > mx) mx = J[k][1]; });
+        dy = PAV - SP - mx;
+      }
+      if (p.pi != null) dx = p.pi - J.ca[0];
+      Object.keys(J).forEach(function (k) { J[k] = [J[k][0] + dx, J[k][1] + dy]; });
+      // mani su un punto preciso (muro, sedia, ginocchia)
+      function bersaglio(m) {
+        if (typeof m === "string") return m === "ventre" ? [J.M[0] * .5 + J.P[0] * .5, J.M[1] * .5 + J.P[1] * .5 - 6] : J[m].slice();
+        return m;
+      }
+      if (p.ma) { var r = ik(J.sa, bersaglio(p.ma), L.br, L.av, p.ga !== false); J.ea = r[0]; J.ha = r[1]; }
+      if (p.mb) { var q = ik(J.sb, bersaglio(p.mb), L.br, L.av, p.gb !== false); J.eb = q[0]; J.hb = q[1]; }
+      return J;
+    }
+    function f1(v) { return Math.round(v * 10) / 10; }
+    function pt(p) { return f1(p[0]) + " " + f1(p[1]); }
+    function linea(pts, cls) { return '<path class="' + cls + '" d="M' + pts.map(pt).join(" L") + '"/>'; }
+    function oggetti(lista, retro) {
+      return (lista || []).map(function (o) {
+        var t = o[0], x = o[1];
+        if (t === "sedia") { // sedia vista di lato: schienale a sinistra di x (o a destra se o[2] === -1)
+          var v = o[2] || 1, sx = x, ex = x + 34 * v, top = PAV - 30;
+          return '<path class="og" d="M' + sx + " " + (PAV) + " L" + sx + " " + (PAV - 76) + " M" + sx + " " + top + " L" + ex + " " + top + " L" + ex + " " + PAV + '"/>';
+        }
+        if (t === "sediaf") { // sedia vista di fronte, dietro la figura
+          return '<path class="og" d="M' + (x - 24) + " " + PAV + " L" + (x - 24) + " " + (PAV - 30) + " L" + (x + 24) + " " + (PAV - 30) + " L" + (x + 24) + " " + PAV + '"/><rect class="ogf" x="' + (x - 22) + '" y="' + (PAV - 82) + '" width="44" height="40" rx="4"/>';
+        }
+        if (t === "muro") return '<rect class="ogf" x="' + x + '" y="30" width="200" height="' + (PAV - 30) + '"/>';
+        if (t === "tappeto") return '<rect class="ogf" x="' + (x || 18) + '" y="' + (PAV - 3) + '" width="' + (o[2] || 164) + '" height="4" rx="2"/>';
+        if (t === "gradini") { var d = "M" + x + " " + PAV; for (var i = 0; i < 4; i++) d += " L" + (x + i * 22) + " " + (PAV - (i + 1) * 17) + " L" + (x + (i + 1) * 22) + " " + (PAV - (i + 1) * 17); d += " L" + (x + 88) + " " + PAV + " Z"; return '<path class="ogf" d="' + d + '"/>'; }
+        if (t === "finestra") return '<rect class="og" x="' + x + '" y="44" width="40" height="56" rx="3"/><path class="og" d="M' + (x + 20) + " 44 L" + (x + 20) + " 100 M" + x + " 72 L" + (x + 40) + ' 72"/><path class="og sottile" d="M' + (x + 6) + " 92 q8 -14 16 -6 q6 -8 12 0" + '"/>';
+        if (t === "rotazione") return '<path class="og freccia" d="M' + (x - 22) + " " + o[2] + " q22 -12 44 0" + '"/><path class="og" d="M' + (x + 22) + " " + o[2] + " l-6 -6 M" + (x + 22) + " " + o[2] + " l-8 1 M" + (x - 22) + " " + o[2] + " l6 -6 M" + (x - 22) + " " + o[2] + ' l8 1"/>';
+        return "";
+      }).join("");
+    }
+    function svg(es, posa, opz) {
+      opz = opz || {};
+      var vista = es.vista || "lato", J = calcola(posa, vista), o = "";
+      var specchio = opz.specchio ? ' transform="translate(200 0) scale(-1 1)"' : "";
+      o += '<line class="pav" x1="6" y1="' + PAV + '" x2="194" y2="' + PAV + '"/>';
+      o += oggetti(es.oggetti);
+      if (vista === "fronte") {
+        o += linea([J.pa, J.ka, J.ca, J.ta], "arto") + linea([J.pb, J.kb, J.cb, J.tb], "arto");
+        o += linea([J.pa, J.pb], "arto") + linea([J.P, J.N], "busto") + linea([J.sa, J.sb], "arto");
+        o += linea([J.sa, J.ea, J.ha], "arto") + linea([J.sb, J.eb, J.hb], "arto");
+        o += linea([J.N, J.H], "collo") + '<circle class="testa" cx="' + f1(J.H[0]) + '" cy="' + f1(J.H[1]) + '" r="' + L.testa + '"/>';
+      } else {
+        o += linea([J.N, J.eb, J.hb], "arto lontano") + linea([J.P, J.kb, J.cb, J.tb], "arto lontano");
+        o += '<path class="busto" d="M' + pt(J.P) + " Q" + pt([2 * J.M[0] - (J.P[0] + J.N[0]) / 2, 2 * J.M[1] - (J.P[1] + J.N[1]) / 2]) + " " + pt(J.N) + '"/>';
+        o += linea([J.N, J.H], "collo") + '<circle class="testa" cx="' + f1(J.H[0]) + '" cy="' + f1(J.H[1]) + '" r="' + L.testa + '"/>';
+        o += linea([J.P, J.ka, J.ca, J.ta], "arto") + linea([J.N, J.ea, J.ha], "arto");
+      }
+      return '<svg class="figura" viewBox="0 0 200 200" role="img" aria-label="' + (opz.label || "") + '"><g' + specchio + ">" + o + "</g></svg>";
+    }
+    function ease(f) { return f * f * (3 - 2 * f); }
+    // posa in un istante: f da 0 a 1 percorre tutte le pose e torna alla prima
+    function lungo(pose, f, chiudi) {
+      var n = pose.length; if (n === 1) return pose[0];
+      var seg = chiudi ? n : n - 1, x = Math.max(0, Math.min(.99999, f)) * seg, i = Math.floor(x);
+      return interp(pose[i], pose[(i + 1) % n], ease(x - i));
+    }
+    return { svg: svg, lungo: lungo, interp: interp, scambia: scambia, completa: completa };
+  })();
+
+  var ICONA = {
+    play: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>',
+    pausa: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>'
+  };
   function fonteHtml(k) { var f = F[k]; return f ? 'Fonte: <a href="' + esc(f.u) + '" target="_blank" rel="noopener">' + esc(f.n) + "</a>" : ""; }
 
   // ---------- data di oggi (ora italiana)
@@ -586,7 +837,6 @@ footer.piede { padding: 26px 0 10px; color: var(--muted); font-size: .85rem; dis
   var pres = scegli(Q.PRESENZA, 3);
   $("h-pres").textContent = pres[0] + " · " + pres[1] + (pres[1] === 1 ? " minuto" : " minuti");
   $("presPerche").textContent = pres[3];
-  $("presInizia").addEventListener("click", function () { apriEsercizio(pres); });
 
   var ab = scegli(Q.ABITUDINI, 0);
   $("abitArea").innerHTML = '<span class="dot"></span>L\'abitudine di oggi · ' + esc(AREE[ab[0]] || "");
@@ -680,9 +930,9 @@ footer.piede { padding: 26px 0 10px; color: var(--muted); font-size: .85rem; dis
     $("newsCard").hidden = false;
     $("newsLista").innerHTML = D.notizie.slice(0, 6).map(function (n) {
       var d = n.data ? new Date(n.data).toLocaleDateString("it-IT", { day: "numeric", month: "short" }) : "";
-      return '<a href="' + esc(n.url) + '" target="_blank" rel="noopener"><b>' + esc(n.titolo) + '</b><span class="small muted">' + esc(n.fonte) + (d ? " · " + esc(d) : "") + "</span></a>";
+      return '<a href="' + esc(n.url) + '" target="_blank" rel="noopener"><b>' + esc(n.titolo) + '</b><span class="small muted">' + (n.tipo === "stampa" ? "Stampa" : "Fonte ufficiale") + " · " + esc(n.fonte) + (d ? " · " + esc(d) : "") + "</span></a>";
     }).join("");
-    if (D.aggiornato) $("newsAgg").textContent = "Aggiornato il " + new Date(D.aggiornato).toLocaleString("it-IT", { day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" }) + ". Le notizie si aprono sul sito della fonte.";
+    if (D.aggiornato) $("newsAgg").textContent = (Date.now() - new Date(D.aggiornato) > 1728e5 ? "Attenzione: notizie ferme da più di due giorni. " : "") + "Aggiornato il " + new Date(D.aggiornato).toLocaleString("it-IT", { day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" }) + ". Le notizie si aprono sul sito della fonte.";
   }
 
   // ---------- fuori oggi (Open-Meteo, dal browser)
@@ -792,58 +1042,504 @@ footer.piede { padding: 26px 0 10px; color: var(--muted); font-size: .85rem; dis
   }).join("");
 
   // ================= MOVIMENTO
-  $("movRoutine").innerHTML = Q.ROUTINE.map(function (r) {
-    return "<details><summary><span>" + esc(r[1]) + ' <span class="badge no">' + r[2] + ' min</span></span></summary><div><p class="small muted">' + esc(r[3]) + '</p><ol class="passi">' + r[4].map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("") + '</ol><p class="small">' + esc(r[5]) + "</p></div></details>";
-  }).join("");
   $("movRegole").innerHTML = regole("movimento") + regole("sonno");
 
   // ================= MENTE
   $("menteEsercizi").innerHTML = Q.PRESENZA.map(function (e, i) {
-    return "<details><summary><span>" + esc(e[0]) + ' <span class="badge no">' + e[1] + ' min</span></span></summary><div><ol class="passi">' + e[2].map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("") + '</ol><p class="small muted">' + esc(e[3]) + '</p><button class="btn piccolo" type="button" data-esercizio="' + i + '" style="justify-self:start">Guidami</button></div></details>';
+    return "<details><summary><span>" + esc(e[0]) + ' <span class="badge no">' + e[1] + ' min</span></span></summary><div><ol class="passi">' + e[2].map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("") + '</ol><p class="small muted">' + esc(e[3]) + '</p><button class="btn piccolo" type="button" data-esercizio="' + i + '" style="justify-self:start">' + ICONA.play + 'Guidami con il timer</button></div></details>';
   }).join("");
-  $("menteEsercizi").addEventListener("click", function (e) { var b = e.target.closest("[data-esercizio]"); if (b) apriEsercizio(Q.PRESENZA[+b.dataset.esercizio]); });
   $("menteSchede").innerHTML = Q.MENTE.map(function (s) {
     return "<details><summary>" + esc(s[1]) + '</summary><div><p class="small muted">' + esc(s[2]) + '</p><ul class="lista">' + s[3].map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + '</ul><p class="fonte">' + fonteHtml(s[4]) + "</p></div></details>";
   }).join("") + "<details><summary>Le abitudini per la mente</summary><div>" + Q.ABITUDINI.filter(function (a) { return a[0] === "mente" || a[0] === "relazioni"; }).map(function (a) { return "<p><b>" + esc(a[1]) + ".</b> " + esc(a[2]) + "</p>"; }).join("") + "</div></details>";
 
-  // ================= RESPIRO GUIDATO / ESERCIZIO
-  var dlg = $("dlgRespiro"), timer = null, fine = 0, minuti = 1, modo = "respiro", passi = [], passoI = 0;
   function premi(btns, sel) { btns.forEach(function (b) { b.setAttribute("aria-pressed", String(sel(b))); }); }
-  function apriRespiro(min) {
-    ferma(); modo = "respiro"; minuti = min || 1;
-    $("dlgTitolo").textContent = "Respira"; $("dlgDurate").hidden = false; $("dlgPasso").textContent = "";
-    $("dlgInfo").textContent = "Inspira mentre il cerchio si apre (4 secondi), espira mentre si chiude (6 secondi).";
-    $("cerchio").hidden = false; $("cerchioTesto").textContent = "Pronto"; $("dlgAvvia").textContent = "Avvia"; $("dlgAvvia").hidden = false;
-    premi(dlg.querySelectorAll("[data-min]"), function (b) { return +b.dataset.min === minuti; });
-    dlg.showModal ? dlg.showModal() : dlg.setAttribute("open", "");
+
+  // ================= GUIDA: TIMER, FIGURE E VOCE
+  // Una sessione è un elenco di blocchi (vedi SESSIONI in contenuti.js) trasformato in fasi:
+  // preparazione, lavoro, recupero. Il tempo scorre con l'orologio reale, quindi resta giusto anche se il telefono rallenta.
+  var ES = Q.ESERCIZI, VEL = { lento: 1.3, normale: 1.1, svelto: .9, molto: .72 };
+  var gd = $("guida"), GS = null, rafId = 0, wake = null, audio = null;
+  var pref = leggi("qo:guida", { voce: true, suoni: true }), livelli = leggi("qo:livelli", {});
+  function mmss(s) { s = Math.max(0, Math.ceil(s)); return Math.floor(s / 60) + ":" + ("0" + (s % 60)).slice(-2); }
+  function durata(s) { if (s < 60) return Math.round(s) + " secondi"; var m = Math.round(s / 60); return m === 1 ? "1 minuto" : m + " minuti"; }
+  function posaIcona(e) { return e.icona != null ? e.pose[e.icona] : e.modo === "tieni" ? e.pose[e.pose.length - 1] : e.modo === "ciclo" || e.chiudi ? e.pose[0] : e.pose[e.pose.length - 1]; }
+
+  // ---- suoni, vibrazione e voce
+  function bip(freq, dur) {
+    if (!pref.suoni) return;
+    try {
+      audio = audio || new (window.AudioContext || window.webkitAudioContext)();
+      var o = audio.createOscillator(), g = audio.createGain(), t0 = audio.currentTime;
+      o.frequency.value = freq || 880; o.connect(g); g.connect(audio.destination);
+      g.gain.setValueAtTime(.0001, t0); g.gain.exponentialRampToValueAtTime(.25, t0 + .02); g.gain.exponentialRampToValueAtTime(.0001, t0 + (dur || .15));
+      o.start(t0); o.stop(t0 + (dur || .15) + .05);
+    } catch (e) {}
   }
-  function apriEsercizio(es) {
-    ferma(); modo = "passi"; passi = es[2]; passoI = 0;
-    $("dlgTitolo").textContent = es[0]; $("dlgDurate").hidden = true; $("cerchio").hidden = true;
-    $("dlgPasso").textContent = passi[0]; $("dlgInfo").textContent = "Passo 1 di " + passi.length + ". Prenditi il tempo che serve.";
-    $("dlgAvvia").textContent = passi.length > 1 ? "Avanti" : "Fatto"; $("dlgAvvia").hidden = false;
-    dlg.showModal ? dlg.showModal() : dlg.setAttribute("open", "");
+  function vibra(ms) { try { if (navigator.vibrate) navigator.vibrate(ms); } catch (e) {} }
+  var vocePref = null;
+  function voceIt() {
+    if (vocePref || !window.speechSynthesis) return vocePref;
+    var v = speechSynthesis.getVoices().filter(function (x) { return /^it/i.test(x.lang); });
+    vocePref = v.filter(function (x) { return x.localService; })[0] || v[0] || null;
+    return vocePref;
   }
-  function ferma() { clearTimeout(timer); timer = null; var c = $("cerchio"); c.style.setProperty("--s", ".55"); c.style.setProperty("--t", "1s"); }
-  function ciclo(inspira) {
-    if (Date.now() >= fine) { ferma(); $("cerchioTesto").textContent = "Fatto"; $("dlgInfo").textContent = "Nota come ti senti adesso. Puoi tornare qui quando vuoi."; $("dlgAvvia").textContent = "Ancora"; segnaPresenza(); return; }
-    var c = $("cerchio"), dur = inspira ? 4 : 6;
-    c.style.setProperty("--t", dur + "s"); c.style.setProperty("--s", inspira ? "1" : ".55");
-    $("cerchioTesto").textContent = inspira ? "Inspira" : "Espira";
-    timer = setTimeout(function () { ciclo(!inspira); }, dur * 1000);
+  if (window.speechSynthesis) try { speechSynthesis.onvoiceschanged = function () { vocePref = null; voceIt(); }; } catch (e) {}
+  function parla(testo, coda) {
+    if (!pref.voce || !window.speechSynthesis || !testo) return;
+    try {
+      if (!coda) speechSynthesis.cancel();
+      var u = new SpeechSynthesisUtterance(testo), v = voceIt();
+      u.lang = "it-IT"; if (v) u.voice = v; u.rate = .95;
+      speechSynthesis.speak(u);
+    } catch (e) {}
+  }
+  function zitto() { try { if (window.speechSynthesis) speechSynthesis.cancel(); } catch (e) {} }
+  function tieniAcceso(si) {
+    try {
+      if (si && navigator.wakeLock && !wake) navigator.wakeLock.request("screen").then(function (w) { wake = w; w.addEventListener("release", function () { wake = null; }); }).catch(function () {});
+      if (!si && wake) { wake.release(); wake = null; }
+    } catch (e) {}
+  }
+  document.addEventListener("visibilitychange", function () { if (GS && GS.attiva && document.visibilityState === "visible") tieniAcceso(true); });
+
+  // ---- da blocchi a fasi
+  function scala(n, f, min) { return Math.max(min, Math.round(n * f)); }
+  function costruisci(blocchi, facile, calma) {
+    var fasi = [], nEs = blocchi.filter(function (b) { return !b.rec || b.e; }).length, k = 0;
+    blocchi.forEach(function (b0, bi) {
+      if (b0.rec && !b0.e && !b0.testo) { fasi.push({ k: "rec", dur: b0.rec, b: b0, poi: "Prossimo esercizio" }); return; }
+      var b = {}, x; for (x in b0) b[x] = b0[x];
+      if (facile) {
+        if (b.rip) b.rip = scala(b.rip, .6, 3);
+        if (b.sec && !b.respiro) b.sec = scala(b.sec / 5, .6, 2) * 5;
+        if (b.tocchi) b.tocchi = scala(b.tocchi, .6, 1);
+        b.serie = 1;
+      }
+      var es = b.e ? ES[b.e] : null, serie = b.serie || 1, lati = b.lati ? 2 : 1;
+      k++;
+      if (!calma) fasi.push({ k: "prep", dur: k === 1 ? 10 : 8, b: b, es: es, n: k, tot: nEs });
+      else if (k === 1) fasi.push({ k: "prep", dur: 4, b: b, es: es, n: k, tot: nEs, calma: true });
+      for (var s = 0; s < serie; s++) {
+        for (var l = 0; l < lati; l++) {
+          var dur = b.tocchi ? null : b.rip ? b.rip * b.ritmo : b.sec;
+          fasi.push({ k: "lavoro", dur: dur, b: b, es: es, n: k, tot: nEs, serie: s, serieTot: serie, lato: l, lati: lati, calma: calma });
+          if (l === 0 && lati === 2) fasi.push({ k: "rec", dur: 5, b: b, es: es, cambio: true, poi: "Cambia lato", lato: 1 });
+        }
+        if (s < serie - 1) fasi.push({ k: "rec", dur: b.rec || 30, b: b, es: es, poi: "Serie " + (s + 2) + " di " + serie });
+      }
+    });
+    fasi.push({ k: "fine", dur: null });
+    return fasi;
+  }
+  function stima(fasi) { return fasi.reduce(function (a, f) { return a + (f.dur == null ? (f.b && f.b.tocchi ? f.b.tocchi * 60 : 0) : f.dur); }, 0); }
+
+  // ---- figura del momento
+  function seqRip(es) { return es.chiudi ? es.pose : es.pose.concat(es.pose.slice(1, -1).reverse()); }
+  function posaDi(f, t) {
+    var es = f.es, b = f.b || {}; if (!es) return null;
+    var pose = es.pose, posa;
+    if (f.k !== "lavoro") posa = f.k === "rec" && !f.cambio ? pose[0] : es.modo === "tieni" ? pose[pose.length - 1] : pose[0];
+    else if (b.respiro) { var r = fiato(b.respiro, t); posa = FIG.interp(pose[0], pose[pose.length - 1], r.livello); }
+    else if (es.modo === "tieni") posa = FIG.interp(pose[0], pose[pose.length - 1], Math.min(1, t / 1.5));
+    else if (es.modo === "ciclo") {
+      var per = b.rip ? b.ritmo * (es.passi || 1) : b.vel ? VEL[b.vel] * (es.periodo || 1.1) / 1.1 : es.periodo || 1.2;
+      posa = FIG.lungo(pose, (t / per) % 1, true);
+    } else {
+      var rip = Math.floor(t / b.ritmo), fr = (t % b.ritmo) / b.ritmo, seq = seqRip(es);
+      if (es.inverti && rip >= b.rip / 2) fr = 1 - fr;
+      posa = FIG.lungo(seq, fr, true);
+      if (b.alterna && rip % 2) posa = FIG.scambia(posa);
+    }
+    var specchio = false;
+    if (f.lato === 1) { if (es.vista === "fronte") specchio = true; else posa = FIG.scambia(posa); }
+    return { posa: posa, specchio: specchio };
+  }
+  // respiro: [inspira, pausa piena, espira, pausa vuota] in secondi
+  function fiato(p, t) {
+    var tot = p[0] + p[1] + p[2] + p[3], x = t % tot, n = Math.floor(t / tot);
+    if (x < p[0]) return { fase: 0, livello: x / p[0], testo: "Inspira", n: n, resta: p[0] - x };
+    x -= p[0]; if (x < p[1]) return { fase: 1, livello: 1, testo: "Trattieni", n: n, resta: p[1] - x };
+    x -= p[1]; if (x < p[2]) return { fase: 2, livello: 1 - x / p[2], testo: "Espira", n: n, resta: p[2] - x };
+    x -= p[2]; return { fase: 3, livello: 0, testo: "Trattieni", n: n, resta: p[3] - x };
+  }
+
+  // ---- apertura: elenco degli esercizi e scelta del livello
+  function apriGuida(conf) {
+    chiudiGuida(true);
+    GS = { conf: conf, facile: conf.facile != null ? conf.facile : livelli[conf.id] === "facile", attiva: false };
+    $("gTitolo").textContent = conf.titolo;
+    gd.classList.toggle("calma", !!conf.calma);
+    aggiornaPref();
+    if (conf.subito) { gd.showModal ? gd.showModal() : gd.setAttribute("open", ""); avvia(); return; }
+    mostra("gIntro"); renderIntro();
+    gd.showModal ? gd.showModal() : gd.setAttribute("open", "");
+  }
+  function mostra(id) { ["gIntro", "gScena", "gFine"].forEach(function (x) { $(x).hidden = x !== id; }); }
+  function descrBlocco(b) {
+    var p = [];
+    if (b.rip) p.push(b.rip + (b.alterna ? " in tutto" : " volte"));
+    if (b.sec) p.push(durata(b.sec) + (b.lati ? " per lato" : ""));
+    if (b.tocchi) p.push(b.tocchi + (b.tocchi === 1 ? " volta" : " volte"));
+    if (b.serie > 1) p.push(b.serie + " serie, " + b.rec + " secondi di pausa");
+    return p.join(" · ");
+  }
+  function renderIntro() {
+    var c = GS.conf, fasi = costruisci(c.blocchi, GS.facile, c.calma), vis = {};
+    var lista = c.blocchi.filter(function (b) { return b.e && !vis[b.e + (b.testo || "")] && (vis[b.e + (b.testo || "")] = 1); });
+    $("gResta").textContent = "circa " + durata(stima(fasi));
+    $("gIntroLista").innerHTML = lista.map(function (b0) {
+      var b = costruisci([b0], GS.facile, c.calma)[1].b, es = ES[b.e];
+      return '<li><div class="g-mini">' + FIG.svg(es, posaIcona(es), { label: es.nome }) + "</div><div><b>" + esc(es.nome) + '</b><span class="small muted">' + esc(b.testo || descrBlocco(b)) + "</span></div></li>";
+    }).join("");
+    $("gIntroNota").textContent = c.nota || "";
+    $("gIntroNota").hidden = !c.nota;
+    $("gLivello").hidden = !!c.calma;
+    premi(document.querySelectorAll("#gLivello button"), function (b) { return (b.dataset.liv === "facile") === GS.facile; });
+    $("gAvvisoMoto").hidden = !!c.calma;
+  }
+  $("gLivello").addEventListener("click", function (e) { var b = e.target.closest("[data-liv]"); if (!b || !GS) return; GS.facile = b.dataset.liv === "facile"; renderIntro(); });
+  function aggiornaPref() {
+    $("gVoce").setAttribute("aria-pressed", String(pref.voce)); $("gVoce").setAttribute("aria-label", pref.voce ? "Voce attiva: tocca per spegnerla" : "Voce spenta: tocca per accenderla");
+    $("gSuoni").setAttribute("aria-pressed", String(pref.suoni));
+  }
+  $("gVoce").addEventListener("click", function () { pref.voce = !pref.voce; scrivi("qo:guida", pref); aggiornaPref(); if (!pref.voce) zitto(); else parla("Voce attiva"); });
+  $("gSuoni").addEventListener("click", function () { pref.suoni = !pref.suoni; scrivi("qo:guida", pref); aggiornaPref(); bip(880); });
+
+  // ---- svolgimento
+  function avvia() {
+    var c = GS.conf;
+    GS.fasi = costruisci(c.blocchi, GS.facile, c.calma); GS.i = 0; GS.t = 0; GS.pausa = false; GS.lavoro = 0; GS.tocchi = 0; GS.attiva = true; GS.ultimo = null; GS.totale = stima(GS.fasi);
+    if (!c.calma) { livelli[c.id] = GS.facile ? "facile" : "normale"; scrivi("qo:livelli", livelli); }
+    mostra("gScena"); bip(660, .08); tieniAcceso(true);
+    entra();
+    cancelAnimationFrame(rafId); rafId = requestAnimationFrame(passo);
+  }
+  $("gInizia").addEventListener("click", avvia);
+  function fase() { return GS.fasi[GS.i]; }
+  function entra() {
+    var f = fase(), b = f.b || {}, es = f.es;
+    GS.t = 0; GS.prev = -1; GS.tocchi = 0;
+    $("gPausa").hidden = f.k === "fine"; $("gFatto").hidden = !(f.k === "lavoro" && b.tocchi);
+    var nome = es ? es.nome : GS.conf.titolo;
+    if (f.k === "fine") return finisci();
+    if (f.k === "prep") {
+      if (f.calma) parla("Mettiti comodo. " + (b.testo || ""));
+      else parla((f.n === 1 ? "Si comincia con: " : "Prossimo: ") + nome + ". " + (b.testo || (es && es.come[0]) || ""));
+    } else if (f.k === "rec") {
+      if (f.cambio) { parla("Cambia lato"); bip(660, .12); vibra(80); }
+      else { parla("Recupero. Respira con calma." + (f.poi ? " Poi, " + f.poi.toLowerCase() + "." : "")); bip(520, .2); vibra([60, 60, 60]); }
+    } else if (f.k === "lavoro") {
+      bip(1046, .18); vibra(120);
+      if (f.calma) parla(b.testo);
+      else if (b.respiro) parla("Inspira");
+      else if (f.lato === 1) parla("Altro lato. Via!");
+      else if (f.serieTot > 1) parla("Serie " + (f.serie + 1) + ". Via!");
+      else parla(b.tocchi ? "Vai. Tocca Fatto alla fine di ogni rampa." : es && es.respiro ? "Inspira" : "Via!");
+    }
+    disegnaFissi();
+  }
+  function disegnaFissi() {
+    var f = fase(), b = f.b || {}, es = f.es;
+    var stato = f.k === "prep" ? (f.calma ? "Mettiti comodo" : "Preparati · esercizio " + f.n + " di " + f.tot) : f.k === "rec" ? (f.cambio ? "Cambia lato" : "Recupero") :
+      f.calma ? "Passo " + f.n + " di " + f.tot : "Esercizio " + f.n + " di " + f.tot + (f.serieTot > 1 ? " · serie " + (f.serie + 1) + " di " + f.serieTot : "");
+    $("gStato").textContent = stato;
+    $("gNome").textContent = f.calma ? "" : es ? es.nome : (f.k === "rec" ? "" : GS.conf.titolo);
+    $("gNome").hidden = !$("gNome").textContent;
+    var passo = f.calma || (!es && b.testo) ? b.testo || "" : f.k === "rec" ? (f.poi ? "Poi: " + f.poi : "") : b.testo || "";
+    $("gPasso").textContent = passo; $("gPasso").hidden = !passo;
+    $("gPasso").classList.toggle("grande", !!(f.calma || !es));
+    var come = es && !f.calma && f.k !== "rec" ? es.come : null;
+    $("gCome").innerHTML = come ? '<ol class="passi small">' + come.map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("") + "</ol>" +
+      (es.facile ? '<p class="small"><b>Più facile:</b> ' + esc(es.facile) + "</p>" : "") + (es.attenzione ? '<p class="small muted"><b>Attenzione:</b> ' + esc(es.attenzione) + "</p>" : "") : "";
+    $("gCome").hidden = !come;
+    var conFigura = !!es && !(f.calma && !es);
+    $("gFig").hidden = !conFigura; $("gCerchio").hidden = conFigura;
+    $("gPrec").disabled = GS.i === 0;
+    $("gPausa").innerHTML = GS.pausa ? ICONA.play + "<span>Riprendi</span>" : ICONA.pausa + "<span>Pausa</span>";
+  }
+  function avanti(salto) {
+    var f = fase();
+    if (f.k === "lavoro") GS.lavoro += Math.min(GS.t, f.dur || (f.b.tocchi || 1) * 180);
+    GS.i = Math.min(GS.fasi.length - 1, GS.i + 1);
+    if (salto) while (GS.fasi[GS.i].k === "rec" && GS.i < GS.fasi.length - 1) GS.i++;
+    entra();
+  }
+  function indietro() {
+    var f = fase();
+    if (GS.t > 3 && f.k === "lavoro") { GS.t = 0; GS.prev = -1; entra(); return; }
+    var j = GS.i - 1;
+    while (j > 0 && GS.fasi[j].k !== "lavoro") j--;
+    while (j > 0 && GS.fasi[j - 1].k === "prep") j--;
+    GS.i = Math.max(0, j); entra();
+  }
+  $("gSucc").addEventListener("click", function () { if (GS && GS.attiva) avanti(true); });
+  $("gPrec").addEventListener("click", function () { if (GS && GS.attiva) indietro(); });
+  $("gPausa").addEventListener("click", function () { if (!GS || !GS.attiva) return; GS.pausa = !GS.pausa; if (GS.pausa) { zitto(); parla("In pausa"); } else parla("Si riparte"); disegnaFissi(); });
+  $("gFatto").addEventListener("click", function () {
+    var f = fase(); if (!f.b || !f.b.tocchi) return;
+    GS.tocchi++; bip(880, .1); vibra(60);
+    if (GS.tocchi >= f.b.tocchi) { GS.lavoro += Math.min(GS.t, f.b.tocchi * 180); avanti(); } else parla(String(GS.tocchi) + ". Recupera e riparti quando sei pronto.");
+  });
+
+  // annunci durante una fase: conti, conto alla rovescia, metà tempo
+  function annunci(f, t0, t1) {
+    var b = f.b || {}, es = f.es, dur = f.dur;
+    if (dur != null && f.k !== "fine") {
+      for (var s = 3; s >= 1; s--) if (t0 < dur - s && t1 >= dur - s && dur >= 6) { bip(f.k === "lavoro" ? 740 : 600, .09); if (f.k !== "lavoro" && !GS.conf.calma) parla(String(s), true); }
+    }
+    if (f.k !== "lavoro") return;
+    if (b.respiro) {
+      var a = fiato(b.respiro, t0), c = fiato(b.respiro, t1);
+      if (a.fase !== c.fase || a.n !== c.n) { if (c.fase === 0 || c.fase === 2 || (c.fase % 2 && b.respiro[c.fase] > 0)) { parla(c.testo); bip(c.fase === 0 ? 700 : 520, .12); } }
+      return;
+    }
+    if (b.rip) {
+      var r0 = Math.floor(t0 / b.ritmo), r1 = Math.floor(t1 / b.ritmo);
+      if (es && es.respiro) {
+        var h0 = Math.floor(t0 / (b.ritmo / 2)), h1 = Math.floor(t1 / (b.ritmo / 2));
+        if (h1 > h0 && r1 < b.rip) parla(h1 % 2 ? "Espira" : "Inspira");
+      }
+      if (r1 > r0 && r1 <= b.rip) { bip(r1 === b.rip ? 1046 : 880, .07); if (!(es && es.respiro)) parla(r1 === b.rip ? String(r1) + ". Fatto." : String(r1)); }
+      return;
+    }
+    if (dur >= 20 && !f.calma) {
+      if (dur >= 240) {
+        for (var m = 5; m * 60 < dur; m += 5) if (t0 < m * 60 && t1 >= m * 60) parla("Ancora " + durata(dur - m * 60) + ".");
+        if (t0 < dur - 60 && t1 >= dur - 60) parla("Ultimo minuto.");
+      } else if (t0 < dur / 2 && t1 >= dur / 2) parla("Metà.");
+    }
+  }
+
+  function passo(ora) {
+    if (!GS || !GS.attiva) return;
+    // tempo reale: se lo schermo si spegne durante una camminata, al ritorno il timer è comunque giusto
+    var dt = GS.ultimo == null ? 0 : Math.min(4 * 3600, (ora - GS.ultimo) / 1000); GS.ultimo = ora;
+    var f = fase();
+    while (!GS.pausa && f.k !== "fine" && dt > 0) {
+      var parte = f.dur == null ? dt : Math.min(dt, f.dur - GS.t), t0 = GS.t;
+      GS.t += parte; dt -= parte;
+      if (parte < 2) annunci(f, t0, GS.t);
+      if (f.dur != null && GS.t >= f.dur) { avanti(); f = fase(); } else break;
+    }
+    if (f.k !== "fine") disegna(f);
+    rafId = requestAnimationFrame(passo);
+  }
+  var ultimoDisegno = 0;
+  function disegna(f) {
+    var t = GS.t, b = f.b || {}, es = f.es;
+    // numero grande e riga sotto
+    var num = "", sub = "";
+    if (f.k === "lavoro" && b.rip) { num = Math.min(b.rip, Math.floor(t / b.ritmo) + 1) + '<small> / ' + b.rip + "</small>"; sub = b.alterna ? (Math.floor(t / b.ritmo) % 2 ? "Gamba sinistra" : "Gamba destra") : "ripetizione"; }
+    else if (f.k === "lavoro" && b.tocchi) { num = GS.tocchi + '<small> / ' + b.tocchi + "</small>"; sub = "fatte · tempo " + mmss(t); }
+    else if (f.dur != null) { num = mmss(f.dur - t); sub = f.k === "lavoro" && f.lati === 2 ? (f.lato ? "secondo lato" : "primo lato") : ""; }
+    if (es && es.respiro && f.k === "lavoro" && b.rip) sub = (t % b.ritmo) < b.ritmo / 2 ? "inspira" : "espira";
+    $("gNum").innerHTML = num; $("gSub").textContent = sub;
+    $("gTempo").style.width = (f.dur ? Math.min(100, t / f.dur * 100) : 0) + "%";
+    // tempo totale rimasto
+    var resta = (f.dur != null ? f.dur - t : (b.tocchi - GS.tocchi) * 60), fatto = 0;
+    for (var j = GS.i + 1; j < GS.fasi.length; j++) resta += GS.fasi[j].dur != null ? GS.fasi[j].dur : (GS.fasi[j].b && GS.fasi[j].b.tocchi ? GS.fasi[j].b.tocchi * 60 : 0);
+    fatto = Math.max(0, GS.totale - resta);
+    $("gResta").textContent = GS.pausa ? "in pausa" : mmss(resta) + " alla fine";
+    $("gBarra").style.width = Math.min(100, fatto / (GS.totale || 1) * 100) + "%";
+    // figura o cerchio del respiro (al massimo 30 volte al secondo)
+    var ora = performance.now(); if (ora - ultimoDisegno < 33) return; ultimoDisegno = ora;
+    if (es) {
+      var p = posaDi(f, t);
+      if (p) $("gFig").innerHTML = FIG.svg(es, p.posa, { specchio: p.specchio, label: es.nome });
+    } else {
+      var liv, testo;
+      if (b.respiro && f.k === "lavoro") { var r = fiato(b.respiro, t); liv = r.livello; testo = r.testo; }
+      else { var ph = (t % 10) / 10; liv = ph < .4 ? ph / .4 : 1 - (ph - .4) / .6; testo = f.k === "lavoro" ? "" : "Pronto"; }
+      $("gCerchio").style.setProperty("--s", (.55 + .45 * liv).toFixed(3));
+      $("gCerchioT").textContent = testo;
+    }
+    if (b.respiro && f.k === "lavoro") { var rr = fiato(b.respiro, t); $("gSub").textContent = rr.testo.toLowerCase(); if (es) $("gPasso").textContent = rr.testo; $("gPasso").hidden = false; }
+  }
+
+  function finisci() {
+    var c = GS.conf, min = Math.round(GS.lavoro / 60);
+    GS.attiva = false; cancelAnimationFrame(rafId); tieniAcceso(false);
+    $("gResta").textContent = ""; $("gBarra").style.width = "100%";
+    mostra("gFine"); bip(784, .15); setTimeout(function () { bip(1046, .25); }, 160); vibra([80, 60, 160]);
+    var testo;
+    if (c.calma) { segnaPresenza(); testo = "Nota come ti senti adesso. Puoi tornare qui quando vuoi."; }
+    else {
+      var tot = registraMoto(GS.lavoro);
+      testo = "Hai fatto " + durata(GS.lavoro) + " di movimento. Oggi in tutto, con la guida: " + tot + (tot === 1 ? " minuto" : " minuti") + (tot >= 30 ? ". Obiettivo dei 30 minuti raggiunto!" : ".");
+    }
+    $("gFineTesto").textContent = testo;
+    $("gFineSentire").hidden = !!c.calma;
+    premi(document.querySelectorAll("#gFineSentire button"), function () { return false; });
+    $("gFineConsiglio").textContent = "";
+    parla(c.calma ? "Fatto. Nota come ti senti adesso." : "Fatto, ottimo lavoro! Com'è andata?");
+    if (c.alFine) c.alFine();
+  }
+  $("gFineSentire").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-sent]"); if (!b || !GS) return;
+    var id = GS.conf.id, s = b.dataset.sent, msg;
+    premi(document.querySelectorAll("#gFineSentire button"), function (x) { return x === b; });
+    if (s === "dura") { livelli[id] = "facile"; msg = "La prossima volta parto dalla versione «Per iniziare». Va benissimo così: la costanza conta più dell'intensità."; }
+    else if (s === "facile" && GS.facile) { livelli[id] = "normale"; msg = "Ottimo! La prossima volta proviamo la versione normale."; }
+    else if (s === "facile") msg = "Bene! Puoi rallentare il ritmo per rendere ogni ripetizione più impegnativa, o aggiungere una serie.";
+    else msg = "Perfetto: è il livello giusto. Continua così.";
+    scrivi("qo:livelli", livelli); $("gFineConsiglio").textContent = msg;
+  });
+  function registraMoto(sec) {
+    var g = giorno(OGGI); g.minGuida = (g.minGuida || 0) + sec / 60;
+    var tot = Math.round(g.minGuida);
+    if (tot >= 30 && !g.moto) { g.moto = 1; var cb = document.querySelector('#oggiChecks [data-voce="moto"]'); if (cb) cb.checked = true; }
+    salvaDiario(); return tot;
   }
   function segnaPresenza() { var g = giorno(OGGI); if (!g.presenza) { g.presenza = 1; salvaDiario(); var cb = document.querySelector('#oggiChecks [data-voce="presenza"]'); if (cb) cb.checked = true; } }
-  $("dlgAvvia").addEventListener("click", function () {
-    if (modo === "respiro") { if (timer) { ferma(); $("cerchioTesto").textContent = "In pausa"; $("dlgAvvia").textContent = "Riprendi"; return; } fine = Date.now() + minuti * 60000; $("dlgAvvia").textContent = "Pausa"; ciclo(true); return; }
-    passoI++;
-    if (passoI >= passi.length) { $("dlgPasso").textContent = "Fatto. Nota come ti senti adesso."; $("dlgInfo").textContent = ""; $("dlgAvvia").hidden = true; segnaPresenza(); return; }
-    $("dlgPasso").textContent = passi[passoI]; $("dlgInfo").textContent = "Passo " + (passoI + 1) + " di " + passi.length + ".";
-    if (passoI === passi.length - 1) $("dlgAvvia").textContent = "Fatto";
+  function chiudiGuida(silenzioso) {
+    if (GS && GS.attiva) {
+      var f = fase(); if (f && f.k === "lavoro") GS.lavoro += Math.min(GS.t, f.dur || GS.t);
+      if (!GS.conf.calma && GS.lavoro >= 60) registraMoto(GS.lavoro);
+    }
+    if (GS) GS.attiva = false;
+    cancelAnimationFrame(rafId); zitto(); tieniAcceso(false);
+    if (!silenzioso && gd.open) { gd.close ? gd.close() : gd.removeAttribute("open"); }
+  }
+  $("gChiudi").addEventListener("click", function () { chiudiGuida(); });
+  $("gFineChiudi").addEventListener("click", function () { chiudiGuida(); });
+  gd.addEventListener("close", function () { chiudiGuida(true); });
+  gd.addEventListener("cancel", function () { chiudiGuida(true); });
+
+  // ---- modi per aprire la guida
+  function confRoutine(id, facile, alFine) {
+    var r = Q.ROUTINE.filter(function (x) { return x[0] === id; })[0];
+    return { id: id, titolo: r[1], blocchi: Q.SESSIONI[id], nota: r[5], facile: facile, alFine: alFine };
+  }
+  function confCamminata(min, alFine) {
+    var caldo = Math.min(5, Math.max(2, Math.round(min / 5))), fine = Math.min(5, Math.max(2, Math.round(min / 6)));
+    return { id: "cam" + min, titolo: "Camminata di " + min + " minuti", facile: false, alFine: alFine, nota: "Se oggi non te la senti di farla tutta insieme, vanno bene anche tratti più brevi.",
+      blocchi: [{ e: "camminare", sec: caldo * 60, vel: "lento", testo: "Passo tranquillo per scaldarti." }, { e: "camminare", sec: (min - caldo - fine) * 60, vel: "svelto", testo: "Passo svelto: puoi parlare, ma non cantare." }, { e: "camminare", sec: fine * 60, vel: "lento", testo: "Rallenta piano piano." }] };
+  }
+  function confPresenza(p, alFine) {
+    if (p[4]) return { id: "pres", titolo: p[0], calma: true, alFine: alFine, blocchi: [{ sec: p[1] * 60, respiro: p[4], testo: p[2].join(" ") }] };
+    var sec = Math.max(15, Math.round(p[1] * 60 / p[2].length));
+    return { id: "pres", titolo: p[0], calma: true, alFine: alFine, blocchi: p[2].map(function (s) { return { sec: sec, testo: s }; }) };
+  }
+  function confRespiro(min) { return { id: "respiro", titolo: "Respiro guidato", calma: true, subito: true, blocchi: [{ sec: min * 60, respiro: [4, 0, 6, 0], testo: "Inspira mentre il cerchio si apre, espira mentre si chiude." }] }; }
+  function confAzione(az, titolo) {
+    if (typeof az === "string") return confCodice(az);
+    var moto = az.some(function (b) { return b.e && !b.respiro; });
+    return { id: "az", titolo: titolo, calma: !moto, subito: !moto, blocchi: az };
+  }
+  function confCodice(cod, alFine) {
+    var p = cod.split(":");
+    if (p[0] === "r") return confRoutine(p[1], p[2] === "facile" ? true : undefined, alFine);
+    if (p[0] === "c") return confCamminata(+p[1], alFine);
+    return confPresenza(pres, alFine);
+  }
+  window.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-guida]"); if (!b) return;
+    e.preventDefault(); apriGuida(confCodice(b.dataset.guida));
   });
-  $("dlgDurate").addEventListener("click", function (e) { var b = e.target.closest("[data-min]"); if (!b) return; minuti = +b.dataset.min; ferma(); $("cerchioTesto").textContent = "Pronto"; $("dlgAvvia").textContent = "Avvia"; premi(dlg.querySelectorAll("[data-min]"), function (x) { return x === b; }); });
-  $("dlgChiudi").addEventListener("click", function () { ferma(); dlg.close ? dlg.close() : dlg.removeAttribute("open"); });
-  dlg.addEventListener("close", ferma);
-  document.addEventListener("click", function (e) { var b = e.target.closest("[data-respiro]"); if (b) apriRespiro(+b.dataset.respiro); });
+  document.addEventListener("click", function (e) { var b = e.target.closest("[data-respiro]"); if (b) apriGuida(confRespiro(+b.dataset.respiro)); });
+  $("presInizia").addEventListener("click", function () { apriGuida(confPresenza(pres)); });
+  $("menteEsercizi").addEventListener("click", function (e) { var b = e.target.closest("[data-esercizio]"); if (b) apriGuida(confPresenza(Q.PRESENZA[+b.dataset.esercizio])); });
+
+  // ================= PULSANTI DELLA GUIDA NELLE PAGINE
+  function striscia(id, quanti) {
+    var vis = {}, es = (Q.SESSIONI[id] || []).filter(function (b) { return b.e && !vis[b.e] && (vis[b.e] = 1); }).slice(0, quanti || 6);
+    return '<div class="striscia">' + es.map(function (b) {
+      var e = ES[b.e], p = posaIcona(e);
+      return '<figure class="g-mini">' + FIG.svg(e, p, { label: e.nome }) + "<figcaption>" + esc(e.nome) + "</figcaption></figure>";
+    }).join("") + "</div>";
+  }
+  // Oggi: routine del giorno con le figure e il pulsante
+  $("movGuida").innerHTML = striscia(rout[0], 5) + '<button class="btn" type="button" data-guida="r:' + rout[0] + '">' + ICONA.play + "Fallo con la guida</button>";
+  // Muoversi: tutte le routine
+  $("movRoutine").innerHTML = Q.ROUTINE.map(function (r) {
+    return "<details><summary><span>" + esc(r[1]) + ' <span class="badge no">' + r[2] + ' min</span></span></summary><div><p class="small muted">' + esc(r[3]) + "</p>" + striscia(r[0]) +
+      '<ol class="passi">' + r[4].map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("") + '</ol><p class="small">' + esc(r[5]) + '</p><button class="btn" type="button" style="justify-self:start" data-guida="r:' + r[0] + '">' + ICONA.play + "Fallo con la guida</button></div></details>";
+  }).join("");
+  // Oggi: l'abitudine del giorno, se ha un'azione con timer
+  (function () {
+    var az = Q.AZIONI[ab[1]]; if (!az) return;
+    var lab = typeof az === "string" ? (az[0] === "c" ? "Cammina con la guida" : "Fallo con la guida") : "Fallo adesso · " + durata(az.reduce(function (a, b) { return a + (b.sec || 0) * (b.lati ? 2 : 1); }, 0));
+    $("abitAzione").innerHTML = '<button class="btn sec piccolo" type="button" id="abitVai">' + ICONA.play + esc(lab) + "</button>";
+    $("abitVai").addEventListener("click", function () { apriGuida(confAzione(az, ab[1])); });
+  })();
+
+  // ================= PRIMI PASSI: QUATTRO SETTIMANE PER CHI PARTE DA ZERO
+  var PP = [];
+  Q.PRIMI_PASSI.forEach(function (s, w) { s[2].forEach(function (g) { PP.push({ sett: w, attivita: g }); }); });
+  var primi = leggi("qo:primi", null);
+  function salvaPrimi() { scrivi("qo:primi", primi); renderPrimi(); }
+  function nomeAttivita(cod, breve) {
+    var p = cod.split(":");
+    if (p[0] === "r") { var r = Q.ROUTINE.filter(function (x) { return x[0] === p[1]; })[0]; return r[1] + (p[2] === "facile" ? " · versione per iniziare" : ""); }
+    if (p[0] === "c") return "Camminata di " + p[1] + " minuti";
+    return breve ? "Un momento di presenza" : "Un momento di presenza: " + pres[0];
+  }
+  function minutiAttivita(cod) {
+    var p = cod.split(":");
+    if (p[0] === "c") return +p[1];
+    if (p[0] === "p") return pres[1];
+    var c = confRoutine(p[1], p[2] === "facile");
+    return Math.max(1, Math.round(stima(costruisci(c.blocchi, !!c.facile)) / 60));
+  }
+  function renderPrimi() {
+    var oggi = $("primiOggi"), mov = $("primiMov");
+    if (!primi) {
+      oggi.hidden = !!leggi("qo:primiNo", false);
+      oggi.innerHTML = '<div class="kicker blu"><span class="dot"></span>Se parti da zero</div><h3>Primi passi, in quattro settimane</h3>' +
+        '<p class="small">Non hai mai fatto sport o hai smesso da tanto? Ogni giorno una o due attività brevi, guidate passo passo con figure, timer e voce. Si parte da 3 minuti.</p>' +
+        '<div class="row"><button class="btn" type="button" data-primi="via">Inizia il percorso</button><button class="btn sec piccolo" type="button" data-primi="no">Non ora</button></div>';
+      mov.innerHTML = '<div class="kicker blu"><span class="dot"></span>Se parti da zero</div><h2>Primi passi</h2>' +
+        '<p>Un percorso di quattro settimane che porta, un passo alla volta, verso i 150 minuti di movimento a settimana consigliati dall\'OMS. Ogni attività si fa con la guida: figure animate, timer e voce.</p>' +
+        Q.PRIMI_PASSI.map(function (s) { return '<p class="small"><b>' + esc(s[0]) + "</b> · " + esc(s[1]) + "</p>"; }).join("") +
+        '<div class="row"><button class="btn" type="button" data-primi="via">Inizia il percorso</button></div><p class="fonte">' + fonteHtml("oms_att") + " · " + fonteHtml("epi_att").replace("Fonte: ", "") + "</p>";
+      return;
+    }
+    oggi.hidden = false;
+    var n = Math.min(primi.giorno, PP.length - 1), finito = primi.giorno >= PP.length, g = PP[n], fattoOggi = primi.completato === OGGI;
+    var head = '<div class="kicker blu"><span class="dot"></span>Primi passi</div>';
+    var corpo;
+    if (finito) corpo = "<h3>Percorso completato!</h3><p>Quattro settimane di fila: adesso il movimento fa parte delle tue giornate. Continua con le routine della pagina Muoversi, alternando camminate, forza ed equilibrio.</p>";
+    else if (fattoOggi) corpo = "<h3>Giorno " + primi.giorno + " di " + PP.length + " fatto</h3><p>Ottimo. Il prossimo passo ti aspetta domani: anche il riposo fa parte dell'allenamento.</p>";
+    else corpo = "<h3>Giorno " + (n + 1) + " di " + PP.length + '</h3><p class="small muted">' + esc(Q.PRIMI_PASSI[g.sett][0]) + "</p>" +
+      '<div class="checks">' + g.attivita.map(function (cod, i) {
+        var ok = primi.fatti && primi.fatti[i];
+        return '<div class="check attivita' + (ok ? " ok" : "") + '"><input type="checkbox" data-primi-segna="' + i + '"' + (ok ? " checked" : "") + ' aria-label="Segna come fatto"><span><b>' + esc(nomeAttivita(cod)) + "</b><small>circa " + minutiAttivita(cod) + " min" + (ok ? " · fatto" : "") + "</small></span>" +
+          (ok ? "" : '<button class="btn piccolo" type="button" data-primi-vai="' + i + '">' + ICONA.play + "Vai</button>") + "</div>";
+      }).join("") + "</div>";
+    var punti = '<div class="pp-punti" aria-label="Avanzamento">' + PP.map(function (x, i) { return '<span class="' + (i < primi.giorno ? "s" : i === primi.giorno && !finito ? "c" : "") + '"></span>'; }).join("") + "</div>";
+    oggi.innerHTML = head + corpo + punti;
+    mov.innerHTML = head + "<h2>Primi passi</h2>" + punti +
+      Q.PRIMI_PASSI.map(function (s, w) {
+        return "<details" + (PP[n].sett === w && !finito ? " open" : "") + "><summary>" + esc(s[0]) + '</summary><div><p class="small muted">' + esc(s[1]) + '</p><ol class="passi small">' +
+          s[2].map(function (gg, d) { var idx = w * 7 + d; return "<li" + (idx < primi.giorno ? ' class="fatto"' : "") + ">" + esc(gg.map(function (c) { return nomeAttivita(c, true); }).join(" + ")) + (idx < primi.giorno ? " ✓" : "") + "</li>"; }).join("") + "</ol></div></details>";
+      }).join("") +
+      '<p class="small muted">Se salti un giorno non succede niente: riprendi da dove eri rimasto.</p><div class="row"><a class="btn sec piccolo" href="#oggi">Vai al passo di oggi</a><button class="btn sec piccolo" type="button" data-primi="stop">Ricomincia da capo</button></div>';
+  }
+  function segnaAttivita(i, si) {
+    if (!primi || primi.completato === OGGI || primi.giorno >= PP.length) return;
+    primi.fatti = primi.fatti || {};
+    if (si) primi.fatti[i] = 1; else delete primi.fatti[i];
+    var g = PP[primi.giorno];
+    if (g.attivita.every(function (c, j) { return primi.fatti[j]; })) { primi.giorno++; primi.fatti = {}; primi.completato = OGGI; }
+    salvaPrimi();
+  }
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-primi]");
+    if (b) {
+      var a = b.dataset.primi;
+      if (a === "via") { primi = { giorno: 0, fatti: {}, inizio: OGGI, completato: null }; salvaPrimi(); if (location.hash !== "#oggi") location.hash = "#oggi"; }
+      else if (a === "no") { scrivi("qo:primiNo", true); renderPrimi(); }
+      else if (a === "stop" && confirm("Vuoi ricominciare il percorso dal primo giorno?")) { primi = null; try { localStorage.removeItem("qo:primi"); } catch (x) {} scrivi("qo:primiNo", false); renderPrimi(); }
+      return;
+    }
+    var v = e.target.closest("[data-primi-vai]");
+    if (v && primi) {
+      var i = +v.dataset.primiVai, cod = PP[primi.giorno].attivita[i];
+      apriGuida(confCodice(cod, function () { segnaAttivita(i, true); }));
+    }
+  });
+  document.addEventListener("change", function (e) { var c = e.target.closest("[data-primi-segna]"); if (c) segnaAttivita(+c.dataset.primiSegna, c.checked); });
+  renderPrimi();
 
   // ================= PROFILO E IMPOSTAZIONI
   $("pNascita").value = profilo.nascita || ""; $("pSesso").value = profilo.sesso || ""; $("pFumo").value = profilo.fumo || "mai"; $("pForte").value = profilo.forte ? "1" : "";

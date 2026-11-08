@@ -22,6 +22,28 @@ Q.ROUTINE.forEach((r) => { if (!r[1] || !(r[2] > 0) || !r[4].length) no(`routine
 Q.MENTE.forEach((s) => { if (!s[1] || !s[3].length) no(`scheda «${s[1]}» incompleta`); fonte(s[4], `scheda «${s[1]}»`); });
 Q.GIORNATE.forEach((g) => { if (!(g[0] >= 1 && g[0] <= 12 && g[1] >= 1 && g[1] <= 31)) no(`giornata «${g[2]}»: data non valida`); });
 if (Q.DOMANDE.length < 20) no("troppo poche domande");
+// Guida: ogni routine ha la sua sessione, ogni esercizio ha figura e istruzioni
+for (const [k, e] of Object.entries(Q.ESERCIZI)) {
+  if (!e.nome || !Array.isArray(e.pose) || !e.pose.length || !Array.isArray(e.come) || !e.come.length) no(`esercizio guidato «${k}» incompleto`);
+  if (!["rip", "ciclo", "tieni"].includes(e.modo)) no(`esercizio guidato «${k}»: modo non valido`);
+}
+Q.ROUTINE.forEach((r) => {
+  const s = Q.SESSIONI[r[0]];
+  if (!Array.isArray(s) || !s.length) return no(`routine «${r[1]}» senza sessione guidata`);
+  s.forEach((b, i) => {
+    if (b.e && !Q.ESERCIZI[b.e]) no(`routine «${r[1]}», blocco ${i + 1}: esercizio «${b.e}» sconosciuto`);
+    if (b.e && !(b.rip > 0 && b.ritmo > 0) && !(b.sec > 0) && !(b.tocchi > 0)) no(`routine «${r[1]}», blocco ${i + 1}: manca durata o ripetizioni`);
+    if (!b.e && !(b.rec > 0)) no(`routine «${r[1]}», blocco ${i + 1}: vuoto`);
+  });
+});
+const codiceOk = (c) => c === "p" || /^c:\d+$/.test(c) || (/^r:/.test(c) && Q.SESSIONI[c.split(":")[1]] && (!c.split(":")[2] || c.split(":")[2] === "facile"));
+if (Q.PRIMI_PASSI.reduce((n, s) => n + s[2].length, 0) !== 28) no("Primi passi: servono 28 giorni");
+Q.PRIMI_PASSI.forEach((s) => s[2].forEach((g) => g.forEach((c) => { if (!codiceOk(c)) no(`Primi passi: attività «${c}» non valida`); })));
+for (const [t, a] of Object.entries(Q.AZIONI)) {
+  if (!Q.ABITUDINI.some((x) => x[1] === t)) no(`azione per «${t}»: abitudine inesistente`);
+  if (typeof a === "string" ? !codiceOk(a) : !a.every((b) => b.sec > 0 && (!b.e || Q.ESERCIZI[b.e]))) no(`azione per «${t}» non valida`);
+}
+Q.PRESENZA.forEach((e) => { if (e[4] && !(e[4].length === 4 && e[4][0] > 0 && e[4][2] > 0)) no(`esercizio «${e[0]}»: ritmo del respiro non valido`); });
 
 const ids = new Set();
 for (const v of P.VOCI) {
@@ -42,5 +64,5 @@ for (const [p, id, atteso] of P.PROVE) {
 if (P.prossima("2025-03-10", 2) !== "2027-03-10") no("calcolo della prossima scadenza");
 if (!Array.isArray(globalThis.QO_DATI?.notizie)) no("data.js non valido");
 
-console.log(`abitudini ${Q.ABITUDINI.length}, esercizi ${Q.PRESENZA.length}, domande ${Q.DOMANDE.length}, alimenti ${Q.ALIMENTI.length}, routine ${Q.ROUTINE.length}, voci di prevenzione ${P.VOCI.length} (verificate il ${P.verificate})`);
+console.log(`abitudini ${Q.ABITUDINI.length}, esercizi ${Q.PRESENZA.length}, domande ${Q.DOMANDE.length}, alimenti ${Q.ALIMENTI.length}, routine ${Q.ROUTINE.length}, esercizi guidati ${Object.keys(Q.ESERCIZI).length}, voci di prevenzione ${P.VOCI.length} (verificate il ${P.verificate})`);
 if (ko) { console.error(`${ko} verifiche non superate`); process.exit(1); }

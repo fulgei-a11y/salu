@@ -61,10 +61,10 @@
     ["relazioni", "Fare qualcosa per gli altri", "Aiutare, fare volontariato o anche un piccolo favore dà senso e allontana l'isolamento. È uno dei «cinque passi per il benessere» proposti dal servizio sanitario inglese.", "nhs_emm"]
   ];
 
-  // Esercizi di presenza, da 1 a 5 minuti: [titolo, minuti, passi[], perché]
+  // Esercizi di presenza, da 1 a 5 minuti: [titolo, minuti, passi[], perché, ritmo del respiro facoltativo [inspira, pausa, espira, pausa]]
   var PRESENZA = [
     ["Cinque, quattro, tre, due, uno", 2, ["Nota 5 cose che vedi.", "Nota 4 cose che puoi toccare: senti la loro consistenza.", "Nota 3 suoni.", "Nota 2 odori.", "Nota 1 sapore, o semplicemente com'è la tua bocca adesso."], "Usare i sensi riporta l'attenzione al presente quando la mente corre avanti o indietro."],
-    ["Il respiro lungo", 2, ["Siediti comodo, piedi a terra.", "Inspira dal naso contando fino a 4.", "Espira piano dalla bocca contando fino a 6.", "Ripeti per dieci respiri, senza forzare."], "Un'espirazione più lunga dell'inspirazione aiuta il corpo a passare dalla modalità allarme a quella di recupero."],
+    ["Il respiro lungo", 2, ["Siediti comodo, piedi a terra.", "Inspira dal naso contando fino a 4.", "Espira piano dalla bocca contando fino a 6.", "Ripeti per dieci respiri, senza forzare."], "Un'espirazione più lunga dell'inspirazione aiuta il corpo a passare dalla modalità allarme a quella di recupero.", [4, 0, 6, 0]],
     ["Gettare l'àncora", 3, ["Nota i pensieri e le emozioni che ci sono, senza cacciarli.", "Ora senti i piedi che premono a terra e la schiena sulla sedia.", "Allunga le braccia, muovi le dita, raddrizza la schiena.", "Guarda intorno: dove sei, cosa stai facendo, chi c'è con te?"], "È l'esercizio di «radicamento» della guida OMS sullo stress: non elimina la tempesta, ma ti tiene saldo mentre passa."],
     ["Fermati (STOP)", 1, ["Smetti per un attimo quello che stai facendo.", "Fai un respiro consapevole.", "Osserva: cosa provi nel corpo, cosa pensi, cosa senti?", "Riprendi l'attività scegliendo come farla."], "Un minuto di pausa tra stimolo e reazione restituisce libertà di scelta."],
     ["La scansione del corpo", 5, ["Chiudi gli occhi o abbassa lo sguardo.", "Porta l'attenzione ai piedi, poi alle gambe, al bacino, alla pancia.", "Sali a petto, schiena, spalle, braccia e mani.", "Arriva a collo, viso e testa.", "Dove trovi tensione, respira lì e lascia andare un poco."], "Ascoltare il corpo zona per zona aiuta a riconoscere dove si accumula lo stress."],
@@ -89,7 +89,7 @@
     ["La pausa del semaforo", 1, ["A ogni attesa (semaforo, fila, ascensore) non prendere il telefono.", "Fai un respiro e guarda intorno.", "Nota com'è il tuo corpo in questo momento."], "Le attese diventano occasioni di presenza invece che di distrazione."],
     ["Il suono che finisce", 2, ["Ascolta un suono che sta finendo: una campana, un'eco, una nota.", "Segui il suono finché sparisce.", "Rimani nel silenzio che resta per qualche secondo."], "Allena l'attenzione fine e la capacità di stare nel silenzio."],
     ["Un messaggio gentile", 2, ["Pensa a una persona cara.", "Scrivile un messaggio breve e sincero, senza motivo.", "Nota come ti senti dopo averlo inviato."], "La connessione con gli altri è una delle basi del benessere mentale."],
-    ["Respiro quadrato", 2, ["Inspira contando fino a 4.", "Trattieni contando fino a 4.", "Espira contando fino a 4.", "Resta senza aria contando fino a 4, poi ricomincia. Se trattenere ti mette a disagio, salta le pause."], "Il ritmo regolare dà alla mente un compito semplice e calma il respiro."],
+    ["Respiro quadrato", 2, ["Inspira contando fino a 4.", "Trattieni contando fino a 4.", "Espira contando fino a 4.", "Resta senza aria contando fino a 4, poi ricomincia. Se trattenere ti mette a disagio, salta le pause."], "Il ritmo regolare dà alla mente un compito semplice e calma il respiro.", [4, 4, 4, 4]],
     ["Il corpo prima di decidere", 1, ["Davanti a una decisione, chiudi un attimo gli occhi.", "Immagina una scelta e nota come reagisce il corpo.", "Poi immagina l'altra.", "Usa queste sensazioni come informazione in più, non come verdetto."], "Corpo e mente parlano insieme: ascoltarli entrambi aiuta a scegliere."]
   ];
 
@@ -304,9 +304,331 @@
     ["persone", "Ho avuto un contatto che mi ha fatto bene", "Una telefonata, una chiacchierata, un abbraccio."]
   ];
 
+  // Esercizi delle routine, con figura animata e istruzioni.
+  // vista: "lato" o "fronte"; pose: posizioni chiave della figura (vedi il motore FIG in index.html);
+  // modo: "rip" (una ripetizione percorre le pose e torna), "ciclo" (movimento continuo), "tieni" (si va nella posa e si resta).
+  // come: istruzioni passo passo; facile: versione per chi inizia; attenzione: sicurezza.
+  var ESERCIZI = {
+    braccia_respiro: {
+      nome: "Respiro con le braccia", vista: "fronte", modo: "rip", respiro: true,
+      pose: [{ a: [6, 6], b: [6, 6] }, { a: [172, 178], b: [172, 178], c: 180 }],
+      come: ["In piedi, piedi alla larghezza delle anche, spalle morbide.", "Inspira dal naso mentre alzi le braccia di lato fin sopra la testa.", "Espira piano dalla bocca mentre le riporti giù."],
+      facile: "Puoi farlo da seduto e alzare le braccia solo fino all'altezza delle spalle.",
+      attenzione: "Se ti gira la testa, respira più piano o fermati."
+    },
+    spalle_cerchi: {
+      nome: "Cerchi con le spalle", vista: "lato", modo: "rip", inverti: true,
+      pose: [{ a: [90, 255], b: [90, 255] }, { a: [180, 345], b: [180, 345] }, { a: [270, 75], b: [270, 75] }, { a: [360, 165], b: [360, 165] }],
+      chiudi: true,
+      come: ["Appoggia la punta delle dita sulle spalle.", "Disegna con i gomiti cerchi grandi e lenti: avanti, su, indietro, giù.", "A metà delle ripetizioni cambia verso."],
+      facile: "Senza mani sulle spalle: solleva le spalle verso le orecchie e lasciale scendere indietro.",
+      attenzione: "Non deve fare male: se senti fastidio, fai cerchi più piccoli."
+    },
+    torsione_seduto: {
+      nome: "Torsione da seduto", vista: "fronte", modo: "rip", icona: 1,
+      oggetti: [["sediaf", 100], ["rotazione", 100, 34]],
+      pose: [
+        { cf: .3, g: [14, 2], k: [14, 2], ma: "sb", mb: "sa", gb: true },
+        { cf: .3, g: [14, 2], k: [14, 2], ma: "sb", mb: "sa", w: .45, hx: 6 },
+        { cf: .3, g: [14, 2], k: [14, 2], ma: "sb", mb: "sa" },
+        { cf: .3, g: [14, 2], k: [14, 2], ma: "sb", mb: "sa", w: .45, hx: -6 }
+      ], chiudi: true,
+      come: ["Siediti sul bordo della sedia, schiena dritta e piedi a terra.", "Incrocia le braccia sul petto.", "Ruota piano busto e testa verso destra, torna al centro, poi verso sinistra: è una ripetizione."],
+      facile: "Ruota di poco: conta il movimento, non quanto arrivi lontano.",
+      attenzione: "Niente strappi. Se hai problemi alla schiena, chiedi al medico."
+    },
+    marcia: {
+      nome: "Marcia sul posto", vista: "lato", modo: "ciclo", periodo: 1.4,
+      pose: [
+        { g: [78, -4, 95], k: [0, 0, 90], a: [-28, -12], b: [30, 70] },
+        { g: [0, 0, 90], k: [0, 0, 90], a: [0, 10], b: [0, 10] },
+        { k: [78, -4, 95], g: [0, 0, 90], b: [-28, -12], a: [30, 70] },
+        { g: [0, 0, 90], k: [0, 0, 90], a: [0, 10], b: [0, 10] }
+      ], chiudi: true,
+      come: ["Solleva un ginocchio alla volta, come se marciassi.", "Muovi le braccia come quando cammini.", "Tieni un ritmo che ti lasci respirare e parlare."],
+      facile: "Alza poco le ginocchia, oppure marcia da seduto.",
+      attenzione: "Stai vicino a un appoggio se hai poco equilibrio."
+    },
+    polpaccio: {
+      nome: "Allungamento del polpaccio", vista: "lato", modo: "tieni", lati: true,
+      oggetti: [["muro", 158]],
+      pose: [{ pi: 112, ma: [157, 92], mb: [157, 92] }, { t: 160, g: [28, -6, 90], k: [-24, -24, 90], pi: 118, ma: [157, 92], mb: [157, 92] }],
+      come: ["Mani al muro, una gamba avanti piegata e l'altra indietro tesa.", "Il tallone della gamba dietro resta a terra: senti tirare il polpaccio.", "Resta fermo e respira, senza molleggiare."],
+      facile: "Avvicina il piede dietro al muro: l'allungamento diventa più leggero.",
+      attenzione: "Deve tirare, non fare male."
+    },
+    camminare: {
+      nome: "Camminare", vista: "lato", modo: "ciclo", periodo: 1.1,
+      pose: [
+        { g: [24, 4, 92], k: [-20, -16, 75], a: [-22, -12], b: [22, 42], t: 178 },
+        { k: [24, 4, 92], g: [-20, -16, 75], b: [-22, -12], a: [22, 42], t: 178 }
+      ], chiudi: true,
+      come: ["Testa alta, sguardo avanti, spalle rilassate.", "Appoggia il tallone e spingi con la punta del piede.", "Lascia oscillare le braccia."],
+      facile: "Cammina anche in casa o in un corridoio: conta il tempo, non il posto.",
+      attenzione: "Scarpe comode. Con il caldo, cammina nelle ore fresche."
+    },
+    petto: {
+      nome: "Apri il petto", vista: "lato", modo: "tieni",
+      pose: [{}, { a: [-38, -18], b: [-38, -18], t: 184, s: -3, c: 183 }],
+      come: ["Intreccia le mani dietro la schiena.", "Porta le spalle indietro e apri il petto, con il mento parallelo al pavimento.", "Respira lentamente."],
+      facile: "Se le mani non si raggiungono, tieni un asciugamano tra le due mani.",
+      attenzione: "Non inarcare troppo la parte bassa della schiena."
+    },
+    collo: {
+      nome: "Allungamento del collo", vista: "fronte", modo: "tieni", lati: true,
+      pose: [{}, { c: 140, a: [4, 4], b: [8, 8], sy: -2 }],
+      come: ["Seduto o in piedi, spalle basse e rilassate.", "Inclina la testa portando l'orecchio verso la spalla, senza alzare la spalla.", "Resta e respira, poi cambia lato."],
+      facile: "Inclina meno: basta sentire un leggero allungamento.",
+      attenzione: "Niente rotazioni rapide del collo."
+    },
+    punte: {
+      nome: "Sulle punte", vista: "lato", modo: "rip",
+      oggetti: [["sedia", 118]],
+      pose: [{ ma: [119, 112], mb: [119, 112] }, { g: [0, 0, 42], k: [0, 0, 42], ma: [119, 112], mb: [119, 112] }],
+      come: ["In piedi, piedi paralleli. Se vuoi, appoggia le mani allo schienale di una sedia.", "Sali piano sulle punte.", "Scendi controllando, senza lasciarti cadere."],
+      facile: "Sali di poco, oppure fallo da seduto alzando i talloni.",
+      attenzione: "Tieniti a un appoggio se perdi l'equilibrio."
+    },
+    lontano: {
+      nome: "Guarda lontano", vista: "lato", modo: "tieni",
+      oggetti: [["finestra", 146]],
+      pose: [{ x: 90 }, { x: 90, c: 168 }],
+      come: ["Guarda fuori da una finestra, verso il punto più lontano che vedi.", "Lascia rilassare gli occhi e sbatti le palpebre ogni tanto."],
+      facile: null,
+      attenzione: null
+    },
+    sedia_alzati: {
+      nome: "Alzarsi dalla sedia", vista: "lato", modo: "rip", icona: 1,
+      oggetti: [["sedia", 58]],
+      pose: [
+        { x: 80, t: 172, g: [88, 2, 90], k: [88, 2, 90], a: [80, 84], b: [80, 84], pi: 112 },
+        { x: 80, t: 138, g: [84, 8, 90], k: [84, 8, 90], a: [100, 98], b: [100, 98], pi: 112, c: 125 },
+        { t: 178, a: [86, 88], b: [86, 88], pi: 112 }
+      ],
+      come: ["Siediti sul bordo di una sedia stabile, piedi a terra un po' arretrati.", "Porta il busto in avanti e alzati spingendo con le gambe, braccia avanti.", "Torna a sederti piano, controllando la discesa."],
+      facile: "Aiutati con le mani sulle cosce o sui braccioli: con il tempo ne avrai meno bisogno.",
+      attenzione: "Usa una sedia senza ruote, appoggiata al muro perché non scivoli."
+    },
+    muro_piegamenti: {
+      nome: "Piegamenti al muro", vista: "lato", modo: "rip",
+      oggetti: [["muro", 160]],
+      pose: [{ t: 150, g: [-30, -30, 90], k: [-30, -30, 90], pi: 60, ma: [159, 88], mb: [159, 88], c: 150 }, { t: 138, g: [-42, -42, 90], k: [-42, -42, 90], pi: 60, ma: [159, 88], mb: [159, 88], c: 136 }],
+      come: ["Mani al muro all'altezza delle spalle, piedi un passo indietro.", "Piega i gomiti e porta il petto verso il muro, con il corpo dritto come una tavola.", "Spingi e torna su."],
+      facile: "Avvicina i piedi al muro: lo sforzo diminuisce.",
+      attenzione: "Per più impegno, usa un tavolo robusto al posto del muro."
+    },
+    ponte: {
+      nome: "Ponte per i glutei", vista: "lato", modo: "rip",
+      oggetti: [["tappeto"]],
+      pose: [{ x: 110, t: -90, c: -96, g: [140, -18, 90], k: [140, -18, 90], a: [90, 90], b: [90, 90] }, { x: 110, t: -56, c: -80, g: [100, -2, 92], k: [100, -2, 92], a: [100, 94], b: [100, 94] }],
+      come: ["Sdraiato sulla schiena, ginocchia piegate e piedi appoggiati a terra.", "Spingi con i talloni e solleva il bacino finché spalle, anche e ginocchia sono in linea.", "Resta un secondo e scendi piano."],
+      facile: "Solleva il bacino di poco.",
+      attenzione: "Non inarcare la schiena: il lavoro lo fanno i glutei."
+    },
+    affondo: {
+      nome: "Affondo con appoggio", vista: "lato", modo: "rip",
+      oggetti: [["sedia", 54, 1]],
+      pose: [{ x: 96, mb: [56, 110] }, { x: 96, g: [62, -4, 90], k: [-22, -78, 40], mb: [56, 110] }],
+      come: ["In piedi, tieni una mano sullo schienale di una sedia.", "Fai un passo avanti e piega tutte e due le ginocchia, con il busto dritto.", "Spingi con la gamba davanti e torna in piedi. Alterna le gambe."],
+      facile: "Fai un passo più corto e scendi poco.",
+      attenzione: "Il ginocchio davanti resta sopra la caviglia, non oltre la punta del piede."
+    },
+    plank: {
+      nome: "Plank sulle ginocchia", vista: "lato", modo: "tieni",
+      oggetti: [["tappeto"]],
+      pose: [{ x: 84, t: 100, c: 98, g: [-76, -110, -160], k: [-76, -110, -160], a: [0, 90], b: [0, 90] }, { x: 84, t: 108, c: 104, g: [-62, -110, -160], k: [-62, -110, -160], a: [0, 90], b: [0, 90] }],
+      come: ["Avambracci a terra sotto le spalle, ginocchia a terra.", "Solleva il bacino finché il corpo è dritto dalle ginocchia alla testa.", "Stringi un po' la pancia e respira normalmente."],
+      facile: "Tieni meno secondi, oppure fallo in piedi con le mani su un tavolo.",
+      attenzione: "Non trattenere il fiato e non lasciar cadere il bacino."
+    },
+    quadricipite: {
+      nome: "Allungamento della coscia", vista: "lato", modo: "tieni", lati: true,
+      oggetti: [["sedia", 118]],
+      pose: [{ x: 100, mb: [119, 112] }, { x: 100, g: [-14, -158, -100], ma: "ca", mb: [119, 112] }],
+      come: ["In piedi, tieniti a una sedia o al muro.", "Piega una gamba e porta il tallone verso il gluteo, tenendo la caviglia con la mano.", "Ginocchia vicine; resta e respira."],
+      facile: "Se non arrivi alla caviglia, usa un asciugamano o piega meno.",
+      attenzione: "Non tirare forte il ginocchio."
+    },
+    un_piede: {
+      nome: "In equilibrio su un piede", vista: "lato", modo: "tieni", lati: true,
+      oggetti: [["sedia", 118]],
+      pose: [{ ma: [119, 112] }, { g: [42, -22, 95], ma: [119, 112] }],
+      come: ["In piedi accanto a una sedia stabile, una mano sullo schienale.", "Solleva un piede da terra e resta in equilibrio.", "Quando ti senti sicuro, appoggia solo un dito."],
+      facile: "Solleva appena il tallone e lascia la punta a terra.",
+      attenzione: "Fallo sempre vicino a un appoggio sicuro."
+    },
+    tallone_punta: {
+      nome: "Tallone davanti alla punta", vista: "lato", modo: "ciclo", passi: 2,
+      pose: [
+        { g: [18, 4, 88], k: [-12, -10, 78], a: [55, 70], b: [35, 50] },
+        { k: [18, 4, 88], g: [-12, -10, 78], a: [55, 70], b: [35, 50] }
+      ], chiudi: true,
+      come: ["Cammina su una linea immaginaria.", "A ogni passo appoggia il tallone proprio davanti alla punta dell'altro piede.", "Guarda avanti, non i piedi."],
+      facile: "Cammina accanto a un muro o al bancone della cucina, per poterti appoggiare.",
+      attenzione: "Togli dal pavimento tappeti e ostacoli."
+    },
+    punte_talloni: {
+      nome: "Punte e talloni", vista: "lato", modo: "rip", icona: 1,
+      oggetti: [["sedia", 118]],
+      pose: [{ ma: [119, 112], mb: [119, 112] }, { g: [0, 0, 42], k: [0, 0, 42], ma: [119, 112], mb: [119, 112] }, { ma: [119, 112], mb: [119, 112] }, { g: [0, 0, 128], k: [0, 0, 128], t: 177, ma: [119, 112], mb: [119, 112] }],
+      chiudi: true,
+      come: ["Tieniti allo schienale di una sedia.", "Sali sulle punte e scendi.", "Poi solleva le punte restando sui talloni, e torna giù."],
+      facile: "Fai solo la salita sulle punte.",
+      attenzione: "Movimenti lenti, sempre con l'appoggio."
+    },
+    peso: {
+      nome: "Sposta il peso", vista: "fronte", modo: "ciclo", periodo: 5,
+      pose: [{ x: 92, t: 184, g: [-3, -3], k: [13, 13], a: [10, 10], b: [10, 10] }, { x: 108, t: 176, g: [13, 13], k: [-3, -3], a: [10, 10], b: [10, 10] }],
+      chiudi: true,
+      come: ["In piedi, piedi alla larghezza delle anche, vicino a un appoggio.", "Sposta lentamente il peso su un piede, poi sull'altro.", "Senti la pianta del piede che preme a terra."],
+      facile: "Tieni le mani sull'appoggio per tutto il tempo.",
+      attenzione: "Movimento piccolo e lento: non serve sollevare i piedi."
+    },
+    gatto_mucca: {
+      nome: "Gatto e mucca", vista: "lato", modo: "rip", respiro: true,
+      oggetti: [["tappeto"]],
+      pose: [{ x: 72, t: 106, s: 11, c: 30, g: [0, -90, -150], k: [0, -90, -150], a: [0, 0], b: [0, 0] }, { x: 72, t: 106, s: -9, c: 118, g: [0, -90, -150], k: [0, -90, -150], a: [0, 0], b: [0, 0] }],
+      come: ["A quattro zampe: mani sotto le spalle, ginocchia sotto le anche.", "Inspirando lascia scendere la pancia e alza lo sguardo.", "Espirando arrotonda la schiena verso l'alto e porta il mento verso il petto."],
+      facile: "Puoi farlo da seduto, con le mani sulle ginocchia.",
+      attenzione: "Muoviti piano. Se le ginocchia fanno male, mettici sotto un cuscino."
+    },
+    ginocchia_petto: {
+      nome: "Ginocchia al petto", vista: "lato", modo: "tieni",
+      oggetti: [["tappeto"]],
+      pose: [{ x: 112, t: -90, c: -96, g: [140, -18, 90], k: [140, -18, 90], a: [90, 90], b: [90, 90] }, { x: 112, t: -90, c: -96, g: [-150, 95, 150], k: [-150, 95, 150], ma: "ka", mb: "kb" }],
+      come: ["Sdraiato sulla schiena, porta le ginocchia verso il petto.", "Abbracciale con le mani e respira lentamente.", "Se ti fa bene, dondola piano da un lato all'altro."],
+      facile: "Porta al petto una gamba alla volta.",
+      attenzione: "Testa e spalle restano appoggiate."
+    },
+    torsione_sdraiato: {
+      nome: "Torsione da sdraiato", vista: "lato", modo: "tieni", lati: true,
+      oggetti: [["tappeto"]],
+      pose: [{ x: 112, y: 177, t: -90, c: -96, g: [140, -18, 90], k: [140, -18, 90], a: [90, 90], b: [90, 90] }, { x: 112, y: 177, t: -90, c: -100, g: [118, -50, 90], k: [130, -35, 90], a: [90, 90], b: [90, 90] }],
+      come: ["Sdraiato sulla schiena, ginocchia piegate, braccia aperte.", "Lascia scendere piano le ginocchia da un lato, tenendo le spalle a terra.", "Resta e respira, poi cambia lato."],
+      facile: "Lascia scendere le ginocchia solo a metà.",
+      attenzione: "Movimento lento e senza dolore."
+    },
+    bambino: {
+      nome: "Posizione del bambino", vista: "lato", modo: "tieni",
+      oggetti: [["tappeto"]],
+      pose: [{ x: 76, t: 175, g: [62, -90, -170], k: [62, -90, -170], a: [5, 10], b: [5, 10] }, { x: 76, t: 98, s: 7, c: 60, g: [62, -90, -170], k: [62, -90, -170], a: [96, 92], b: [96, 92] }],
+      come: ["In ginocchio, siediti sui talloni.", "Porta il busto in avanti sulle cosce e allunga le braccia a terra.", "Appoggia la fronte e respira lentamente."],
+      facile: "Metti un cuscino tra talloni e glutei, o sotto la fronte.",
+      attenzione: "Evitala se hai dolore alle ginocchia."
+    },
+    pancia: {
+      nome: "Respiro con la pancia", vista: "lato", modo: "ciclo", periodo: 10,
+      oggetti: [["tappeto"]],
+      pose: [{ x: 112, t: -90, c: -96, g: [140, -18, 90], k: [140, -18, 90], ma: "ventre", mb: "ventre", ga: false, gb: false }, { x: 112, t: -90, c: -96, s: -5, g: [140, -18, 90], k: [140, -18, 90], ma: "ventre", mb: "ventre", ga: false, gb: false }],
+      come: ["Sdraiato, ginocchia piegate, mani sulla pancia.", "Inspira dal naso e senti la pancia che si alza sotto le mani.", "Espira piano dalla bocca, più a lungo di quanto hai inspirato."],
+      facile: "Va benissimo anche da seduto.",
+      attenzione: null
+    },
+    scale: {
+      nome: "Salire le scale", vista: "lato", modo: "ciclo", periodo: 1.6,
+      oggetti: [["gradini", 116]],
+      pose: [{ x: 100, g: [62, -14, 92], k: [0, 0, 90], a: [-20, -10], b: [20, 45], t: 172, ma: null }, { x: 100, g: [20, 6, 90], k: [-14, -24, 70], a: [10, 20], b: [-10, 0], t: 176 }],
+      chiudi: true,
+      come: ["Sali con passo regolare, appoggiando tutto il piede sul gradino.", "Tieni il corrimano.", "Scendi con calma: è la parte in cui si cade più facilmente."],
+      facile: "Fai una sola rampa e riposa quanto serve.",
+      attenzione: "Fermati se senti dolore al petto, vertigini o un fiato insolito."
+    }
+  };
+
+  // Sessioni guidate delle routine: un blocco per esercizio.
+  // rip = ripetizioni, ritmo = secondi per ripetizione, sec = durata, serie e rec = serie e recupero in secondi,
+  // lati = da fare a destra e a sinistra, alterna = gambe alternate, tocchi = da segnare a mano, vel = velocità del passo.
+  var SESSIONI = {
+    risveglio: [
+      { e: "braccia_respiro", rip: 5, ritmo: 8 },
+      { e: "spalle_cerchi", rip: 10, ritmo: 3 },
+      { e: "torsione_seduto", rip: 5, ritmo: 6 },
+      { e: "marcia", sec: 60 },
+      { e: "polpaccio", sec: 30, lati: true }
+    ],
+    scrivania: [
+      { e: "camminare", sec: 60, testo: "Cammina per la stanza o in corridoio." },
+      { e: "petto", sec: 30 },
+      { e: "collo", sec: 20, lati: true },
+      { e: "punte", rip: 15, ritmo: 2 },
+      { e: "lontano", sec: 20 }
+    ],
+    forza: [
+      { e: "sedia_alzati", rip: 10, ritmo: 3.5, serie: 3, rec: 45 },
+      { e: "muro_piegamenti", rip: 10, ritmo: 3, serie: 3, rec: 45 },
+      { e: "ponte", rip: 12, ritmo: 3.5, serie: 3, rec: 45 },
+      { e: "affondo", rip: 16, ritmo: 3.5, serie: 2, rec: 45, alterna: true, testo: "8 per gamba, alternando." },
+      { e: "plank", sec: 20, serie: 3, rec: 30 }
+    ],
+    camminata: [
+      { e: "camminare", sec: 300, vel: "lento", testo: "Passo tranquillo per scaldarti." },
+      { e: "camminare", sec: 1200, vel: "svelto", testo: "Passo svelto: puoi parlare, ma non cantare." },
+      { e: "camminare", sec: 300, vel: "lento", testo: "Rallenta piano piano." },
+      { e: "polpaccio", sec: 20, lati: true },
+      { e: "quadricipite", sec: 20, lati: true }
+    ],
+    equilibrio: [
+      { e: "un_piede", sec: 30, lati: true, serie: 2, rec: 15 },
+      { e: "tallone_punta", rip: 10, ritmo: 2.2, serie: 3, rec: 20, testo: "10 passi su una linea." },
+      { e: "punte_talloni", rip: 10, ritmo: 3 },
+      { e: "peso", sec: 60 },
+      { e: "sedia_alzati", rip: 10, ritmo: 4 }
+    ],
+    mobilita: [
+      { e: "gatto_mucca", rip: 8, ritmo: 6 },
+      { e: "ginocchia_petto", sec: 30 },
+      { e: "torsione_sdraiato", sec: 30, lati: true },
+      { e: "bambino", sec: 60 },
+      { e: "pancia", sec: 60, respiro: [4, 0, 6, 0] }
+    ],
+    scale: [
+      { e: "scale", tocchi: 5, testo: "Sali una rampa a passo normale e scendi con calma. Tocca «Fatto» alla fine di ogni rampa." },
+      { rec: 60 },
+      { e: "scale", tocchi: 3, vel: "svelto", testo: "Sali due rampe a passo svelto tenendo il corrimano, poi scendi lentamente e recupera. Tocca «Fatto» ogni volta." }
+    ],
+    intervalli: [{ e: "camminare", sec: 300, vel: "lento", testo: "Camminata tranquilla per scaldarti." }]
+      .concat([1, 2, 3, 4].reduce(function (a, i) {
+        return a.concat([{ e: "camminare", sec: 60, vel: "molto", testo: "Molto svelto: " + i + " di 4." }, { e: "camminare", sec: 120, vel: "normale", testo: "Passo normale, recupera il fiato." }]);
+      }, []))
+      .concat([{ e: "camminare", sec: 180, vel: "lento", testo: "Passo tranquillo per finire." }])
+  };
+
+  // Primi passi: quattro settimane per chi parte da zero. Ogni giorno 1-2 attività brevi.
+  // "r:id" = routine, "r:id:facile" = routine in versione per iniziare, "c:N" = camminata di N minuti, "p" = esercizio di presenza del giorno.
+  var PRIMI_PASSI = [
+    ["Settimana 1 · Prendere confidenza", "Pochi minuti al giorno per imparare gli esercizi senza fretta.", [
+      ["r:risveglio:facile"], ["p", "c:10"], ["r:risveglio:facile", "r:scrivania"], ["c:10", "p"], ["r:mobilita:facile"], ["c:10"], ["r:risveglio", "p"]]],
+    ["Settimana 2 · Un po' di più", "Le camminate si allungano e arriva l'equilibrio.", [
+      ["c:15"], ["r:risveglio", "r:equilibrio:facile"], ["c:15", "p"], ["r:forza:facile"], ["r:mobilita"], ["c:15"], ["r:risveglio", "p"]]],
+    ["Settimana 3 · Prendere il ritmo", "Due giorni di forza, camminate da 20 minuti.", [
+      ["c:20"], ["r:forza:facile"], ["c:20", "p"], ["r:equilibrio"], ["r:forza:facile"], ["c:20"], ["r:mobilita", "p"]]],
+    ["Settimana 4 · Diventa abitudine", "Ti avvicini ai 150 minuti a settimana consigliati dall'OMS.", [
+      ["c:25"], ["r:forza"], ["c:25", "p"], ["r:equilibrio", "r:scrivania"], ["r:forza"], ["c:30"], ["r:risveglio", "p"]]]
+  ];
+
+  // Azioni con timer collegate alle abitudini del giorno (chiave: titolo dell'abitudine).
+  var AZIONI = {
+    "Le mani, il primo vaccino": [{ sec: 40, testo: "Bagna le mani e insaponale. Strofina palmi, dorsi, tra le dita, pollici e punte delle dita, poi risciacqua.", icona: "mani" }],
+    "Denti, due volte al giorno": [
+      { sec: 30, testo: "Arcata in alto, lato esterno: piccoli movimenti dalla gengiva verso il dente.", icona: "denti" },
+      { sec: 30, testo: "Arcata in alto, lato interno e superfici che masticano.", icona: "denti" },
+      { sec: 30, testo: "Arcata in basso, lato esterno.", icona: "denti" },
+      { sec: 30, testo: "Arcata in basso, lato interno e superfici che masticano. Poi filo o scovolino.", icona: "denti" }],
+    "Gli occhi hanno bisogno di lontano": [{ e: "lontano", sec: 20, testo: "Guarda qualcosa ad almeno sei metri di distanza." }],
+    "Respira con la pancia": [{ e: "pancia", sec: 120, respiro: [4, 0, 6, 0] }],
+    "L'equilibrio si allena": [{ e: "un_piede", sec: 30, lati: true }],
+    "Spezza la sedia": "r:scrivania",
+    "Due giorni di forza": "r:forza",
+    "150 minuti alla settimana": "r:camminata",
+    "Ogni passo conta": "c:10",
+    "Postura: cambia spesso": "r:scrivania",
+    "Il fiato giusto": "r:intervalli"
+  };
+
   window.QO = {
     ABITUDINI: ABITUDINI, PRESENZA: PRESENZA, DOMANDE: DOMANDE, ALIMENTI: ALIMENTI,
     ROUTINE: ROUTINE, MENTE: MENTE, URGENZE: URGENZE, DAL_MEDICO: DAL_MEDICO,
-    GIORNATE: GIORNATE, DIARIO: DIARIO
+    GIORNATE: GIORNATE, DIARIO: DIARIO,
+    ESERCIZI: ESERCIZI, SESSIONI: SESSIONI, PRIMI_PASSI: PRIMI_PASSI, AZIONI: AZIONI
   };
 })();

@@ -1,5 +1,5 @@
 /* Funzionamento offline: rete prima per pagina e contenuti, copia salvata quando manca la rete. */
-const VERSIONE = "qo-v1";
+const VERSIONE = "qo-v2";
 const BASE = ["./", "./index.html", "./fonti.js", "./contenuti.js", "./prevenzione.js", "./data.js", "./manifest.webmanifest", "./icons/icon-192.png", "./icons/icon-512.png", "./icons/favicon.png"];
 
 self.addEventListener("install", (e) => {
