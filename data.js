@@ -1,6 +1,6 @@
 /* Notizie del giorno, generate automaticamente dagli script. */
 window.QO_DATI = {
-  "aggiornato": "2026-11-08T19:36:49.337Z",
+  "aggiornato": "2026-11-08T19:37:34.980Z",
   "notizie": [
     {
       "titolo": "Arbovirosi: 376 casi confermati di Dengue, 30 di Chikungunya, 790 di West Nile",
