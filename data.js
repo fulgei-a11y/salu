@@ -1,11 +1,18 @@
 /* Notizie del giorno, generate automaticamente dagli script. */
 window.QO_DATI = {
-  "aggiornato": "2026-11-08T19:37:34.980Z",
+  "aggiornato": "2026-11-09T13:47:52.478Z",
   "notizie": [
     {
       "titolo": "Arbovirosi: 376 casi confermati di Dengue, 30 di Chikungunya, 790 di West Nile",
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOc2lJZWNkS2x1c3JwQzhSRWlnNXhNRWNzQk5lUkVxdFVjU2JXVEIwYzhYZUhmQlFlOWtocm92TC1tQk9YQ1JXQ0lRNVdTWm5YZ29WTWcwWU52b1VaQ3E0b3JhbXk0Q2pwUzliY3E5eWVpd3ZDTDdsOGxvckFOV092UEVneXdTd1BFOXQzOC13?oc=5",
-      "data": "2026-11-06T13:21:00.000Z",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOU05OZkNBeV82blBJNy0wMHVkc1ZUc3NiaE9xTWtTQ0JVQV9hV3JkelNUUGZUeHM1Q3RQSGdscm85aGRZM3Jkc09rRllfMUs1bV9hNHVQVkdXOWZKY2lZckpob1VaMWRwSkhORGVkbzNPQXBWZWVIT2lhaF9UdjFUbUJLekpuNk1SdlczdUxtRklUcy1BOEx2V05WRHo?oc=5",
+      "data": "2026-11-06T18:31:16.000Z",
+      "fonte": "Istituto Superiore di Sanità",
+      "tipo": "ufficiale"
+    },
+    {
+      "titolo": "\"Fuori sede, dentro la cucina\", dall’Iss una webserie per promuovere la sicurezza alimentare tra i giovani",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPN1ZKQU5SM0tuZ0Y2aGNOb2hFRVQ3UVE5Mm1vMDc5RTJKYUpJQ2FxSEZTcHZLLTNTeFB6OGU5MWhUNUZFS25wRlAyZVZnblhwTThMa19NMUFNNlBfbi1MbFB1RGJDRmhTS29UcktSLVFMUDJUdnlQY0FKd0gyNXZvaTNKa09ZeVVSZ3JQVDR1Nk9QaVprM2k5SmxHZkVSbFhoT01jQkl0TC1KbE9wV0RPUkc3c3JDWmhrVFpJZFZMN0JYdw?oc=5",
+      "data": "2026-11-05T10:43:04.000Z",
       "fonte": "Istituto Superiore di Sanità",
       "tipo": "ufficiale"
     },
@@ -17,13 +24,6 @@ window.QO_DATI = {
       "tipo": "ufficiale"
     },
     {
-      "titolo": "Una vita dietro ogni azione: JACARDI mette le persone al centro della prevenzione delle malattie cardiovascolari e del diabete",
-      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQbkZZYTRMV01uTE5GUnd3YVc1eW5PeEtXMUdKbGo0Qmlwd0xvLVNtM2xyV1RyemVwa095SDlSUkk2ZVdpRjFWUlNRVV9TTEZORDh4TUxlWGtERHEwZXRmS1dvLTZCZy1OWE9CNV85ZlQ2VXFxNWI3X3c2amRkWTIycDdwMVllOEE3YjZmZHRKVFBPT0QxREluT056Qi13WEVjbjZsVmNtSnFSSmpCa0otRW9VOHBBZDdTOEdhZmFLUHV2bnRMZnUtSGZTRFp0MXEwVmlQVVNLTEo5OUkwZWtn?oc=5",
-      "data": "2026-10-23T15:02:53.000Z",
-      "fonte": "Istituto Superiore di Sanità",
-      "tipo": "ufficiale"
-    },
-    {
       "titolo": "Screening del tumore della mammella nelle Aziende Sanitarie del Friuli Venezia Giulia Il Monitoraggio di PASSI dal 2008 al 2024",
       "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOampEc1dQbzlKN2pQZ2hUd21MRnlaTjI0YTdoMjR0RFZhcUxNeElROURuM3dnZkEwSVgtdkVwSE1tSHB2QzltZ2J4YU1TMzlKeVl4MHBOT1Vrd1pKbmlyak5KU1BVTXhiTm1TbkpWeHg3Um5OQnBNYmp4SFhUYVViemVnNkJnejlWVTM1TjQzZFVkSlJZTWZpZnQweDI5eS1UeGJxbGt2d2tIa3pDOEpXZnViTHROQkd4S2hZSWNyc1NIU0tZNzQtS29WVW50UQ?oc=5",
       "data": "2026-10-22T11:12:04.000Z",
@@ -31,25 +31,25 @@ window.QO_DATI = {
       "tipo": "ufficiale"
     },
     {
-      "titolo": "Sanità, in Liguria è boom di vaccinazioni antinfluenzali",
-      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/medicina/2026/11/07/sanita-in-liguria-e-boom-di-vaccinazioni-antinfluenzali_41f1840c-9de6-4635-9cdd-379080f5dc68.html",
-      "data": "2026-11-07T09:55:13.000Z",
+      "titolo": "Oncologi, 'i budget siano adeguati ai bisogni dei pazienti'",
+      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/focus_tumore/2026/11/09/oncologi-i-budget-siano-adeguati-ai-bisogni-dei-pazienti_5f2d1d86-e23c-4492-8988-945b5b007f36.html",
+      "data": "2026-11-09T13:34:35.000Z",
       "fonte": "ANSA Salute",
       "tipo": "stampa"
     },
     {
-      "titolo": "Allarme in Usa, due neonati morti per morbillo in pochi giorni",
-      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/sanita/2026/11/06/in-usa-neonato-morto-per-morbillo-e-il-secondo-decesso-in-pochi-giorni_254d1625-a715-4b73-9f88-88e1a60e272c.html",
-      "data": "2026-11-06T16:49:56.000Z",
+      "titolo": "Cure palliative, servono anche in ospedale e nelle Rsa per un anziano su 2",
+      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/sanita/2026/11/09/cure-palliative-servono-anche-in-ospedale-e-nelle-rsa-per-un-anziano-su-due_636025d4-fcfc-4aa1-b33e-37c1b78ea8f3.html",
+      "data": "2026-11-09T11:36:18.000Z",
       "fonte": "ANSA Salute",
       "tipo": "stampa"
     }
   ],
   "stato": {
-    "Ministero della Salute": 0,
+    "Ministero della Salute": 1,
     "Istituto Superiore di Sanità": 7,
     "ISS EpiCentro": 5,
     "ECDC (in inglese)": 5,
-    "ANSA Salute": 11
+    "ANSA Salute": 3
   }
 };
