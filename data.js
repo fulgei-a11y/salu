@@ -1,18 +1,18 @@
 /* Notizie del giorno, generate automaticamente dagli script. */
 window.QO_DATI = {
-  "aggiornato": "2026-11-09T13:47:52.478Z",
+  "aggiornato": "2026-11-09T23:45:54.527Z",
   "notizie": [
     {
-      "titolo": "Arbovirosi: 376 casi confermati di Dengue, 30 di Chikungunya, 790 di West Nile",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOU05OZkNBeV82blBJNy0wMHVkc1ZUc3NiaE9xTWtTQ0JVQV9hV3JkelNUUGZUeHM1Q3RQSGdscm85aGRZM3Jkc09rRllfMUs1bV9hNHVQVkdXOWZKY2lZckpob1VaMWRwSkhORGVkbzNPQXBWZWVIT2lhaF9UdjFUbUJLekpuNk1SdlczdUxtRklUcy1BOEx2V05WRHo?oc=5",
-      "data": "2026-11-06T18:31:16.000Z",
+      "titolo": "Uomini, parliamone! La prevenzione non è una debolezza",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNYmtzckNvUHE3bGZKMzN4dFlyUjFiQlJpMHF1MXlOZUVpZU1ZbFlVX2x6cENLVC0xMjRqYzl4YklKZFpRb3BfQXowb25IUXRDd3hHWTJ1U1dBQUd2RlNrUTRIZ3JvS1EyVkZncEhxQnNzZlhsSzVFVDExR29tZWFnNndFRzc?oc=5",
+      "data": "2026-11-09T18:52:05.000Z",
       "fonte": "Istituto Superiore di Sanità",
       "tipo": "ufficiale"
     },
     {
-      "titolo": "\"Fuori sede, dentro la cucina\", dall’Iss una webserie per promuovere la sicurezza alimentare tra i giovani",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPN1ZKQU5SM0tuZ0Y2aGNOb2hFRVQ3UVE5Mm1vMDc5RTJKYUpJQ2FxSEZTcHZLLTNTeFB6OGU5MWhUNUZFS25wRlAyZVZnblhwTThMa19NMUFNNlBfbi1MbFB1RGJDRmhTS29UcktSLVFMUDJUdnlQY0FKd0gyNXZvaTNKa09ZeVVSZ3JQVDR1Nk9QaVprM2k5SmxHZkVSbFhoT01jQkl0TC1KbE9wV0RPUkc3c3JDWmhrVFpJZFZMN0JYdw?oc=5",
-      "data": "2026-11-05T10:43:04.000Z",
+      "titolo": "Arbovirosi: 376 casi confermati di Dengue, 30 di Chikungunya, 790 di West Nile",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOU05OZkNBeV82blBJNy0wMHVkc1ZUc3NiaE9xTWtTQ0JVQV9hV3JkelNUUGZUeHM1Q3RQSGdscm85aGRZM3Jkc09rRllfMUs1bV9hNHVQVkdXOWZKY2lZckpob1VaMWRwSkhORGVkbzNPQXBWZWVIT2lhaF9UdjFUbUJLekpuNk1SdlczdUxtRklUcy1BOEx2V05WRHo?oc=5",
+      "data": "2026-11-06T18:31:16.000Z",
       "fonte": "Istituto Superiore di Sanità",
       "tipo": "ufficiale"
     },
@@ -31,25 +31,25 @@ window.QO_DATI = {
       "tipo": "ufficiale"
     },
     {
-      "titolo": "Oncologi, 'i budget siano adeguati ai bisogni dei pazienti'",
-      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/focus_tumore/2026/11/09/oncologi-i-budget-siano-adeguati-ai-bisogni-dei-pazienti_5f2d1d86-e23c-4492-8988-945b5b007f36.html",
-      "data": "2026-11-09T13:34:35.000Z",
+      "titolo": ">ANSA-FOCUS/Cala ancora vaccinazione antinfluenzale tra over 65, Italia sotto 50%",
+      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/focus_vaccini/2026/11/09/ansa-focuscala-ancora-vaccinazione-antinfluenzale-tra-over-65-italia-sotto-50_e12aa75b-3a25-408f-bc6f-8d7b26b7d81d.html",
+      "data": "2026-11-09T19:18:17.000Z",
       "fonte": "ANSA Salute",
       "tipo": "stampa"
     },
     {
-      "titolo": "Cure palliative, servono anche in ospedale e nelle Rsa per un anziano su 2",
-      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/sanita/2026/11/09/cure-palliative-servono-anche-in-ospedale-e-nelle-rsa-per-un-anziano-su-due_636025d4-fcfc-4aa1-b33e-37c1b78ea8f3.html",
-      "data": "2026-11-09T11:36:18.000Z",
+      "titolo": "Over 65 vaccinati contro l'influenza scendono sotto il 50% nel 2025-26",
+      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/focus_vaccini/2026/11/09/over-65-vaccinati-contro-linfluenza-scendono-sotto-il-50-nel-2025-26_48ba1634-021f-4067-b5ef-e43f5c3dacf3.html",
+      "data": "2026-11-09T16:46:17.000Z",
       "fonte": "ANSA Salute",
       "tipo": "stampa"
     }
   ],
   "stato": {
     "Ministero della Salute": 1,
-    "Istituto Superiore di Sanità": 7,
+    "Istituto Superiore di Sanità": 9,
     "ISS EpiCentro": 5,
-    "ECDC (in inglese)": 5,
-    "ANSA Salute": 3
+    "ECDC (in inglese)": 4,
+    "ANSA Salute": 6
   }
 };
