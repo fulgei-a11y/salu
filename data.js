@@ -1,6 +1,6 @@
 /* Notizie del giorno, generate automaticamente dagli script. */
 window.QO_DATI = {
-  "aggiornato": "2026-11-10T13:24:32.802Z",
+  "aggiornato": "2026-11-10T21:16:10.668Z",
   "notizie": [
     {
       "titolo": "La qualità dell’aria nelle strutture sanitarie deve essere parte della prevenzione: all’Iss la terza Conferenza europea",
@@ -31,16 +31,16 @@ window.QO_DATI = {
       "tipo": "ufficiale"
     },
     {
-      "titolo": "Over 65 vaccinati contro l'influenza scendono sotto il 50% nel 2025-26",
-      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/focus_vaccini/2026/11/09/over-65-vaccinati-contro-linfluenza-scendono-sotto-il-50-nel-2025-26_48ba1634-021f-4067-b5ef-e43f5c3dacf3.html",
-      "data": "2026-11-10T12:33:52.000Z",
+      "titolo": "Al San Martino diagnosi precoce dei tumori al polmone grazie a nuovo robot",
+      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/focus_tumore/2026/11/10/al-san-martino-diagnosi-precoce-dei-tumori-al-polmone-grazie-a-nuovo-robot_9ae0934a-8745-4cfb-a94e-8c610114f1ed.html",
+      "data": "2026-11-10T14:40:01.000Z",
       "fonte": "ANSA Salute",
       "tipo": "stampa"
     },
     {
-      "titolo": ">ANSA-FOCUS/Cala ancora vaccinazione antinfluenzale tra over 65, Italia sotto 50%",
-      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/focus_vaccini/2026/11/09/ansa-focuscala-ancora-vaccinazione-antinfluenzale-tra-over-65-italia-sotto-50_e12aa75b-3a25-408f-bc6f-8d7b26b7d81d.html",
-      "data": "2026-11-09T19:18:17.000Z",
+      "titolo": "Sulla pelle spesso i segnali di malattie rare. Una su 4 dà manifestazioni cutanee",
+      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/sanita/2026/11/10/sulla-pelle-spesso-i-segnali-di-malattie-rare.-una-su-4-da-manifestazioni-cutanee_a5d8a295-bce1-46c0-93bd-085917b08e21.html",
+      "data": "2026-11-10T14:13:30.000Z",
       "fonte": "ANSA Salute",
       "tipo": "stampa"
     }
@@ -50,6 +50,6 @@ window.QO_DATI = {
     "Istituto Superiore di Sanità": 9,
     "ISS EpiCentro": 5,
     "ECDC (in inglese)": 4,
-    "ANSA Salute": 6
+    "ANSA Salute": 10
   }
 };
