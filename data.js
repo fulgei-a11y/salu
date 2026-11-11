@@ -1,6 +1,6 @@
 /* Notizie del giorno, generate automaticamente dagli script. */
 window.QO_DATI = {
-  "aggiornato": "2026-11-11T12:37:43.342Z",
+  "aggiornato": "2026-11-11T21:52:58.992Z",
   "notizie": [
     {
       "titolo": "La qualità dell’aria nelle strutture sanitarie deve essere parte della prevenzione: all’Iss la terza Conferenza europea",
@@ -24,23 +24,23 @@ window.QO_DATI = {
       "tipo": "ufficiale"
     },
     {
-      "titolo": "Screening del tumore della mammella nelle Aziende Sanitarie del Friuli Venezia Giulia Il Monitoraggio di PASSI dal 2008 al 2024",
-      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOampEc1dQbzlKN2pQZ2hUd21MRnlaTjI0YTdoMjR0RFZhcUxNeElROURuM3dnZkEwSVgtdkVwSE1tSHB2QzltZ2J4YU1TMzlKeVl4MHBOT1Vrd1pKbmlyak5KU1BVTXhiTm1TbkpWeHg3Um5OQnBNYmp4SFhUYVViemVnNkJnejlWVTM1TjQzZFVkSlJZTWZpZnQweDI5eS1UeGJxbGt2d2tIa3pDOEpXZnViTHROQkd4S2hZSWNyc1NIU0tZNzQtS29WVW50UQ?oc=5",
-      "data": "2026-10-22T11:12:04.000Z",
+      "titolo": "Report della Sorveglianza dei casi umani di West Nile e Usutu virus in Italia nella stagione 2026",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQWkFrV1AxeWwyWVAzRUpNQ1dlazdnUldxaGlrekIyUTdSRmVFRHFuWllJZXRRcFZ1QmJKSURvdDJTQWppdy1heHNiUzNDNmNyWTBKUnVKbFZlUk1OYXJjaXB0dVB5ZXI4ZDJUdE5UaHV2VDZrbFpHOU9oT2wxTlpSbw?oc=5",
+      "data": "2026-10-22T07:00:00.000Z",
       "fonte": "ISS EpiCentro",
       "tipo": "ufficiale"
     },
     {
-      "titolo": "Sulla pelle spesso i segnali di malattie rare. Una su 4 dà manifestazioni cutanee",
-      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/sanita/2026/11/10/sulla-pelle-spesso-i-segnali-di-malattie-rare.-una-su-4-da-manifestazioni-cutanee_a5d8a295-bce1-46c0-93bd-085917b08e21.html",
-      "data": "2026-11-11T09:08:04.000Z",
+      "titolo": "Allarme bomba, studenti disconnessi a forza da social e whatspp, 'ansia e nervosismo'",
+      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/stili_di_vita/2026/11/11/allarme-bomba-molti-studenti-disconnessi-a-forza-da-social-e-whatspp_00ec4cd8-c845-4d23-a63c-c402e4b7e4f5.html",
+      "data": "2026-11-11T20:36:27.000Z",
       "fonte": "ANSA Salute",
       "tipo": "stampa"
     },
     {
-      "titolo": "Al San Martino diagnosi precoce dei tumori al polmone grazie a nuovo robot",
-      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/focus_tumore/2026/11/10/al-san-martino-diagnosi-precoce-dei-tumori-al-polmone-grazie-a-nuovo-robot_9ae0934a-8745-4cfb-a94e-8c610114f1ed.html",
-      "data": "2026-11-10T14:40:01.000Z",
+      "titolo": "Tumore del seno, da Europa Donna Italia 373mila ore di volontariato",
+      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/sanita/2026/11/11/tumore-del-seno-da-europa-donna-italia-373mila-ore-di-volontariato_0fa92566-ebac-4a73-a0ac-b5d0e59b5f89.html",
+      "data": "2026-11-11T17:56:30.000Z",
       "fonte": "ANSA Salute",
       "tipo": "stampa"
     }
@@ -48,7 +48,7 @@ window.QO_DATI = {
   "stato": {
     "Ministero della Salute": 0,
     "Istituto Superiore di Sanità": 8,
-    "ISS EpiCentro": 4,
+    "ISS EpiCentro": 3,
     "ECDC (in inglese)": 4,
     "ANSA Salute": 8
   }
