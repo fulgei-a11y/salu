@@ -1,6 +1,6 @@
 /* Notizie del giorno, generate automaticamente dagli script. */
 window.QO_DATI = {
-  "aggiornato": "2026-11-10T21:16:10.668Z",
+  "aggiornato": "2026-11-11T12:37:43.342Z",
   "notizie": [
     {
       "titolo": "La qualità dell’aria nelle strutture sanitarie deve essere parte della prevenzione: all’Iss la terza Conferenza europea",
@@ -31,25 +31,25 @@ window.QO_DATI = {
       "tipo": "ufficiale"
     },
     {
-      "titolo": "Al San Martino diagnosi precoce dei tumori al polmone grazie a nuovo robot",
-      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/focus_tumore/2026/11/10/al-san-martino-diagnosi-precoce-dei-tumori-al-polmone-grazie-a-nuovo-robot_9ae0934a-8745-4cfb-a94e-8c610114f1ed.html",
-      "data": "2026-11-10T14:40:01.000Z",
+      "titolo": "Sulla pelle spesso i segnali di malattie rare. Una su 4 dà manifestazioni cutanee",
+      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/sanita/2026/11/10/sulla-pelle-spesso-i-segnali-di-malattie-rare.-una-su-4-da-manifestazioni-cutanee_a5d8a295-bce1-46c0-93bd-085917b08e21.html",
+      "data": "2026-11-11T09:08:04.000Z",
       "fonte": "ANSA Salute",
       "tipo": "stampa"
     },
     {
-      "titolo": "Sulla pelle spesso i segnali di malattie rare. Una su 4 dà manifestazioni cutanee",
-      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/sanita/2026/11/10/sulla-pelle-spesso-i-segnali-di-malattie-rare.-una-su-4-da-manifestazioni-cutanee_a5d8a295-bce1-46c0-93bd-085917b08e21.html",
-      "data": "2026-11-10T14:13:30.000Z",
+      "titolo": "Al San Martino diagnosi precoce dei tumori al polmone grazie a nuovo robot",
+      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/focus_tumore/2026/11/10/al-san-martino-diagnosi-precoce-dei-tumori-al-polmone-grazie-a-nuovo-robot_9ae0934a-8745-4cfb-a94e-8c610114f1ed.html",
+      "data": "2026-11-10T14:40:01.000Z",
       "fonte": "ANSA Salute",
       "tipo": "stampa"
     }
   ],
   "stato": {
     "Ministero della Salute": 0,
-    "Istituto Superiore di Sanità": 9,
-    "ISS EpiCentro": 5,
+    "Istituto Superiore di Sanità": 8,
+    "ISS EpiCentro": 4,
     "ECDC (in inglese)": 4,
-    "ANSA Salute": 10
+    "ANSA Salute": 8
   }
 };
