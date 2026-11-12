@@ -1,7 +1,14 @@
 /* Notizie del giorno, generate automaticamente dagli script. */
 window.QO_DATI = {
-  "aggiornato": "2026-11-11T21:52:58.992Z",
+  "aggiornato": "2026-11-12T13:40:35.383Z",
   "notizie": [
+    {
+      "titolo": "Giornata europea e settimana mondiale degli antibiotici 2026",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOLWxleWRqX01DOEloTXN5d0lQTFFRMnR4Tzg5cE9hRDQ3WTJKLWltMDJiWl9pVGExUjdUZTBPdEYwZWthY3E0c01RemM5d0pzX29vQkFUNzVIUlhLZE9sOGFOOUZlS2ZrblpBc2R5MWVzbWROYnZzQllzTWRWdktnS0JuR0xkcm1qNkxfaTdsdTQwX2lOc3c?oc=5",
+      "data": "2026-11-12T11:41:49.000Z",
+      "fonte": "ISS EpiCentro",
+      "tipo": "ufficiale"
+    },
     {
       "titolo": "La qualità dell’aria nelle strutture sanitarie deve essere parte della prevenzione: all’Iss la terza Conferenza europea",
       "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOVjRaUzJid0dPWU1wbEJVM3J6SjhTc1VhWnUxbmgwQVVnTzl4eE80QVdrN1JHaTRTbXd1dXllSGp3ZjlRdFlaaUNHZXc4WlN1cWRTcEs5anV5Vms1UTZxbHRzWENuanFoOW9sRHRzM0xmZFJPZmZIaS1vS1Jsd0U5eF9uXzdrcF9VR2g5Qlln?oc=5",
@@ -17,39 +24,32 @@ window.QO_DATI = {
       "tipo": "ufficiale"
     },
     {
-      "titolo": "As the cold season nears, universal immunisation of newborns against RSV could significantly reduce infant hospitalisations across Europe",
-      "url": "https://www.ecdc.europa.eu/en/news-events/cold-season-nears-universal-immunisation-newborns-against-rsv-could-significantly",
-      "data": "2026-10-28T09:02:07.000Z",
-      "fonte": "ECDC (in inglese)",
-      "tipo": "ufficiale"
-    },
-    {
       "titolo": "Report della Sorveglianza dei casi umani di West Nile e Usutu virus in Italia nella stagione 2026",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQWkFrV1AxeWwyWVAzRUpNQ1dlazdnUldxaGlrekIyUTdSRmVFRHFuWllJZXRRcFZ1QmJKSURvdDJTQWppdy1heHNiUzNDNmNyWTBKUnVKbFZlUk1OYXJjaXB0dVB5ZXI4ZDJUdE5UaHV2VDZrbFpHOU9oT2wxTlpSbw?oc=5",
-      "data": "2026-10-22T07:00:00.000Z",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOTVRRT2ViU01SejFKMnVwdWhBN3E1WGtfdFlwdWlDTFk3LXNrRUhBS05GOFF2NEUzdUNMbVA5Zm8telNVSE5kUlJERzZaSmFUZjdwX1pfc2dVa2swckViNzFFT04wUGFYT2M4c1NLTkZOTFRFUHNOb2xhaU83LXhLNQ?oc=5",
+      "data": "2026-10-29T11:36:34.000Z",
       "fonte": "ISS EpiCentro",
       "tipo": "ufficiale"
     },
     {
-      "titolo": "Allarme bomba, studenti disconnessi a forza da social e whatspp, 'ansia e nervosismo'",
-      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/stili_di_vita/2026/11/11/allarme-bomba-molti-studenti-disconnessi-a-forza-da-social-e-whatspp_00ec4cd8-c845-4d23-a63c-c402e4b7e4f5.html",
-      "data": "2026-11-11T20:36:27.000Z",
+      "titolo": "Obesità, sì a lotta allo stigma ma valutare possibili interessi commerciali",
+      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/medicina/2026/11/12/obesita-si-a-lotta-allo-stigma-ma-valutare-possibili-interessi-commerciali_289cd463-3225-43eb-92e1-51af2ccc59cd.html",
+      "data": "2026-11-12T12:45:25.000Z",
       "fonte": "ANSA Salute",
       "tipo": "stampa"
     },
     {
-      "titolo": "Tumore del seno, da Europa Donna Italia 373mila ore di volontariato",
-      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/sanita/2026/11/11/tumore-del-seno-da-europa-donna-italia-373mila-ore-di-volontariato_0fa92566-ebac-4a73-a0ac-b5d0e59b5f89.html",
-      "data": "2026-11-11T17:56:30.000Z",
+      "titolo": "Bambini, al parco almeno una volta a settimana aumenta benessere mentale",
+      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/stili_di_vita/2026/11/12/bambini-al-parco-almeno-una-volta-a-settimana-aumenta-benessere-mentale_79c616e0-722d-4270-be87-8f10bfb599fa.html",
+      "data": "2026-11-12T12:08:34.000Z",
       "fonte": "ANSA Salute",
       "tipo": "stampa"
     }
   ],
   "stato": {
     "Ministero della Salute": 0,
-    "Istituto Superiore di Sanità": 8,
+    "Istituto Superiore di Sanità": 6,
     "ISS EpiCentro": 3,
-    "ECDC (in inglese)": 4,
-    "ANSA Salute": 8
+    "ECDC (in inglese)": 3,
+    "ANSA Salute": 13
   }
 };
