@@ -1,7 +1,14 @@
 /* Notizie del giorno, generate automaticamente dagli script. */
 window.QO_DATI = {
-  "aggiornato": "2026-11-12T13:40:35.383Z",
+  "aggiornato": "2026-11-12T21:50:01.250Z",
   "notizie": [
+    {
+      "titolo": "Diabete tipo 1: quasi 2.500 bambini da 1 a 5 anni già sottoposti a screening con lo studio Baby D1Ce",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPOWd2N0hfYktmU3BoblJQUGVGSU1hZU1oZ0lsU3VBQjlFOFpQNlUxSlYyRUVsNGZiUzZGZDBBNm1id1J4SDVtRVRBWjN6QmhURmQtVUtZSk9nZ0pkaF96S2l5ejR0UlgtWWtUdHZqSUdfell0WGMwSGQ0RjRvOUljclBXQjRPa0VMTWdyMURLeXlZN3QtRzBZdmF4dy12SXU3MkFhMXg0a1dEZkNXZU1VLTBpSVNwZTVxVzd5cDlKQXozUW8?oc=5",
+      "data": "2026-11-12T15:16:27.000Z",
+      "fonte": "Istituto Superiore di Sanità",
+      "tipo": "ufficiale"
+    },
     {
       "titolo": "Giornata europea e settimana mondiale degli antibiotici 2026",
       "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOLWxleWRqX01DOEloTXN5d0lQTFFRMnR4Tzg5cE9hRDQ3WTJKLWltMDJiWl9pVGExUjdUZTBPdEYwZWthY3E0c01RemM5d0pzX29vQkFUNzVIUlhLZE9sOGFOOUZlS2ZrblpBc2R5MWVzbWROYnZzQllzTWRWdktnS0JuR0xkcm1qNkxfaTdsdTQwX2lOc3c?oc=5",
@@ -17,13 +24,6 @@ window.QO_DATI = {
       "tipo": "ufficiale"
     },
     {
-      "titolo": "Uomini, parliamone! La prevenzione non è una debolezza",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNYmtzckNvUHE3bGZKMzN4dFlyUjFiQlJpMHF1MXlOZUVpZU1ZbFlVX2x6cENLVC0xMjRqYzl4YklKZFpRb3BfQXowb25IUXRDd3hHWTJ1U1dBQUd2RlNrUTRIZ3JvS1EyVkZncEhxQnNzZlhsSzVFVDExR29tZWFnNndFRzc?oc=5",
-      "data": "2026-11-09T18:52:05.000Z",
-      "fonte": "Istituto Superiore di Sanità",
-      "tipo": "ufficiale"
-    },
-    {
       "titolo": "Report della Sorveglianza dei casi umani di West Nile e Usutu virus in Italia nella stagione 2026",
       "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOTVRRT2ViU01SejFKMnVwdWhBN3E1WGtfdFlwdWlDTFk3LXNrRUhBS05GOFF2NEUzdUNMbVA5Zm8telNVSE5kUlJERzZaSmFUZjdwX1pfc2dVa2swckViNzFFT04wUGFYT2M4c1NLTkZOTFRFUHNOb2xhaU83LXhLNQ?oc=5",
       "data": "2026-10-29T11:36:34.000Z",
@@ -31,25 +31,25 @@ window.QO_DATI = {
       "tipo": "ufficiale"
     },
     {
-      "titolo": "Obesità, sì a lotta allo stigma ma valutare possibili interessi commerciali",
-      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/medicina/2026/11/12/obesita-si-a-lotta-allo-stigma-ma-valutare-possibili-interessi-commerciali_289cd463-3225-43eb-92e1-51af2ccc59cd.html",
-      "data": "2026-11-12T12:45:25.000Z",
+      "titolo": "Berardi (Aiom), 'l'obiettivo è arrivare a prima generazione senza fumo'",
+      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/focus_tumore/2026/11/12/berardi-aiom-lobiettivo-e-arrivare-a-prima-generazione-senza-fumo_cbcdfb77-6025-46df-b228-865a3a84e43f.html",
+      "data": "2026-11-12T17:23:40.000Z",
       "fonte": "ANSA Salute",
       "tipo": "stampa"
     },
     {
-      "titolo": "Bambini, al parco almeno una volta a settimana aumenta benessere mentale",
-      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/stili_di_vita/2026/11/12/bambini-al-parco-almeno-una-volta-a-settimana-aumenta-benessere-mentale_79c616e0-722d-4270-be87-8f10bfb599fa.html",
-      "data": "2026-11-12T12:08:34.000Z",
+      "titolo": "Kenya, guariti tutti i pazienti affetti dal virus ebola",
+      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/medicina/2026/11/11/kenya-guariti-tutti-i-pazienti-affetti-dal-virus-ebola_3701b069-189d-4787-ba2e-12ba408d90cb.html",
+      "data": "2026-11-12T16:44:20.000Z",
       "fonte": "ANSA Salute",
       "tipo": "stampa"
     }
   ],
   "stato": {
     "Ministero della Salute": 0,
-    "Istituto Superiore di Sanità": 6,
+    "Istituto Superiore di Sanità": 7,
     "ISS EpiCentro": 3,
     "ECDC (in inglese)": 3,
-    "ANSA Salute": 13
+    "ANSA Salute": 11
   }
 };
