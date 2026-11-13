@@ -1,7 +1,14 @@
 /* Notizie del giorno, generate automaticamente dagli script. */
 window.QO_DATI = {
-  "aggiornato": "2026-11-13T12:59:13.155Z",
+  "aggiornato": "2026-11-13T21:24:16.000Z",
   "notizie": [
+    {
+      "titolo": "Giornata mondiale del diabete: agire tempestivamente per riconoscere e curare la malattia",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNbFZzQjVNTjF0QnlUcUd0N2JEREN4Z3d5aTV3YzZkNjRpR0R0QmpQSUNlWG0tQjYzdU82UW9ocjV3M2RwODZmOGM3T2NUUE92eHV6ZUhNd0ljQkY4V3UtVE05OG1pQjhDVFVqQk9mc3FGRXhUNTRBenJkbnlhYkxmTGRiZXgwWk8tSm1DNnVR?oc=5",
+      "data": "2026-11-13T14:00:22.000Z",
+      "fonte": "Istituto Superiore di Sanità",
+      "tipo": "ufficiale"
+    },
     {
       "titolo": "Diabete tipo 1: quasi 2.500 bambini da 1 a 5 anni già sottoposti a screening con lo studio Baby D1Ce",
       "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPOWd2N0hfYktmU3BoblJQUGVGSU1hZU1oZ0lsU3VBQjlFOFpQNlUxSlYyRUVsNGZiUzZGZDBBNm1id1J4SDVtRVRBWjN6QmhURmQtVUtZSk9nZ0pkaF96S2l5ejR0UlgtWWtUdHZqSUdfell0WGMwSGQ0RjRvOUljclBXQjRPa0VMTWdyMURLeXlZN3QtRzBZdmF4dy12SXU3MkFhMXg0a1dEZkNXZU1VLTBpSVNwZTVxVzd5cDlKQXozUW8?oc=5",
@@ -17,13 +24,6 @@ window.QO_DATI = {
       "tipo": "ufficiale"
     },
     {
-      "titolo": "La qualità dell’aria nelle strutture sanitarie deve essere parte della prevenzione: all’Iss la terza Conferenza europea",
-      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQLTFWV25pUUsxdDA4VkNIUTZqTFg0VVNybk4zUGhfM3FPQUEtQWhyeVNRLVdMVUNrTW5jT1dtb0dNV2t4bHQyXzljVzJ4WEM1Mzg0YWNUbjhuU1k3c2J3OE9DSWtnbmRLdUlfaERFOWd3djdnU1AybjdzMzBjNG5uMFM3Y0xxZXZLNVU1V0lqSzYwb3lFR0tFM2xzc1JTdFpPSWNQejdkc281N0g5UE9OZUpnSV9rWUo2OVQzdkhkamNRWDRVTG1ZUnRwbHRMOVBmOUlGRnpQX0wtNzla?oc=5",
-      "data": "2026-11-10T12:49:42.000Z",
-      "fonte": "Istituto Superiore di Sanità",
-      "tipo": "ufficiale"
-    },
-    {
       "titolo": "Report della Sorveglianza dei casi umani di West Nile e Usutu virus in Italia nella stagione 2026",
       "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOTVRRT2ViU01SejFKMnVwdWhBN3E1WGtfdFlwdWlDTFk3LXNrRUhBS05GOFF2NEUzdUNMbVA5Zm8telNVSE5kUlJERzZaSmFUZjdwX1pfc2dVa2swckViNzFFT04wUGFYT2M4c1NLTkZOTFRFUHNOb2xhaU83LXhLNQ?oc=5",
       "data": "2026-10-29T07:00:00.000Z",
@@ -31,25 +31,25 @@ window.QO_DATI = {
       "tipo": "ufficiale"
     },
     {
-      "titolo": "Tumori, 'in 9 anni inutilizzati 3 miliardi del fondo farmaci innovativi'",
-      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/focus_tumore/2026/11/13/tumori-in-9-anni-inutilizzati-3-miliardi-del-fondo-farmaci-innovativi_e32cc588-7131-494c-938e-20c5c0b9d261.html",
-      "data": "2026-11-13T12:30:31.000Z",
+      "titolo": "Anche cani e gatti a rischio di diabete, i 4 segnali da non sottovalutare",
+      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/medicina/2026/11/13/anche-cani-e-gatti-a-rischio-di-diabete-i-4-segnali-da-non-sottovalutare_35e05ab7-3e88-4ad7-8157-643b904bde46.html",
+      "data": "2026-11-13T19:41:47.000Z",
       "fonte": "ANSA Salute",
       "tipo": "stampa"
     },
     {
-      "titolo": "Oncologi, 'cure innovative talvolta non sono accessibili a tutti, ritardi e burocrazia'",
-      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/focus_tumore/2026/11/13/di-maio-cure-innovative-talvolta-non-sono-accessibili-a-tutti-ritardi-e-burocrazia_e6ce51f0-ee84-4428-a36a-2f65e6a71af7.html",
-      "data": "2026-11-13T12:30:28.000Z",
+      "titolo": "Nisticò (Aifa), al lavoro per rendere accessibile il nuovo farmaco per il tumore al pancreas",
+      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/focus_tumore/2026/11/13/nistico-aifa-al-lavoro-per-rendere-accessibile-farmaco-per-tumore-pancreas_c4e556cf-13bc-4df8-b8ec-08e32074719e.html",
+      "data": "2026-11-13T18:36:38.000Z",
       "fonte": "ANSA Salute",
       "tipo": "stampa"
     }
   ],
   "stato": {
     "Ministero della Salute": 0,
-    "Istituto Superiore di Sanità": 5,
+    "Istituto Superiore di Sanità": 4,
     "ISS EpiCentro": 3,
-    "ECDC (in inglese)": 3,
-    "ANSA Salute": 13
+    "ECDC (in inglese)": 2,
+    "ANSA Salute": 18
   }
 };
