@@ -1,6 +1,6 @@
 /* Notizie del giorno, generate automaticamente dagli script. */
 window.QO_DATI = {
-  "aggiornato": "2026-11-13T21:24:16.000Z",
+  "aggiornato": "2026-11-14T12:04:10.378Z",
   "notizie": [
     {
       "titolo": "Giornata mondiale del diabete: agire tempestivamente per riconoscere e curare la malattia",
@@ -31,16 +31,16 @@ window.QO_DATI = {
       "tipo": "ufficiale"
     },
     {
-      "titolo": "Anche cani e gatti a rischio di diabete, i 4 segnali da non sottovalutare",
-      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/medicina/2026/11/13/anche-cani-e-gatti-a-rischio-di-diabete-i-4-segnali-da-non-sottovalutare_35e05ab7-3e88-4ad7-8157-643b904bde46.html",
-      "data": "2026-11-13T19:41:47.000Z",
+      "titolo": "On line la prima piattaforma per l'oncologia di precisione",
+      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/focus_tumore/2026/11/14/on-line-la-prima-piattaforma-per-loncologia-di-precisione_b6ec5754-9306-4ac6-9f8b-d1e88369f218.html",
+      "data": "2026-11-14T10:50:11.000Z",
       "fonte": "ANSA Salute",
       "tipo": "stampa"
     },
     {
-      "titolo": "Nisticò (Aifa), al lavoro per rendere accessibile il nuovo farmaco per il tumore al pancreas",
-      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/focus_tumore/2026/11/13/nistico-aifa-al-lavoro-per-rendere-accessibile-farmaco-per-tumore-pancreas_c4e556cf-13bc-4df8-b8ec-08e32074719e.html",
-      "data": "2026-11-13T18:36:38.000Z",
+      "titolo": "Sei oncologi su 10 malati di burnout e per 55% troppo tempo alla burocrazia",
+      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/focus_tumore/2026/11/14/sei-oncologi-su-10-malati-di-burnout-e-per-55-troppo-tempo-alla-burocrazia_2f6efb09-3fb4-49a1-9f7e-ae1951a6f6cf.html",
+      "data": "2026-11-14T10:43:32.000Z",
       "fonte": "ANSA Salute",
       "tipo": "stampa"
     }
@@ -50,6 +50,6 @@ window.QO_DATI = {
     "Istituto Superiore di Sanità": 4,
     "ISS EpiCentro": 3,
     "ECDC (in inglese)": 2,
-    "ANSA Salute": 18
+    "ANSA Salute": 19
   }
 };
