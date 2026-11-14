@@ -1,6 +1,6 @@
 /* Notizie del giorno, generate automaticamente dagli script. */
 window.QO_DATI = {
-  "aggiornato": "2026-11-14T12:04:10.378Z",
+  "aggiornato": "2026-11-14T19:53:07.747Z",
   "notizie": [
     {
       "titolo": "Giornata mondiale del diabete: agire tempestivamente per riconoscere e curare la malattia",
@@ -31,25 +31,25 @@ window.QO_DATI = {
       "tipo": "ufficiale"
     },
     {
-      "titolo": "On line la prima piattaforma per l'oncologia di precisione",
-      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/focus_tumore/2026/11/14/on-line-la-prima-piattaforma-per-loncologia-di-precisione_b6ec5754-9306-4ac6-9f8b-d1e88369f218.html",
-      "data": "2026-11-14T10:50:11.000Z",
+      "titolo": "Sei oncologi su 10 malati di burnout e per il 55% troppo tempo da dover dedicare alla burocrazia",
+      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/focus_tumore/2026/11/14/sei-oncologi-su-10-malati-di-burnout-e-per-55-troppo-tempo-alla-burocrazia_2f6efb09-3fb4-49a1-9f7e-ae1951a6f6cf.html",
+      "data": "2026-11-14T15:48:21.000Z",
       "fonte": "ANSA Salute",
       "tipo": "stampa"
     },
     {
-      "titolo": "Sei oncologi su 10 malati di burnout e per 55% troppo tempo alla burocrazia",
-      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/focus_tumore/2026/11/14/sei-oncologi-su-10-malati-di-burnout-e-per-55-troppo-tempo-alla-burocrazia_2f6efb09-3fb4-49a1-9f7e-ae1951a6f6cf.html",
-      "data": "2026-11-14T10:43:32.000Z",
+      "titolo": "Aiom, in Italia 3mila oncologi per 4 milioni che convivono con tumore",
+      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/focus_tumore/2026/11/13/aiom-in-italia-3mila-oncologi-per-4-milioni-che-convivono-con-tumore_cd88a34b-9343-4db9-9216-bad0a49f0426.html",
+      "data": "2026-11-14T15:08:42.000Z",
       "fonte": "ANSA Salute",
       "tipo": "stampa"
     }
   ],
   "stato": {
     "Ministero della Salute": 0,
-    "Istituto Superiore di Sanità": 4,
+    "Istituto Superiore di Sanità": 3,
     "ISS EpiCentro": 3,
     "ECDC (in inglese)": 2,
-    "ANSA Salute": 19
+    "ANSA Salute": 14
   }
 };
