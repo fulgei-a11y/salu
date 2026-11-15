@@ -1,12 +1,19 @@
 /* Notizie del giorno, generate automaticamente dagli script. */
 window.QO_DATI = {
-  "aggiornato": "2026-11-15T12:39:15.349Z",
+  "aggiornato": "2026-11-15T20:21:14.028Z",
   "notizie": [
     {
       "titolo": "CARTA INTESTATA DITTA RICHIESTA DI INSERIMENTO NELLA LISTA EXPORT IN VIETNAM DI PRODOTTI ALIMENTARI DI ORIGINE ANIMALE",
       "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOTXNSNkdheDJYeHREZFgtVGV4bVBiZF9TSWM0RzBVc2lTUDdqbS02V3dmcjJDNThERHVQcVVXZUFUYTJrQ0dXT2JyOTNFOExFOFFUajlSX21mZ3ZEYWRLOFlhYl85UWFyMnRkeVA5dEhXS1dTdXJSbFNvbjZQU2xGMU5PRjJxcjlPUlZ1X212WElUdV9IWHE0?oc=5",
       "data": "2026-11-15T01:09:02.000Z",
       "fonte": "Ministero della Salute",
+      "tipo": "ufficiale"
+    },
+    {
+      "titolo": "Le collezioni di campioni biologici del Progetto CUORE: una risorsa nazionale e trentennale per la ricerca epidemiologica e la medicina preventiva",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1pMDdWZTg0VG1zQnBueFRZUEZZeVE5aEdWZWRCMHduc3Rqbmh3ck9fVDBCR2dkQVpFT1JQV3FmYi1jdmRndzhYWVgwdWt3bWl0cDlwWExyVG1oYkg4VmRrZ3RMQktKOVFyUXZjTWlVT0d2UzNNOTFtUHZqQndTQQ?oc=5",
+      "data": "2026-11-14T20:09:33.000Z",
+      "fonte": "ISS EpiCentro",
       "tipo": "ufficiale"
     },
     {
@@ -24,23 +31,16 @@ window.QO_DATI = {
       "tipo": "ufficiale"
     },
     {
-      "titolo": "Giornata europea e settimana mondiale degli antibiotici 2026",
-      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOLWxleWRqX01DOEloTXN5d0lQTFFRMnR4Tzg5cE9hRDQ3WTJKLWltMDJiWl9pVGExUjdUZTBPdEYwZWthY3E0c01RemM5d0pzX29vQkFUNzVIUlhLZE9sOGFOOUZlS2ZrblpBc2R5MWVzbWROYnZzQllzTWRWdktnS0JuR0xkcm1qNkxfaTdsdTQwX2lOc3c?oc=5",
-      "data": "2026-11-12T11:41:49.000Z",
-      "fonte": "ISS EpiCentro",
-      "tipo": "ufficiale"
+      "titolo": ">ANSA-BOX/ Oncologo professione 'usurante', un emendamento in manovra",
+      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/focus_tumore/2026/11/15/ansa-box-oncologo-professione-usurante-un-emendamento-in-manovra_cbd200ef-df06-41a5-aedc-a6d50228dd40.html",
+      "data": "2026-11-15T14:31:09.000Z",
+      "fonte": "ANSA Salute",
+      "tipo": "stampa"
     },
     {
       "titolo": "Tumore seno, cure su misura con oncologia di precisione ma pazienti poco consapevoli",
       "url": "https://www.ansa.it/canale_saluteebenessere/notizie/focus_tumore/2026/11/15/tumore-seno-cure-su-misura-con-oncologia-di-precisione-ma-pazienti-poco-consapevoli_0f6baf4d-8176-4606-89c9-fcba651cf334.html",
       "data": "2026-11-15T10:10:00.000Z",
-      "fonte": "ANSA Salute",
-      "tipo": "stampa"
-    },
-    {
-      "titolo": "Tumori, solo il 6% degli studi clinici è no profit italiano",
-      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/focus_tumore/2026/11/15/tumori-solo-il-6-degli-studi-clinici-e-no-profit-italiano_8a3a6624-b6a3-4ed6-b193-e3b24f8d37e0.html",
-      "data": "2026-11-15T09:20:58.000Z",
       "fonte": "ANSA Salute",
       "tipo": "stampa"
     }
@@ -50,6 +50,6 @@ window.QO_DATI = {
     "Istituto Superiore di Sanità": 5,
     "ISS EpiCentro": 5,
     "ECDC (in inglese)": 2,
-    "ANSA Salute": 13
+    "ANSA Salute": 12
   }
 };
