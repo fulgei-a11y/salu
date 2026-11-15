@@ -1,7 +1,14 @@
 /* Notizie del giorno, generate automaticamente dagli script. */
 window.QO_DATI = {
-  "aggiornato": "2026-11-14T19:53:07.747Z",
+  "aggiornato": "2026-11-15T12:39:15.349Z",
   "notizie": [
+    {
+      "titolo": "CARTA INTESTATA DITTA RICHIESTA DI INSERIMENTO NELLA LISTA EXPORT IN VIETNAM DI PRODOTTI ALIMENTARI DI ORIGINE ANIMALE",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOTXNSNkdheDJYeHREZFgtVGV4bVBiZF9TSWM0RzBVc2lTUDdqbS02V3dmcjJDNThERHVQcVVXZUFUYTJrQ0dXT2JyOTNFOExFOFFUajlSX21mZ3ZEYWRLOFlhYl85UWFyMnRkeVA5dEhXS1dTdXJSbFNvbjZQU2xGMU5PRjJxcjlPUlZ1X212WElUdV9IWHE0?oc=5",
+      "data": "2026-11-15T01:09:02.000Z",
+      "fonte": "Ministero della Salute",
+      "tipo": "ufficiale"
+    },
     {
       "titolo": "Giornata mondiale del diabete: agire tempestivamente per riconoscere e curare la malattia",
       "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNbFZzQjVNTjF0QnlUcUd0N2JEREN4Z3d5aTV3YzZkNjRpR0R0QmpQSUNlWG0tQjYzdU82UW9ocjV3M2RwODZmOGM3T2NUUE92eHV6ZUhNd0ljQkY4V3UtVE05OG1pQjhDVFVqQk9mc3FGRXhUNTRBenJkbnlhYkxmTGRiZXgwWk8tSm1DNnVR?oc=5",
@@ -24,32 +31,25 @@ window.QO_DATI = {
       "tipo": "ufficiale"
     },
     {
-      "titolo": "Report della Sorveglianza dei casi umani di West Nile e Usutu virus in Italia nella stagione 2026",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOTVRRT2ViU01SejFKMnVwdWhBN3E1WGtfdFlwdWlDTFk3LXNrRUhBS05GOFF2NEUzdUNMbVA5Zm8telNVSE5kUlJERzZaSmFUZjdwX1pfc2dVa2swckViNzFFT04wUGFYT2M4c1NLTkZOTFRFUHNOb2xhaU83LXhLNQ?oc=5",
-      "data": "2026-10-29T07:00:00.000Z",
-      "fonte": "ISS EpiCentro",
-      "tipo": "ufficiale"
-    },
-    {
-      "titolo": "Sei oncologi su 10 malati di burnout e per il 55% troppo tempo da dover dedicare alla burocrazia",
-      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/focus_tumore/2026/11/14/sei-oncologi-su-10-malati-di-burnout-e-per-55-troppo-tempo-alla-burocrazia_2f6efb09-3fb4-49a1-9f7e-ae1951a6f6cf.html",
-      "data": "2026-11-14T15:48:21.000Z",
+      "titolo": "Tumore seno, cure su misura con oncologia di precisione ma pazienti poco consapevoli",
+      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/focus_tumore/2026/11/15/tumore-seno-cure-su-misura-con-oncologia-di-precisione-ma-pazienti-poco-consapevoli_0f6baf4d-8176-4606-89c9-fcba651cf334.html",
+      "data": "2026-11-15T10:10:00.000Z",
       "fonte": "ANSA Salute",
       "tipo": "stampa"
     },
     {
-      "titolo": "Aiom, in Italia 3mila oncologi per 4 milioni che convivono con tumore",
-      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/focus_tumore/2026/11/13/aiom-in-italia-3mila-oncologi-per-4-milioni-che-convivono-con-tumore_cd88a34b-9343-4db9-9216-bad0a49f0426.html",
-      "data": "2026-11-14T15:08:42.000Z",
+      "titolo": "Tumori, solo il 6% degli studi clinici è no profit italiano",
+      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/focus_tumore/2026/11/15/tumori-solo-il-6-degli-studi-clinici-e-no-profit-italiano_8a3a6624-b6a3-4ed6-b193-e3b24f8d37e0.html",
+      "data": "2026-11-15T09:20:58.000Z",
       "fonte": "ANSA Salute",
       "tipo": "stampa"
     }
   ],
   "stato": {
-    "Ministero della Salute": 0,
-    "Istituto Superiore di Sanità": 3,
-    "ISS EpiCentro": 3,
+    "Ministero della Salute": 1,
+    "Istituto Superiore di Sanità": 5,
+    "ISS EpiCentro": 5,
     "ECDC (in inglese)": 2,
-    "ANSA Salute": 14
+    "ANSA Salute": 13
   }
 };
