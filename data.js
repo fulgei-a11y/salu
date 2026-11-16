@@ -1,7 +1,14 @@
 /* Notizie del giorno, generate automaticamente dagli script. */
 window.QO_DATI = {
-  "aggiornato": "2026-11-15T20:21:14.028Z",
+  "aggiornato": "2026-11-16T13:31:28.016Z",
   "notizie": [
+    {
+      "titolo": "Dieta mediterranea, cinque consigli per mangiare bene anche quando si ha poco tempo",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPWE9vdWRpRmhENHZJZUdzaDBpQ043cUJJMnlHZHdPLWFHRVF6MjZBbUd0eGdPbFE4RGJ1al9UZGY5TGhTY2tzYlNOdGFnRXpKNHd6R25QRDhxaEkxZHVVQ1Z5ZGtvVHdtcjBZbzBsMk1IVUljdVFIeEFnWlg2c2tuODhBZWo0dWRrZGpfWnhSNm5yVVJ0ZmFIZzJqTmZEMjN6dEhCa1hB?oc=5",
+      "data": "2026-11-16T09:30:00.000Z",
+      "fonte": "Istituto Superiore di Sanità",
+      "tipo": "ufficiale"
+    },
     {
       "titolo": "CARTA INTESTATA DITTA RICHIESTA DI INSERIMENTO NELLA LISTA EXPORT IN VIETNAM DI PRODOTTI ALIMENTARI DI ORIGINE ANIMALE",
       "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOTXNSNkdheDJYeHREZFgtVGV4bVBiZF9TSWM0RzBVc2lTUDdqbS02V3dmcjJDNThERHVQcVVXZUFUYTJrQ0dXT2JyOTNFOExFOFFUajlSX21mZ3ZEYWRLOFlhYl85UWFyMnRkeVA5dEhXS1dTdXJSbFNvbjZQU2xGMU5PRjJxcjlPUlZ1X212WElUdV9IWHE0?oc=5",
@@ -24,11 +31,11 @@ window.QO_DATI = {
       "tipo": "ufficiale"
     },
     {
-      "titolo": "Diabete tipo 1: quasi 2.500 bambini da 1 a 5 anni già sottoposti a screening con lo studio Baby D1Ce",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPOWd2N0hfYktmU3BoblJQUGVGSU1hZU1oZ0lsU3VBQjlFOFpQNlUxSlYyRUVsNGZiUzZGZDBBNm1id1J4SDVtRVRBWjN6QmhURmQtVUtZSk9nZ0pkaF96S2l5ejR0UlgtWWtUdHZqSUdfell0WGMwSGQ0RjRvOUljclBXQjRPa0VMTWdyMURLeXlZN3QtRzBZdmF4dy12SXU3MkFhMXg0a1dEZkNXZU1VLTBpSVNwZTVxVzd5cDlKQXozUW8?oc=5",
-      "data": "2026-11-12T15:16:27.000Z",
-      "fonte": "Istituto Superiore di Sanità",
-      "tipo": "ufficiale"
+      "titolo": "Le Palestre della memoria al centro della nuova puntata di 'Senza Ricetta'",
+      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/medicina/2026/11/16/le-palestre-della-memoria-al-centro-della-nuova-puntata-di-senza-ricetta_dd8fd42f-fe47-4341-a867-5f11309efc31.html",
+      "data": "2026-11-16T13:00:14.000Z",
+      "fonte": "ANSA Salute",
+      "tipo": "stampa"
     },
     {
       "titolo": ">ANSA-BOX/ Oncologo professione 'usurante', un emendamento in manovra",
@@ -36,20 +43,13 @@ window.QO_DATI = {
       "data": "2026-11-15T14:31:09.000Z",
       "fonte": "ANSA Salute",
       "tipo": "stampa"
-    },
-    {
-      "titolo": "Tumore seno, cure su misura con oncologia di precisione ma pazienti poco consapevoli",
-      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/focus_tumore/2026/11/15/tumore-seno-cure-su-misura-con-oncologia-di-precisione-ma-pazienti-poco-consapevoli_0f6baf4d-8176-4606-89c9-fcba651cf334.html",
-      "data": "2026-11-15T10:10:00.000Z",
-      "fonte": "ANSA Salute",
-      "tipo": "stampa"
     }
   ],
   "stato": {
     "Ministero della Salute": 1,
-    "Istituto Superiore di Sanità": 5,
+    "Istituto Superiore di Sanità": 6,
     "ISS EpiCentro": 5,
     "ECDC (in inglese)": 2,
-    "ANSA Salute": 12
+    "ANSA Salute": 4
   }
 };
