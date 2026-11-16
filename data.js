@@ -1,6 +1,6 @@
 /* Notizie del giorno, generate automaticamente dagli script. */
 window.QO_DATI = {
-  "aggiornato": "2026-11-16T13:31:28.016Z",
+  "aggiornato": "2026-11-16T23:43:34.152Z",
   "notizie": [
     {
       "titolo": "Dieta mediterranea, cinque consigli per mangiare bene anche quando si ha poco tempo",
@@ -31,25 +31,25 @@ window.QO_DATI = {
       "tipo": "ufficiale"
     },
     {
-      "titolo": "Le Palestre della memoria al centro della nuova puntata di 'Senza Ricetta'",
-      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/medicina/2026/11/16/le-palestre-della-memoria-al-centro-della-nuova-puntata-di-senza-ricetta_dd8fd42f-fe47-4341-a867-5f11309efc31.html",
-      "data": "2026-11-16T13:00:14.000Z",
+      "titolo": "Ancora pochi casi di influenza, ma c'è carenza di vaccini in alcune Regioni",
+      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/focus_vaccini/2026/11/16/ancora-pochi-casi-di-influenza-ma-ce-carenza-di-vaccini-in-alcune-regioni_d6bbefe8-ebc4-4b3d-8ee4-5223f7401cd2.html",
+      "data": "2026-11-16T19:06:56.000Z",
       "fonte": "ANSA Salute",
       "tipo": "stampa"
     },
     {
-      "titolo": ">ANSA-BOX/ Oncologo professione 'usurante', un emendamento in manovra",
-      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/focus_tumore/2026/11/15/ansa-box-oncologo-professione-usurante-un-emendamento-in-manovra_cbd200ef-df06-41a5-aedc-a6d50228dd40.html",
-      "data": "2026-11-15T14:31:09.000Z",
+      "titolo": "Influenza, medici di base 'circa 85mila casi in 3 settimane'",
+      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/medicina/2026/11/16/influenza-medici-di-base-circa-85mila-casi-in-3-settimane_c732e72a-96be-44a4-aed9-96dbf5f1c496.html",
+      "data": "2026-11-16T19:06:03.000Z",
       "fonte": "ANSA Salute",
       "tipo": "stampa"
     }
   ],
   "stato": {
-    "Ministero della Salute": 1,
+    "Ministero della Salute": "errore",
     "Istituto Superiore di Sanità": 6,
     "ISS EpiCentro": 5,
     "ECDC (in inglese)": 2,
-    "ANSA Salute": 4
+    "ANSA Salute": 11
   }
 };
