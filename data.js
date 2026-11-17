@@ -1,6 +1,6 @@
 /* Notizie del giorno, generate automaticamente dagli script. */
 window.QO_DATI = {
-  "aggiornato": "2026-11-17T14:16:53.441Z",
+  "aggiornato": "2026-11-17T22:51:52.107Z",
   "notizie": [
     {
       "titolo": "Ebola disease: Multi-country outbreak 2026",
@@ -31,16 +31,16 @@ window.QO_DATI = {
       "tipo": "ufficiale"
     },
     {
-      "titolo": "Iss, in Italia restano alti i tassi di antibioticoresistenza",
-      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/sanita/2026/11/17/iss-in-italia-restano-alti-i-tassi-di-antibioticoresistenza_565d2577-28f6-4e5c-b410-40bf7578118e.html",
-      "data": "2026-11-17T14:05:15.000Z",
+      "titolo": "Ogni anno 5.000 casi di tumore per Hpv, 'vaccinare tutti almeno fino a 30 anni'",
+      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/medicina/2026/11/17/ogni-anno-5.000-casi-di-tumore-per-hpv-vaccinare-tutti-almeno_02fc4d73-5818-49f4-b240-672af8933864.html",
+      "data": "2026-11-17T17:23:23.000Z",
       "fonte": "ANSA Salute",
       "tipo": "stampa"
     },
     {
-      "titolo": "Da lotta al cancro a tutela degli oceani, premiate tre start up europee IA",
-      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/sanita/2026/11/17/da-lotta-al-cancro-a-tutela-degli-oceani-premiate-tre-start-up-europee-ia_7bf348da-013b-4769-acb9-9cadfbebc9b0.html",
-      "data": "2026-11-17T13:15:33.000Z",
+      "titolo": "Tumore pancreas, da Commissione europea ok a farmaco che aumenta sopravvivenza",
+      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/focus_tumore/2026/11/17/tumore-pancreas-da-commissione-europea-ok-a-farmaco-che-aumenta-sopravvivenza_0ebc1341-fc71-4ea1-af47-50defb2ffbad.html",
+      "data": "2026-11-17T17:16:42.000Z",
       "fonte": "ANSA Salute",
       "tipo": "stampa"
     }
@@ -49,7 +49,7 @@ window.QO_DATI = {
     "Ministero della Salute": 1,
     "Istituto Superiore di Sanità": 7,
     "ISS EpiCentro": 5,
-    "ECDC (in inglese)": 3,
-    "ANSA Salute": 15
+    "ECDC (in inglese)": 2,
+    "ANSA Salute": 17
   }
 };
