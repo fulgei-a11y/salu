@@ -1,6 +1,6 @@
 /* Notizie del giorno, generate automaticamente dagli script. */
 window.QO_DATI = {
-  "aggiornato": "2026-11-17T22:51:52.107Z",
+  "aggiornato": "2026-11-18T13:48:38.912Z",
   "notizie": [
     {
       "titolo": "Ebola disease: Multi-country outbreak 2026",
@@ -31,25 +31,25 @@ window.QO_DATI = {
       "tipo": "ufficiale"
     },
     {
-      "titolo": "Ogni anno 5.000 casi di tumore per Hpv, 'vaccinare tutti almeno fino a 30 anni'",
-      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/medicina/2026/11/17/ogni-anno-5.000-casi-di-tumore-per-hpv-vaccinare-tutti-almeno_02fc4d73-5818-49f4-b240-672af8933864.html",
-      "data": "2026-11-17T17:23:23.000Z",
+      "titolo": "Benessere orale parte della salute sistemica, il 19 novembre il convegno al Senato",
+      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/sanita/2026/11/18/benessere-orale-parte-della-salute-sistemica-il-19-novembre-il-convegno-al-senato_88b162fc-823f-488a-86d8-eb35375a983d.html",
+      "data": "2026-11-18T13:23:21.000Z",
       "fonte": "ANSA Salute",
       "tipo": "stampa"
     },
     {
-      "titolo": "Tumore pancreas, da Commissione europea ok a farmaco che aumenta sopravvivenza",
-      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/focus_tumore/2026/11/17/tumore-pancreas-da-commissione-europea-ok-a-farmaco-che-aumenta-sopravvivenza_0ebc1341-fc71-4ea1-af47-50defb2ffbad.html",
-      "data": "2026-11-17T17:16:42.000Z",
+      "titolo": "Prognosi del tumore polmonare, la risposta è nei microbi",
+      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/sanita/2026/11/18/prognosi-del-tumore-polmonare-la-risposta-e-nei-microbi_25f47a56-ec21-4ef9-b529-783c6984556c.html",
+      "data": "2026-11-18T13:22:18.000Z",
       "fonte": "ANSA Salute",
       "tipo": "stampa"
     }
   ],
   "stato": {
     "Ministero della Salute": 1,
-    "Istituto Superiore di Sanità": 7,
+    "Istituto Superiore di Sanità": 8,
     "ISS EpiCentro": 5,
-    "ECDC (in inglese)": 2,
-    "ANSA Salute": 17
+    "ECDC (in inglese)": 1,
+    "ANSA Salute": 24
   }
 };
