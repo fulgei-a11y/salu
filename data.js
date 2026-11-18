@@ -1,7 +1,14 @@
 /* Notizie del giorno, generate automaticamente dagli script. */
 window.QO_DATI = {
-  "aggiornato": "2026-11-18T13:48:38.912Z",
+  "aggiornato": "2026-11-18T22:34:23.596Z",
   "notizie": [
+    {
+      "titolo": "ISTISAN Congressi 26/C8 - 19° Convegno. I Centri per i Disturbi Cognitivi e le Demenze e la gestione integrata della demenza. Istituto Superiore di…",
+      "url": "https://news.google.com/rss/articles/CBMijANBVV95cUxQRHlDRThsUm5HN3pyMkV0R2NFUklXRWNQRWFHdnlLSG9aMmVPWHh3VDNjaDY4NF9iTUxldkNreE9nN1hKWHVTbXBRM3NQNkVta0VWRnlYd0ZyRXpRNjNydDdtV1FuX2ZFQUh3Z25jWkRuZ0ptazBBZ2o3bThCTzFyS1ZzMDV3aEg0UFQyRFFSR2pVSkFhSVcxNmRwdFg2R25iT18wTElZS1lNUEZtN0l0dHBoTk1UQTVtQWwzQ3ZGUzk5Q1U1Sy15eXo5NTY1cnV5NWp4dGJZZDY1azJ4TngxeE5RRmNXYkVXTzRKbzJBa0hfczI2UDMzUjU2Q05KMHlDZ2laM1JUVk9jYkNZT1VtVVVUQXYwcktDZHdoZjYwOHgwWVlmcUVua0tERUsxdlF3RGI5bGMzUkZ6QzF5R0Rnc0djTWM5RnRhTUVKT18wZFhCT1Q2YkpkRUZmUlVRNXdDdG1YQVZzUXJnMjdkZFhOV0prTmg5QWFzRHIzS0VBbTM1UVY0ZVBYa3ZqdlU?oc=5",
+      "data": "2026-11-18T15:19:58.000Z",
+      "fonte": "Istituto Superiore di Sanità",
+      "tipo": "ufficiale"
+    },
     {
       "titolo": "Ebola disease: Multi-country outbreak 2026",
       "url": "https://www.ecdc.europa.eu/en/ebola-disease-multi-country-outbreak-2026",
@@ -17,13 +24,6 @@ window.QO_DATI = {
       "tipo": "ufficiale"
     },
     {
-      "titolo": "Dieta mediterranea, cinque consigli per mangiare bene anche quando si ha poco tempo",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPWE9vdWRpRmhENHZJZUdzaDBpQ043cUJJMnlHZHdPLWFHRVF6MjZBbUd0eGdPbFE4RGJ1al9UZGY5TGhTY2tzYlNOdGFnRXpKNHd6R25QRDhxaEkxZHVVQ1Z5ZGtvVHdtcjBZbzBsMk1IVUljdVFIeEFnWlg2c2tuODhBZWo0dWRrZGpfWnhSNm5yVVJ0ZmFIZzJqTmZEMjN6dEhCa1hB?oc=5",
-      "data": "2026-11-16T09:30:00.000Z",
-      "fonte": "Istituto Superiore di Sanità",
-      "tipo": "ufficiale"
-    },
-    {
       "titolo": "CARTA INTESTATA DITTA RICHIESTA DI INSERIMENTO NELLA LISTA EXPORT IN VIETNAM DI PRODOTTI ALIMENTARI DI ORIGINE ANIMALE",
       "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOTXNSNkdheDJYeHREZFgtVGV4bVBiZF9TSWM0RzBVc2lTUDdqbS02V3dmcjJDNThERHVQcVVXZUFUYTJrQ0dXT2JyOTNFOExFOFFUajlSX21mZ3ZEYWRLOFlhYl85UWFyMnRkeVA5dEhXS1dTdXJSbFNvbjZQU2xGMU5PRjJxcjlPUlZ1X212WElUdV9IWHE0?oc=5",
       "data": "2026-11-15T01:09:02.000Z",
@@ -31,25 +31,25 @@ window.QO_DATI = {
       "tipo": "ufficiale"
     },
     {
-      "titolo": "Benessere orale parte della salute sistemica, il 19 novembre il convegno al Senato",
-      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/sanita/2026/11/18/benessere-orale-parte-della-salute-sistemica-il-19-novembre-il-convegno-al-senato_88b162fc-823f-488a-86d8-eb35375a983d.html",
-      "data": "2026-11-18T13:23:21.000Z",
+      "titolo": "'Te lo direbbe anche un bambino', la campagna di Aifa e ministero per giusto uso degli antibiotici",
+      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/sanita/2026/11/18/te-lo-direbbe-anche-un-bambino-la-campagna-aifa-per-giusto-uso-antibiotici_3fcd1aa2-7183-44fe-944d-7eb29d3f0009.html",
+      "data": "2026-11-18T15:41:38.000Z",
       "fonte": "ANSA Salute",
       "tipo": "stampa"
     },
     {
-      "titolo": "Prognosi del tumore polmonare, la risposta è nei microbi",
-      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/sanita/2026/11/18/prognosi-del-tumore-polmonare-la-risposta-e-nei-microbi_25f47a56-ec21-4ef9-b529-783c6984556c.html",
-      "data": "2026-11-18T13:22:18.000Z",
+      "titolo": "Istituti zooprofilattici, 'negli allevamenti uso di antibiotici ridotto fino al 96%'",
+      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/sanita/2026/11/18/istituti-zooprofilattici-negli-allevamenti-uso-di-antibiotici-ridotto-fino-al-96_26f5ee80-ae46-4529-8c0c-dede9d3ca855.html",
+      "data": "2026-11-18T15:38:15.000Z",
       "fonte": "ANSA Salute",
       "tipo": "stampa"
     }
   ],
   "stato": {
     "Ministero della Salute": 1,
-    "Istituto Superiore di Sanità": 8,
-    "ISS EpiCentro": 5,
+    "Istituto Superiore di Sanità": 9,
+    "ISS EpiCentro": 4,
     "ECDC (in inglese)": 1,
-    "ANSA Salute": 24
+    "ANSA Salute": 23
   }
 };
