@@ -1,6 +1,6 @@
 /* Notizie del giorno, generate automaticamente dagli script. */
 window.QO_DATI = {
-  "aggiornato": "2026-11-18T22:34:23.596Z",
+  "aggiornato": "2026-11-19T14:18:39.790Z",
   "notizie": [
     {
       "titolo": "ISTISAN Congressi 26/C8 - 19° Convegno. I Centri per i Disturbi Cognitivi e le Demenze e la gestione integrata della demenza. Istituto Superiore di…",
@@ -31,25 +31,25 @@ window.QO_DATI = {
       "tipo": "ufficiale"
     },
     {
-      "titolo": "'Te lo direbbe anche un bambino', la campagna di Aifa e ministero per giusto uso degli antibiotici",
-      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/sanita/2026/11/18/te-lo-direbbe-anche-un-bambino-la-campagna-aifa-per-giusto-uso-antibiotici_3fcd1aa2-7183-44fe-944d-7eb29d3f0009.html",
-      "data": "2026-11-18T15:41:38.000Z",
+      "titolo": "In Italia solo il 9% degli adolescenti fa almeno un'ora di movimento al giorno",
+      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/salute_bambini/news/2026/11/18/in-italia-solo-il-9-degli-adolescenti-fa-almeno-unora-di-movimento-al-giorno_1ae10b00-755f-45e0-9551-0971d2fa8f59.html",
+      "data": "2026-11-19T11:13:15.000Z",
       "fonte": "ANSA Salute",
       "tipo": "stampa"
     },
     {
-      "titolo": "Istituti zooprofilattici, 'negli allevamenti uso di antibiotici ridotto fino al 96%'",
-      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/sanita/2026/11/18/istituti-zooprofilattici-negli-allevamenti-uso-di-antibiotici-ridotto-fino-al-96_26f5ee80-ae46-4529-8c0c-dede9d3ca855.html",
-      "data": "2026-11-18T15:38:15.000Z",
+      "titolo": "Cardiologi, 'per i pazienti cardiovascolari fondamentale il vaccino antinfluenzale'",
+      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/medicina/2026/11/18/cardiologi-per-pazienti-cardiovascolari-fondamentale-vaccino-antinfluenzale_282bc960-49f9-4ba3-b958-7a788f1d72cf.html",
+      "data": "2026-11-19T09:10:15.000Z",
       "fonte": "ANSA Salute",
       "tipo": "stampa"
     }
   ],
   "stato": {
     "Ministero della Salute": 1,
-    "Istituto Superiore di Sanità": 9,
-    "ISS EpiCentro": 4,
+    "Istituto Superiore di Sanità": 8,
+    "ISS EpiCentro": 3,
     "ECDC (in inglese)": 1,
-    "ANSA Salute": 23
+    "ANSA Salute": 20
   }
 };
