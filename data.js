@@ -1,6 +1,6 @@
 /* Notizie del giorno, generate automaticamente dagli script. */
 window.QO_DATI = {
-  "aggiornato": "2026-11-20T13:57:03.442Z",
+  "aggiornato": "2026-11-20T22:13:54.365Z",
   "notizie": [
     {
       "titolo": "Sorveglianza RespiVirNet, in leggera crescita i casi di Infezioni Respiratorie Acute",
@@ -31,16 +31,16 @@ window.QO_DATI = {
       "tipo": "ufficiale"
     },
     {
-      "titolo": "Influenza: salgono infezioni respiratorie, 487 mila casi nell'ultima settimana",
-      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/medicina/2026/11/20/influenza-salgono-infezioni-respiratorie-487-mila-casi-nellultima-settimana_1d1cb6e6-55cc-48e4-b5cf-597386dcda2a.html",
-      "data": "2026-11-20T11:15:31.000Z",
+      "titolo": "Sei su 10 scoprono tardi l'infezione da Hiv, al via la settimana dei test",
+      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/sanita/2026/11/20/sei-su-10-scoprono-tardi-linfezione-da-hiv-al-via-la-settimana-dei-test_684128a4-5934-4349-bdf9-f658f5288f25.html",
+      "data": "2026-11-20T17:09:11.000Z",
       "fonte": "ANSA Salute",
       "tipo": "stampa"
     },
     {
-      "titolo": "Colesterolo, per la prevenzione cardiovascolare non basta abbassare i valori",
-      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/medicina/2026/11/19/colesterolo-per-la-prevenzione-cardiovascolare-non-basta-abbassare-i-valori_455c9569-697f-4c23-a0f8-8e9800a7633e.html",
-      "data": "2026-11-20T09:09:36.000Z",
+      "titolo": "Influenza: salgono infezioni respiratorie, 487 mila casi nell'ultima settimana",
+      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/medicina/2026/11/20/influenza-salgono-infezioni-respiratorie-487-mila-casi-nellultima-settimana_1d1cb6e6-55cc-48e4-b5cf-597386dcda2a.html",
+      "data": "2026-11-20T13:49:23.000Z",
       "fonte": "ANSA Salute",
       "tipo": "stampa"
     }
@@ -50,6 +50,6 @@ window.QO_DATI = {
     "Istituto Superiore di Sanità": 10,
     "ISS EpiCentro": 5,
     "ECDC (in inglese)": 1,
-    "ANSA Salute": 6
+    "ANSA Salute": 4
   }
 };
