@@ -1,7 +1,14 @@
 /* Notizie del giorno, generate automaticamente dagli script. */
 window.QO_DATI = {
-  "aggiornato": "2026-11-19T22:39:19.288Z",
+  "aggiornato": "2026-11-20T13:57:03.442Z",
   "notizie": [
+    {
+      "titolo": "Sorveglianza RespiVirNet, in leggera crescita i casi di Infezioni Respiratorie Acute",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOSVhrUU5FRTlMNWN2eE0tYVF0MWdPbTJDN2ttclpYdGZGRzFyVDRFc2U2WkwxVURFZGUxYzZESmJJSktOclFmQUo2dTRaUUpsbENsaWpER2RDdU4wR0Y0VDFLOUVUd3pneDJOOU5pdlRRODNpbDFPaDRTRlpsWjAwZ0huUDNHVTBSZmZKY3Ezdk9ZVlpEdUw0MXQ4RTBvNU1IUndOQVJGbw?oc=5",
+      "data": "2026-11-20T09:54:23.000Z",
+      "fonte": "Istituto Superiore di Sanità",
+      "tipo": "ufficiale"
+    },
     {
       "titolo": "La popolazione diabetica adulta nelle Marche",
       "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOd1QtaGVzZmNzeGwwWEdGN1BBeklUWVlRZEw4U25vWVpHTDZVeEpDTTQyemlDVnFON21zMFVjWnVMa2YyWmNHZ3Q2NnMyTTBGNlc2c09JU0JCYlB1TzdWbWxuNlhsbnQ3cGNoY1lOeDZkdmdTenh1S185WW05NU1XMWxpMXI3ZFoyWk9JVE80V09xcFly?oc=5",
@@ -24,32 +31,25 @@ window.QO_DATI = {
       "tipo": "ufficiale"
     },
     {
-      "titolo": "Antibiotico-resistenza, in Italia tassi sempre alti; ecco come ‘viaggia’ un batterio resistente in Europa",
-      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOTkhPUUtscHBXQzg4UU5aUENtek8xdFhFbnJYd0I3RUQ1bmQ3UkxOdDE3UTQ5T3dESlcxWlo5Z0ZlUXZzQmFDa2FZR2JFTGFvOG9CWURxNWFiOVp2cGtyUFdMcXZFdUt3dWJuWG1KSlRieG1TdTFFZ0xEdUJuOHR2dWJTbk0tX0JGejVleDNKamRFZkN0YU45ODFrS1cybjh4bmJxWkxlTDV0NG9SZlZkT000Zk00cS04ZF9TQ2RTZw?oc=5",
-      "data": "2026-11-17T12:38:31.000Z",
-      "fonte": "Istituto Superiore di Sanità",
-      "tipo": "ufficiale"
-    },
-    {
-      "titolo": "Tumore al pancreas, le regioni spingono per il nuovo farmaco",
-      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/focus_tumore/2026/11/19/ansatumore-al-pancreas-le-regioni-spingono-per-il-nuovo-farmaco_99833f52-2494-4148-aa32-3dd4e350854e.html",
-      "data": "2026-11-19T22:15:22.000Z",
+      "titolo": "Influenza: salgono infezioni respiratorie, 487 mila casi nell'ultima settimana",
+      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/medicina/2026/11/20/influenza-salgono-infezioni-respiratorie-487-mila-casi-nellultima-settimana_1d1cb6e6-55cc-48e4-b5cf-597386dcda2a.html",
+      "data": "2026-11-20T11:15:31.000Z",
       "fonte": "ANSA Salute",
       "tipo": "stampa"
     },
     {
       "titolo": "Colesterolo, per la prevenzione cardiovascolare non basta abbassare i valori",
       "url": "https://www.ansa.it/canale_saluteebenessere/notizie/medicina/2026/11/19/colesterolo-per-la-prevenzione-cardiovascolare-non-basta-abbassare-i-valori_455c9569-697f-4c23-a0f8-8e9800a7633e.html",
-      "data": "2026-11-19T16:09:58.000Z",
+      "data": "2026-11-20T09:09:36.000Z",
       "fonte": "ANSA Salute",
       "tipo": "stampa"
     }
   ],
   "stato": {
     "Ministero della Salute": 1,
-    "Istituto Superiore di Sanità": 8,
-    "ISS EpiCentro": 4,
+    "Istituto Superiore di Sanità": 10,
+    "ISS EpiCentro": 5,
     "ECDC (in inglese)": 1,
-    "ANSA Salute": 13
+    "ANSA Salute": 6
   }
 };
