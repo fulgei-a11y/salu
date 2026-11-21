@@ -1,6 +1,6 @@
 /* Notizie del giorno, generate automaticamente dagli script. */
 window.QO_DATI = {
-  "aggiornato": "2026-11-20T22:13:54.365Z",
+  "aggiornato": "2026-11-21T13:23:00.991Z",
   "notizie": [
     {
       "titolo": "Sorveglianza RespiVirNet, in leggera crescita i casi di Infezioni Respiratorie Acute",
@@ -47,7 +47,7 @@ window.QO_DATI = {
   ],
   "stato": {
     "Ministero della Salute": 1,
-    "Istituto Superiore di Sanità": 10,
+    "Istituto Superiore di Sanità": 9,
     "ISS EpiCentro": 5,
     "ECDC (in inglese)": 1,
     "ANSA Salute": 4
