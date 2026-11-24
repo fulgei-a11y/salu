@@ -1,0 +1,24 @@
+{
+  "name": "Qui e Ora",
+  "short_name": "Qui e Ora",
+  "description": "Ogni giorno un passo per il corpo e per la mente: abitudini sane, cibo di stagione, movimento, presenza e prevenzione.",
+  "lang": "it",
+  "id": "./",
+  "start_url": "./?app=1",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#23392F",
+  "theme_color": "#23392F",
+  "categories": ["health", "lifestyle", "education"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Un minuto di respiro", "short_name": "Respiro", "url": "./#mente", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Il mio diario", "short_name": "Diario", "url": "./#diario", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Prevenzione", "short_name": "Prevenzione", "url": "./#prevenzione", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] }
+  ]
+}

@@ -1,0 +1,84 @@
+name: Aggiorna e pubblica
+
+on:
+  schedule:
+    # Ore UTC: 5:10 e 15:10 (6:10 e 16:10 in inverno, 7:10 e 17:10 in estate a Roma)
+    - cron: "10 5 * * *"
+    - cron: "10 15 * * *"
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: aggiorna-e-pubblica
+  cancel-in-progress: false
+
+jobs:
+  aggiorna:
+    if: github.event_name != 'push'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Scarica le notizie
+        run: node scripts/aggiorna.mjs
+      - name: Controlla contenuti e regole
+        run: |
+          node --check data.js
+          node scripts/verifica.mjs
+      - name: Salva le notizie
+        run: |
+          if git diff --quiet -- data.js; then echo "Nessuna novità."; exit 0; fi
+          # Autore anonimo e commit senza messaggio
+          git config user.name "qo"
+          git config user.email "qo@users.noreply.github.com"
+          for i in 1 2 3; do
+            git fetch -q origin main
+            git reset -q origin/main
+            git add data.js
+            git commit -q --allow-empty-message -m "" && git push -q origin HEAD:main && exit 0
+            sleep 5
+          done
+          exit 1
+
+  pubblica:
+    needs: aggiorna
+    if: always() && needs.aggiorna.result != 'cancelled'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Controlla contenuti e regole
+        run: node scripts/verifica.mjs
+      - name: Prepara il sito
+        run: |
+          mkdir _site
+          cp index.html fonti.js contenuti.js prevenzione.js data.js manifest.webmanifest sw.js _site/
+          cp -r icons _site/
+          touch _site/.nojekyll
+      - name: Imposta la password del sito
+        env:
+          SITO_PASSWORD: ${{ secrets.SITO_PASSWORD }}
+        run: node scripts/password.mjs _site/index.html
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deploy
+        uses: actions/deploy-pages@v4
