@@ -1,18 +1,18 @@
 /* Notizie del giorno, generate automaticamente dagli script. */
 window.QO_DATI = {
-  "aggiornato": "2026-11-24T15:43:28.169Z",
+  "aggiornato": "2026-11-25T15:34:24.192Z",
   "notizie": [
     {
-      "titolo": "Demenze: la prevenzione può evitare 33mila casi, agire su 11 fattori di rischio",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPRTlDWW8xc0gtQ2NqUUNkdXU4WXNremFOZm54M2tsQnJ6azI4LU50ZlhsU0JwWDUtT25HdFN5ZzlYZnpsaXV5WTBjR3AwTHM5RkhVSjZ1UXEwVUoyVzZwMFJXSGE1WXJ3RWtSOWlySHo4d1kwcmlFUDlqQ3gxNEdXaUhFdmwwbGYtNUl6TXZXQXF0amxfdkJkWVIyX3NQMWFTdGxXMHZR?oc=5",
-      "data": "2026-11-24T14:05:07.000Z",
+      "titolo": "Sorveglianza RespiVirNet, ancora in calo le infezioni respiratorie nell'ultima settimana",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNMmR5aFJSc3BQLTVReFpXZEs0WV9QZm5tOWNhSkNBOVBIQS01Y1lobDFxd0dxY3hfQnZLMHoxNjFFdXFyb3BnWmlNUTk3UjcwUnJxUEtlUzNXZzVNaXBTZS00c0lUWFUwTGNfZ1hITFlXcm56VVpHdXM3UHd4UTVXRHE5dw?oc=5",
+      "data": "2026-11-24T17:47:03.000Z",
       "fonte": "Istituto Superiore di Sanità",
       "tipo": "ufficiale"
     },
     {
-      "titolo": "L’alcol può alimentare la violenza contro le donne, l'Iss rilancia la campagna dell'Oms Europa",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQUUNnRmtQUWxvY3BCNWltVGVqWkdzcjljMWhJMG90ejE3cTJUSUtGMjdKU0t5Ylh2eFNId3pSS01XRklmTzdNWTYxVnhHMTBiZU9vczJGWFZ2OXNEd0Y5d0JRRFdIVEJyZTJPMzdDaVlub0hTUHl3SGJHSVNfMHVIb2ZHUi1FTFc0RXJfN0EwZTZjUVJ0cWJ3dHdfWkF4T1hrMjRpcGJ2b2VwbklMYXhyMmxLaFlWbk43ZFBB?oc=5",
-      "data": "2026-11-24T11:04:39.000Z",
+      "titolo": "Demenze: la prevenzione può evitare 33mila casi, agire su 11 fattori di rischio",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPRTlDWW8xc0gtQ2NqUUNkdXU4WXNremFOZm54M2tsQnJ6azI4LU50ZlhsU0JwWDUtT25HdFN5ZzlYZnpsaXV5WTBjR3AwTHM5RkhVSjZ1UXEwVUoyVzZwMFJXSGE1WXJ3RWtSOWlySHo4d1kwcmlFUDlqQ3gxNEdXaUhFdmwwbGYtNUl6TXZXQXF0amxfdkJkWVIyX3NQMWFTdGxXMHZR?oc=5",
+      "data": "2026-11-24T14:05:07.000Z",
       "fonte": "Istituto Superiore di Sanità",
       "tipo": "ufficiale"
     },
@@ -31,23 +31,23 @@ window.QO_DATI = {
       "tipo": "ufficiale"
     },
     {
-      "titolo": "Dengue, in 35 anni casi segnalati nel mondo cresciuti di 34 volte",
-      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/sanita/2026/11/23/dengue-in-35-anni-casi-segnalati-nel-mondo-cresciuti-di-34-volte_2fae8bff-1b57-408f-956a-2ff7806f7fda.html",
-      "data": "2026-11-23T13:09:52.000Z",
+      "titolo": "Curigliano, 'obiettivo è accesso al nuovo farmaco per tumore a pancreas in tempi contenuti anche in Italia'",
+      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/focus_tumore/2026/11/25/curigliano-obiettivo-nuovo-farmaco-per-pancreas-in-tempi-contenuti-anche-in-italia_4432efb1-b075-4ac8-a245-ddcba31bb20e.html",
+      "data": "2026-11-25T15:21:59.000Z",
       "fonte": "ANSA Salute",
       "tipo": "stampa"
     },
     {
-      "titolo": "Oncologi, 'definire un iter nazionale per l'accesso al nuovo farmaco per tumore al pancreas'",
-      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/focus_tumore/2026/11/23/oncologi-definire-iter-nazionale-per-accesso-a-nuovo-farmaco-tumore-pancreas_2e5f0d19-cc6d-4548-b9e2-0871e996079a.html",
-      "data": "2026-11-23T12:38:53.000Z",
+      "titolo": "L'onda di 'giovani vecchi', i nati dopo il 2000 rischiano di invecchiare prima",
+      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/medicina/2026/11/25/londa-di-giovani-vecchi-i-nati-dopo-il-2000-rischiano-di-invecchiare-prima_31dc7594-10dc-464e-8b34-d13c1edb8319.html",
+      "data": "2026-11-25T13:04:20.000Z",
       "fonte": "ANSA Salute",
       "tipo": "stampa"
     }
   ],
   "stato": {
     "Ministero della Salute": 1,
-    "Istituto Superiore di Sanità": 9,
+    "Istituto Superiore di Sanità": 10,
     "ISS EpiCentro": 6,
     "ECDC (in inglese)": 1,
     "ANSA Salute": 5
