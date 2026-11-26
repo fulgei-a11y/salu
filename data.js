@@ -1,6 +1,6 @@
 /* Notizie del giorno, generate automaticamente dagli script. */
 window.QO_DATI = {
-  "aggiornato": "2026-11-26T15:10:03.463Z",
+  "aggiornato": "2026-11-26T23:47:51.709Z",
   "notizie": [
     {
       "titolo": "\"Alcohol and Violence Against Women\": la campagna di comunicazione dell’OMS Europa sul legame tra alcol e violenza contro le donne",
@@ -31,16 +31,16 @@ window.QO_DATI = {
       "tipo": "ufficiale"
     },
     {
-      "titolo": "Fino a un infarto su 10 non dipende da arterie ostruite, terapie mirate",
-      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/medicina/2026/11/26/fino-a-un-infarto-su-10-non-dipende-da-arterie-ostruite-terapie-mirate_0657827f-385f-4247-b337-0cd3b36cfd93.html",
-      "data": "2026-11-26T13:59:27.000Z",
+      "titolo": "Regione Lazio, via libera ad accesso gratuito farmaco contro tumore pancreas",
+      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/medicina/2026/11/26/regione-lazio-via-libera-ad-accesso-gratuito-farmaco-contro-tumore-pancreas_5706c0bd-25c1-4b55-a909-ad260fce5bd5.html",
+      "data": "2026-11-26T17:37:52.000Z",
       "fonte": "ANSA Salute",
       "tipo": "stampa"
     },
     {
-      "titolo": "Influenza, per la Simg 'a rischio le coperture vaccinali per gli anziani'",
-      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/sanita/2026/11/25/influenza-per-la-simg-a-rischio-le-coperture-vaccinali-per-gli-anziani_f61af223-7afe-49ef-a6a4-f31b3ab5fa0b.html",
-      "data": "2026-11-25T16:55:37.000Z",
+      "titolo": "Associazioni, in manovra istituire fondo 10 milioni per ricerca tumori pediatrici",
+      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/focus_tumore/2026/11/26/associazioni-in-manovra-istituire-fondo-10-milioni-per-ricerca-tumori-pediatrici_c2bc364c-9075-49de-950f-9a5744ef6f89.html",
+      "data": "2026-11-26T15:18:21.000Z",
       "fonte": "ANSA Salute",
       "tipo": "stampa"
     }
@@ -50,6 +50,6 @@ window.QO_DATI = {
     "Istituto Superiore di Sanità": 9,
     "ISS EpiCentro": 6,
     "ECDC (in inglese)": 1,
-    "ANSA Salute": 7
+    "ANSA Salute": 9
   }
 };
