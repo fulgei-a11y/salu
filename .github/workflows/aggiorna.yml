@@ -38,8 +38,8 @@ jobs:
         run: |
           if git diff --quiet -- data.js; then echo "Nessuna novità."; exit 0; fi
           # Autore anonimo e commit senza messaggio
-          git config user.name "qo"
-          git config user.email "qo@users.noreply.github.com"
+          git config user.name "anonimo"
+          git config user.email "noreply@anonimo.invalid"
           for i in 1 2 3; do
             git fetch -q origin main
             git reset -q origin/main
