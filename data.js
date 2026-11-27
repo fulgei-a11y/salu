@@ -1,6 +1,6 @@
 /* Notizie del giorno, generate automaticamente dagli script. */
 window.QO_DATI = {
-  "aggiornato": "2026-11-27T15:01:45.619Z",
+  "aggiornato": "2026-11-27T23:23:54.291Z",
   "notizie": [
     {
       "titolo": "Sorveglianza RespiVirNet, nell'ultima settimana 532mila casi di Infezioni Respiratorie Acute",
@@ -47,7 +47,7 @@ window.QO_DATI = {
   ],
   "stato": {
     "Ministero della Salute": 2,
-    "Istituto Superiore di Sanità": 11,
+    "Istituto Superiore di Sanità": 21,
     "ISS EpiCentro": 6,
     "ECDC (in inglese)": 1,
     "ANSA Salute": 9
