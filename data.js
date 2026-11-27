@@ -1,7 +1,21 @@
 /* Notizie del giorno, generate automaticamente dagli script. */
 window.QO_DATI = {
-  "aggiornato": "2026-11-26T23:47:51.709Z",
+  "aggiornato": "2026-11-27T15:01:45.619Z",
   "notizie": [
+    {
+      "titolo": "Sorveglianza RespiVirNet, nell'ultima settimana 532mila casi di Infezioni Respiratorie Acute",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQYmdjaGhRcWtmc0pCMFJtVXlwWi1Qc2F6S2M3eE1qWThjWk5Hb0RvWDNZS0xfM1VqN19FTzNQU1N5NWtUYXNzejBtcTJuM0tzLUx5SXZFRWFHaDZBSWhZV1RUN2k0WGQ1T1E4T0c4S3BBcHFqZk94WDFmQ1NYeThVQktXekMteWN5SmJMSjhpbUVRSVJ3aW5XOWdQUmRZVXpNczA4M1RraU8tR1FSeDYtSWV3?oc=5",
+      "data": "2026-11-27T13:51:41.000Z",
+      "fonte": "Istituto Superiore di Sanità",
+      "tipo": "ufficiale"
+    },
+    {
+      "titolo": "Arbovirosi: 388 casi di Dengue, su Eurosurveillance la descrizione del focolaio toscano; Lancet Regional Health pubblica la descrizione del sistema di…",
+      "url": "https://news.google.com/rss/articles/CBMimwJBVV95cUxPeFo2cFlWNjZGU1JjeGJEOTBlRUg5aEZ1Q2R0bVZoLVZTV3lxZzIwYWVTNWVjdmU5ckpLOG1reEVxeVpaT0U2YXpSalZETE1Wd1ZiMndMTVg1ZTBsLVE5YW9EZktpYk5ld2tJSHpFQWFGSFNKM2UwWUpkbjNoMmNuQkVVMnVXdGdzd1cxR2FVdHE5N2psRTlfRUtmLThHY29kTDgwdHI2TDlmOHdyR0YzVWFSNTBad09RWUpLRUhqX1czRkh1NDNISjJEQ3BkeTZ5M0dNRlNEZHJPcGl2UXVoWlFoUnV2QnhlV2txSHhLMUZDUXJXZEFjTWN4TFd0VkRfT2ZacWR5WExDSTJOVWhLNmE0QUVoR3M5QVRv?oc=5",
+      "data": "2026-11-27T09:15:10.000Z",
+      "fonte": "Istituto Superiore di Sanità",
+      "tipo": "ufficiale"
+    },
     {
       "titolo": "\"Alcohol and Violence Against Women\": la campagna di comunicazione dell’OMS Europa sul legame tra alcol e violenza contro le donne",
       "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE43ZmNld05yUWl3WWZHSG9oMWRRbmQyZmNQTGNpNFpEeG5IU1pEcHpmUGt3SUx6ckNqZVZ4ZGNMa01YTFhtX0RGeTRYUlM3OWluX0RCQlNWX3JjdkdUXzc3V0pPVFpDNElCM3UtREVJU0xuVjc5RmpvVVN4QkNoUQ?oc=5",
@@ -14,20 +28,6 @@ window.QO_DATI = {
       "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxONG5nd2F4S2VmMVpQZUFxUWdqczF6SjlYYmQtU2NDN01LdHhOdlZaNXdJUVo1ZXZnR09JdFYzR2Z0UnpyNmZzUnJ0NVFCNVRpcjZZa3BBeDFpVnBSemlvSXR6UEtVQTZVa2x0ZTVHMkhONHRzNHYwdTByUVppQmdDZ2QyMmdta2dHQnVKT003cWlqaDFmX2NoQ2RQNkNpTVFGNVdSdHV4SjVRR2dvbmNFYmVtRjBia1ppdW1WN2JhbkhxSTNmM1Vmb1ZJNjE?oc=5",
       "data": "2026-11-25T15:34:42.000Z",
       "fonte": "Ministero della Salute",
-      "tipo": "ufficiale"
-    },
-    {
-      "titolo": "Sorveglianza RespiVirNet, ancora in calo le infezioni respiratorie nell'ultima settimana",
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNMmR5aFJSc3BQLTVReFpXZEs0WV9QZm5tOWNhSkNBOVBIQS01Y1lobDFxd0dxY3hfQnZLMHoxNjFFdXFyb3BnWmlNUTk3UjcwUnJxUEtlUzNXZzVNaXBTZS00c0lUWFUwTGNfZ1hITFlXcm56VVpHdXM3UHd4UTVXRHE5dw?oc=5",
-      "data": "2026-11-24T17:47:03.000Z",
-      "fonte": "Istituto Superiore di Sanità",
-      "tipo": "ufficiale"
-    },
-    {
-      "titolo": "Demenze: la prevenzione può evitare 33mila casi, agire su 11 fattori di rischio",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPRTlDWW8xc0gtQ2NqUUNkdXU4WXNremFOZm54M2tsQnJ6azI4LU50ZlhsU0JwWDUtT25HdFN5ZzlYZnpsaXV5WTBjR3AwTHM5RkhVSjZ1UXEwVUoyVzZwMFJXSGE1WXJ3RWtSOWlySHo4d1kwcmlFUDlqQ3gxNEdXaUhFdmwwbGYtNUl6TXZXQXF0amxfdkJkWVIyX3NQMWFTdGxXMHZR?oc=5",
-      "data": "2026-11-24T14:05:07.000Z",
-      "fonte": "Istituto Superiore di Sanità",
       "tipo": "ufficiale"
     },
     {
@@ -47,7 +47,7 @@ window.QO_DATI = {
   ],
   "stato": {
     "Ministero della Salute": 2,
-    "Istituto Superiore di Sanità": 9,
+    "Istituto Superiore di Sanità": 11,
     "ISS EpiCentro": 6,
     "ECDC (in inglese)": 1,
     "ANSA Salute": 9
