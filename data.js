@@ -1,6 +1,6 @@
 /* Notizie del giorno, generate automaticamente dagli script. */
 window.QO_DATI = {
-  "aggiornato": "2026-11-27T23:23:54.291Z",
+  "aggiornato": "2026-11-28T14:09:58.732Z",
   "notizie": [
     {
       "titolo": "Sorveglianza RespiVirNet, nell'ultima settimana 532mila casi di Infezioni Respiratorie Acute",
@@ -31,25 +31,25 @@ window.QO_DATI = {
       "tipo": "ufficiale"
     },
     {
-      "titolo": "Regione Lazio, via libera ad accesso gratuito farmaco contro tumore pancreas",
-      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/medicina/2026/11/26/regione-lazio-via-libera-ad-accesso-gratuito-farmaco-contro-tumore-pancreas_5706c0bd-25c1-4b55-a909-ad260fce5bd5.html",
-      "data": "2026-11-26T17:37:52.000Z",
+      "titolo": "Virus respiratorio sinciziale, appello per vaccini ad anziani e fragili",
+      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/sanita/2026/11/28/virus-respiratorio-sinciziale-appello-per-vaccini-ad-anziani-e-fragili_bd233708-6ac0-47da-90bf-1385f219f081.html",
+      "data": "2026-11-28T11:36:42.000Z",
       "fonte": "ANSA Salute",
       "tipo": "stampa"
     },
     {
-      "titolo": "Associazioni, in manovra istituire fondo 10 milioni per ricerca tumori pediatrici",
-      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/focus_tumore/2026/11/26/associazioni-in-manovra-istituire-fondo-10-milioni-per-ricerca-tumori-pediatrici_c2bc364c-9075-49de-950f-9a5744ef6f89.html",
-      "data": "2026-11-26T15:18:21.000Z",
+      "titolo": "Regione Lazio, via libera ad accesso gratuito farmaco contro tumore pancreas",
+      "url": "https://www.ansa.it/canale_saluteebenessere/notizie/medicina/2026/11/26/regione-lazio-via-libera-ad-accesso-gratuito-farmaco-contro-tumore-pancreas_5706c0bd-25c1-4b55-a909-ad260fce5bd5.html",
+      "data": "2026-11-26T17:37:52.000Z",
       "fonte": "ANSA Salute",
       "tipo": "stampa"
     }
   ],
   "stato": {
     "Ministero della Salute": 2,
-    "Istituto Superiore di Sanità": 21,
+    "Istituto Superiore di Sanità": 18,
     "ISS EpiCentro": 6,
     "ECDC (in inglese)": 1,
-    "ANSA Salute": 9
+    "ANSA Salute": 4
   }
 };
